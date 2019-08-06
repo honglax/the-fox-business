@@ -3,6 +3,10 @@ nav.navbar {
   padding: 0;
 }
 
+.navbar .navbar-brand .logo {
+  height: 30px;
+}
+
 .container .navbar a:hover {
   text-decoration: none;
 }
