@@ -1,0 +1,31 @@
+@import "variables.scss";
+
+.page__header {
+  .container {
+    .navbar {
+      height: 90px;
+      padding: 0;
+
+      .navbar-brand .logo {
+        height: 30px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .navbar-nav {
+        .nav-link {
+          text-transform: uppercase;
+          font-size: 15px;
+          margin: 20px;
+          padding: 0;
+          font-weight: $semiBold;
+          color: $darkGrayColor;
+        }
+        .active {
+          color: $activeColor;
+        }
+      }
+    }
+  }
+}

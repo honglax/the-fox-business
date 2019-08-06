@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-import "../../styles/header.css";
+import "../../styles/header.scss";
 import logo from "../../assets/logo-retina.png";
 
 function Header() {
   return (
-    <div className="Header">
+    <header className="header page__header">
       <Container>
         <Navbar>
           <NavLink to="/">
@@ -37,7 +37,7 @@ function Header() {
           </Nav>
         </Navbar>
       </Container>
-    </div>
+    </header>
   );
 }
 

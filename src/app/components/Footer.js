@@ -2,15 +2,19 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
-import "../../styles/footer.css";
+import "../../styles/footer.scss";
 import footerLogo from "../../assets/logo-footer.png";
 function Footer() {
   return (
-    <div className="Footer">
+    <footer className="footer page__footer">
       <div className="top-content">
         <Container>
-          <div className="logo-footer">
-            <img src={footerLogo} alt="TheFox Plus - Made for Business" />
+          <div>
+            <img
+              className="logo-footer"
+              src={footerLogo}
+              alt="TheFox Plus - Made for Business"
+            />
           </div>
           <div className="contact-box">
             <div className="title">Postal Address</div>
@@ -77,7 +81,7 @@ function Footer() {
           </div>
         </Container>
       </div>
-    </div>
+    </footer>
   );
 }
 
