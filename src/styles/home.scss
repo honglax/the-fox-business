@@ -194,27 +194,27 @@ $iconHoverBg: #4285f4;
           }
         }
 
-        .take-a-tour {
-          @extend %flex-row-center-center;
-          @include customFont($whiteColor, 14px, $boldWeight, uppercase);
-          background-color: $primaryColor;
-          width: 270px;
-          height: 55px;
-          border-radius: 5px;
-          border: 1px solid $primaryBorderColor;
-          @include customTransition($duration: 0.2s);
+        // .take-a-tour {
+        //   @extend %flex-row-center-center;
+        //   @include customFont($whiteColor, 14px, $boldWeight, uppercase);
+        //   background-color: $primaryColor;
+        //   width: 270px;
+        //   height: 55px;
+        //   border-radius: 5px;
+        //   border: 1px solid $primaryBorderColor;
+        //   @include customTransition($duration: 0.2s);
 
-          &:hover {
-            @include customBoxShadow(
-              $blurRadius: 10px,
-              $shadowColor: rgba(0, 0, 0, 0.3)
-            );
-          }
+        //   &:hover {
+        //     @include customBoxShadow(
+        //       $blurRadius: 10px,
+        //       $shadowColor: rgba(0, 0, 0, 0.3)
+        //     );
+        //   }
 
-          .icon {
-            font-weight: bold;
-          }
-        }
+        //   .icon {
+        //     font-weight: bold;
+        //   }
+        // }
       }
     }
 
@@ -357,6 +357,120 @@ $iconHoverBg: #4285f4;
       .signing .author {
         @include customFont(#fff, 14px, $boldWeight, uppercase);
         line-height: 24px;
+      }
+    }
+  }
+
+  .section-services {
+    width: 100%;
+
+    .container {
+      @extend %flex-row;
+      @include customFont(#ccc, 14px, $regularWeight, none);
+      flex-wrap: wrap;
+      align-items: center;
+      line-height: 30px;
+      max-width: 100%;
+      min-height: 800px;
+      height: 800px;
+
+      .left-content {
+        background-color: $homeServicesLeftBg;
+        min-width: 775px;
+        width: 775px;
+        padding: 80px 100px;
+        height: 100%;
+
+        .title {
+          @include customFont(#fff, 36px, $lightWeight, capitalize);
+          line-height: 64px;
+          padding-bottom: 10px;
+          margin-bottom: 25px;
+          position: relative;
+
+          &::after {
+            @include primaryGradientBg(90deg);
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        .content {
+          margin-bottom: 25px;
+          .gray-text {
+            @include customFont(#b9b9b9, 18px, $lightWeight, none);
+            margin-bottom: 20px;
+          }
+        }
+
+        .doing-list {
+          padding: 0;
+          margin: 20px 0;
+          li {
+            padding-left: 20px;
+            list-style: none;
+
+            &::before {
+              content: "\f054";
+              font-family: FontAweSome;
+              display: inline-block;
+              margin-left: -20px;
+              width: 20px;
+            }
+          }
+        }
+      }
+
+      .right-content {
+        @extend %flex-row;
+        align-items: flex-start;
+        justify-content: space;
+        flex-wrap: wrap;
+        width: calc(100% - 775px);
+        height: 100%;
+
+        .service-item {
+          @extend %flex-col-center-center;
+          @include customFont($mediumGrayColor, 14px, $regularWeight, none);
+          @include customTransition($duration: 0.3s);
+          width: calc(100% / 3);
+          height: 400px;
+          padding: 60px;
+          text-align: center;
+          border-top: 1px solid $serviceBoxBorder;
+          border-right: 1px solid $serviceBoxBorder;
+
+          &:nth-child(-n + 3) {
+            border-top-color: transparent;
+          }
+
+          &:nth-child(3n + 0) {
+            border-right-color: transparent;
+          }
+
+          &:hover {
+            @include customBoxShadow(
+              $blurRadius: 5px,
+              $shadowColor: rgba(0, 0, 0, 0.3)
+            );
+          }
+
+          .title {
+            @include customFont(
+              $darkGrayColor,
+              18px,
+              $semiBoldWeight,
+              capitalize
+            );
+            line-height: 30px;
+            margin-top: 50px;
+            margin-bottom: 10px;
+          }
+        }
       }
     }
   }

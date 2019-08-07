@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { PrimaryButton } from "../StyledComponent/style";
 
 export default function GreatTheme(props) {
   let { alignItems } = props;
@@ -20,10 +21,10 @@ export default function GreatTheme(props) {
             venenatis faucibus. Praesent aliquet convallis.
           </p>
         </div>
-        <button className="take-a-tour btn btn-blue">
+        <PrimaryButton>
           <span className="icon ti-light-bulb mr-2" />
           Take a tour
-        </button>
+        </PrimaryButton>
       </div>
     </Container>
   );

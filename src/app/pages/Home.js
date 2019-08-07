@@ -6,6 +6,7 @@ import GreenBox from "../components/GreenBox";
 import Utils from "../components/Home/Utils.Home";
 import Analyzer from "../components/Home/Analyzer.Home";
 import Parallax from "../components/Home/Parallax.Home";
+import Services from "../components/Home/Services.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
 
@@ -38,6 +39,9 @@ function Home() {
       </section>
       <section id="parallax" className="section section-parallax">
         <Parallax />
+      </section>
+      <section id="services" className="section section-services">
+        <Services />
       </section>
     </div>
   );
