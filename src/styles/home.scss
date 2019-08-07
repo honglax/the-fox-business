@@ -8,6 +8,17 @@
   );
 }
 
+@mixin primaryGradientColor($deg: 0deg) {
+  background: -webkit-linear-gradient(
+    $deg,
+    rgba(0, 240, 255, 1) 0%,
+    rgba(235, 172, 253, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 $iconHoverBg: #4285f4;
 
 /* CSS for Homepage */
@@ -93,7 +104,7 @@ $iconHoverBg: #4285f4;
         margin-bottom: 25px;
 
         .icon-img {
-          width: 30px;
+          @include customFont($whiteColor, 30px, $regularWeight, none);
         }
 
         &:hover {
@@ -126,16 +137,24 @@ $iconHoverBg: #4285f4;
   .section-greate-theme {
     @extend %flex-col;
     position: relative;
-    background-image: url("../assets/greate-theme-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 775px;
     align-items: center;
     justify-content: center;
 
+    .aifs {
+      // Align item: flex-start
+      align-items: flex-start;
+    }
+
+    .aife {
+      // Align item: flex-end
+      align-items: flex-end;
+    }
+
     .container {
       @extend %flex-col;
-      align-items: flex-start;
       justify-content: center;
 
       .box-content {
@@ -150,7 +169,7 @@ $iconHoverBg: #4285f4;
           margin-bottom: 25px;
 
           &::after {
-            @include primaryGradientBg;
+            @include primaryGradientBg($deg: 90deg);
             content: "";
             display: block;
             position: absolute;
@@ -176,14 +195,11 @@ $iconHoverBg: #4285f4;
         }
 
         .take-a-tour {
-          @extend %flex-col-center-center;
+          @extend %flex-row-center-center;
+          @include customFont($whiteColor, 14px, $boldWeight, uppercase);
           background-color: $primaryColor;
-          color: #fff;
-          font-size: 14px;
-          text-transform: uppercase;
           width: 270px;
           height: 55px;
-          font-weight: $boldWeight;
           border-radius: 5px;
           border: 1px solid $primaryBorderColor;
           @include customTransition($duration: 0.2s);
@@ -193,6 +209,10 @@ $iconHoverBg: #4285f4;
               $blurRadius: 10px,
               $shadowColor: rgba(0, 0, 0, 0.3)
             );
+          }
+
+          .icon {
+            font-weight: bold;
           }
         }
       }
@@ -209,4 +229,60 @@ $iconHoverBg: #4285f4;
       z-index: 1;
     }
   }
+
+  .section-utils {
+    .container {
+      @extend %flex-row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 555px;
+      padding: 100px 0;
+
+      .util-item {
+        @extend %flex-row;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 370px;
+        min-height: 160px;
+
+        .icon {
+          @include primaryGradientColor(42deg);
+          font-size: 40px;
+          margin-right: 25px;
+        }
+
+        .content {
+          @include customFont($mediumGrayColor, 14px, $regularWeight, none);
+          line-height: 30px;
+          .title {
+            @include customFont(
+              $darkGrayColor,
+              18px,
+              $semiBoldWeight,
+              capitalize
+            );
+            margin-bottom: 15px;
+            vertical-align: text-top;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#first-greate-theme {
+  background-image: url("../assets/greate-theme-bg.jpg");
+}
+
+#second-greate-theme {
+  // background-color: $secondaryBgColor;
+  // background-image: url("../assets/macbook-bg.png");
+  // background-repeat: no-repeat;
+  // background-size: 845px 566px;
+  // background-origin: content-box;
+  background: $secondaryBgColor url("../assets//macbook-bg.png") no-repeat left
+    center;
+  background-size: 700px;
 }

@@ -10,11 +10,14 @@ $primaryBorderColor: #2c6cd6;
 $lightenOverlay: rgba(0, 0, 0, 0.2);
 
 $lightWeight: 300;
+$regularWeight: 400;
 $semiBoldWeight: 600;
 $boldWeight: 700;
 
 $greenBoxBg: #82b440;
 
+$primaryBgColor: #fff;
+$secondaryBgColor: #f6f7f8;
 // Display Flex
 %flex-row {
   display: flex;

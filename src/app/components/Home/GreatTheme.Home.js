@@ -1,9 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-export default function GreatTheme() {
+export default function GreatTheme(props) {
+  let { alignItems } = props;
   return (
-    <Container>
+    <Container className={alignItems}>
       <div className="box-content">
         <div className="title">Greate Theme for Your Business</div>
         <div className="content">
@@ -19,7 +20,10 @@ export default function GreatTheme() {
             venenatis faucibus. Praesent aliquet convallis.
           </p>
         </div>
-        <button className="take-a-tour btn btn-blue">Take a tour</button>
+        <button className="take-a-tour btn btn-blue">
+          <span className="icon ti-light-bulb mr-2" />
+          Take a tour
+        </button>
       </div>
     </Container>
   );
