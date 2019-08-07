@@ -19,9 +19,7 @@ export default function GreatTheme() {
             venenatis faucibus. Praesent aliquet convallis.
           </p>
         </div>
-        <div className="take-a-tour">
-          <div className="btn btn-blue">Take a tour</div>
-        </div>
+        <button className="take-a-tour btn btn-blue">Take a tour</button>
       </div>
     </Container>
   );

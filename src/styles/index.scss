@@ -1,0 +1,39 @@
+@import "variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0;
+}
+
+.section-green-box {
+  background-color: $greenBoxBg;
+  height: 180px;
+  width: 100%;
+
+  .container {
+    @extend %flex-row-center-space-between;
+    height: 100%;
+  }
+
+  .text {
+    @include customFont(
+      $color: $whiteColor,
+      $fontSize: 30px,
+      $fontWeight: $lightWeight,
+      $textTransform: capitalize
+    );
+  }
+
+  .btn-purchase {
+    @include customBtn(270px, 55px, transparent, solid 1px $whiteColor, 5px);
+    @include customFont($whiteColor, 14px, $boldWeight, uppercase);
+  }
+}

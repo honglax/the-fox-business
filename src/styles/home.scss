@@ -1,12 +1,13 @@
 @import "variables.scss";
-%functional-item-bg {
+@mixin primaryGradientBg($deg: 0deg) {
   background: rgb(0, 240, 255);
   background: linear-gradient(
-    42deg,
+    $deg,
     rgba(0, 240, 255, 1) 0%,
     rgba(235, 172, 253, 1) 100%
   );
 }
+
 $iconHoverBg: #4285f4;
 
 /* CSS for Homepage */
@@ -16,7 +17,7 @@ $iconHoverBg: #4285f4;
 
 .home__content {
   // Begin slideshow
-  .slideshow {
+  .section-slideshow {
     position: relative;
     background-image: url("../assets/slider_bg2.jpg");
     width: 100%;
@@ -74,7 +75,7 @@ $iconHoverBg: #4285f4;
   }
   // End Slideshow
 
-  .functionals .container {
+  .section-functionals .container {
     width: 100%;
     @extend %flex-row-center-space-between;
 
@@ -85,10 +86,10 @@ $iconHoverBg: #4285f4;
 
       .icon {
         @extend %flex-row-center-center;
+        @include primaryGradientBg($deg: 42deg);
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        @extend %functional-item-bg;
         margin-bottom: 25px;
 
         .icon-img {
@@ -106,7 +107,7 @@ $iconHoverBg: #4285f4;
 
       .title {
         font-size: 18px;
-        font-weight: $semiBold;
+        font-weight: $semiBoldWeight;
         color: $darkGrayColor;
         line-height: 30px;
         margin-bottom: 20px;
@@ -122,13 +123,13 @@ $iconHoverBg: #4285f4;
     }
   }
 
-  .greate-theme {
+  .section-greate-theme {
+    @extend %flex-col;
     position: relative;
     background-image: url("../assets/greate-theme-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 775px;
-    @extend %flex-col;
     align-items: center;
     justify-content: center;
 
@@ -138,12 +139,67 @@ $iconHoverBg: #4285f4;
       justify-content: center;
 
       .box-content {
-        width: 600px;
+        max-width: 600px;
+
+        .title {
+          position: relative;
+          font-size: 36px;
+          font-weight: $lightWeight;
+          color: $darkGrayColor;
+          padding-bottom: 20px;
+          margin-bottom: 25px;
+
+          &::after {
+            @include primaryGradientBg;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 2px;
+          }
+        }
+
+        .content {
+          font-size: 14px;
+          line-height: 30px;
+          color: $mediumGrayColor;
+          margin-bottom: 35px;
+
+          .gray-text {
+            color: $lightGrayColor;
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 15px;
+          }
+        }
+
+        .take-a-tour {
+          @extend %flex-col-center-center;
+          background-color: $primaryColor;
+          color: #fff;
+          font-size: 14px;
+          text-transform: uppercase;
+          width: 270px;
+          height: 55px;
+          font-weight: $boldWeight;
+          border-radius: 5px;
+          border: 1px solid $primaryBorderColor;
+          @include customTransition($duration: 0.2s);
+
+          &:hover {
+            @include customBoxShadow(
+              $blurRadius: 10px,
+              $shadowColor: rgba(0, 0, 0, 0.3)
+            );
+          }
+        }
       }
     }
 
     &::after {
-      content: "";
+      // content: "";
       position: absolute;
       top: 0;
       left: 0;
