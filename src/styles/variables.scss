@@ -1,14 +1,24 @@
-$activeColor: #4285f4;
+$primaryColor: #4285f4;
 $darkGrayColor: #333;
 $mediumGrayColor: #666;
 $lightGrayColor: #999;
 $whiteColor: #fff;
 $blackColor: #000;
 
+$primaryBorderColor: #2c6cd6;
+
 $lightenOverlay: rgba(0, 0, 0, 0.2);
 
-$semiBold: 600;
+$lightWeight: 300;
+$regularWeight: 400;
+$semiBoldWeight: 600;
+$boldWeight: 700;
 
+$greenBoxBg: #82b440;
+
+$primaryBgColor: #fff;
+$secondaryBgColor: #f6f7f8;
+// Display Flex
 %flex-row {
   display: flex;
   flex-direction: row;
@@ -40,4 +50,53 @@ $semiBold: 600;
   @extend %flex-col;
   align-items: center;
   justify-content: center;
+}
+
+// Transition
+@mixin customTransition(
+  $property: all,
+  $duration: 0.5s,
+  $timingFunction: ease-in-out,
+  $delay: 0s
+) {
+  transition: $property $duration $timingFunction $delay;
+  -moz-transition: $property $duration $timingFunction $delay;
+  -webkit-transition: $property $duration $timingFunction $delay;
+  -o-transition: $property $duration $timingFunction $delay;
+}
+
+// Box Shadow
+@mixin customBoxShadow(
+  $horizontal: 0px,
+  $vertical: 0px,
+  $blurRadius: 0px,
+  $spreadRadius: 0px,
+  $shadowColor: rgba(0, 0, 0, 1)
+) {
+  box-shadow: $horizontal $vertical $blurRadius $spreadRadius $shadowColor;
+  -webkit-box-shadow: $horizontal $vertical $blurRadius $spreadRadius
+    $shadowColor;
+  -moz-box-shadow: $horizontal $vertical $blurRadius $spreadRadius $shadowColor;
+}
+
+// Custom Font
+@mixin customFont(
+  $color,
+  $fontSize: 14px,
+  $fontWeight: 400,
+  $textTransform: none
+) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $color;
+  text-transform: $textTransform;
+}
+
+// Button
+@mixin customBtn($width, $height, $bgColor, $border, $borderRadius: 0px) {
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+  border-radius: $borderRadius;
+  border: $border;
 }

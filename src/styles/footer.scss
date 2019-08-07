@@ -31,7 +31,7 @@ $botContentBg: #1a1a1d;
     @extend %flex-row-center-space-between;
 
     .semibold {
-      font-weight: $semiBold;
+      font-weight: $semiBoldWeight;
       color: $lightGrayColor;
     }
   }
