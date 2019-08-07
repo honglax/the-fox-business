@@ -474,6 +474,65 @@ $iconHoverBg: #4285f4;
       }
     }
   }
+
+  .section-partners {
+    background: url("../assets/partner-bg.jpg") no-repeat;
+    height: 1296px;
+    .container {
+      @extend %flex-col;
+      align-items: center;
+      justify-content: center;
+      padding-top: 70px;
+      text-align: center;
+
+      .title {
+        @include customFont($darkGrayColor, 36px, $lightWeight, capitalize);
+        line-height: 36px;
+        padding: 30px 0;
+        position: relative;
+        margin-bottom: 25px;
+
+        &:after {
+          @include primaryGradientBg(90deg);
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          margin-left: -50px;
+          width: 100px;
+          height: 1px;
+        }
+      }
+
+      .description {
+        @include customFont($lightGrayColor, 18px, $lightWeight, none);
+        line-height: 36px;
+        margin-bottom: 60px;
+      }
+
+      .partner-logos {
+        @extend %flex-row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .logo {
+          width: calc(100% / 4);
+          border-top: 1px solid #c7c4c8;
+          border-right: 1px solid #c7c4c8;
+
+          &:nth-child(-n + 4) {
+            border-top-color: transparent;
+          }
+
+          &:nth-child(4n + 0) {
+            border-right-color: transparent;
+          }
+        }
+      }
+    }
+  }
 }
 
 #first-greate-theme {

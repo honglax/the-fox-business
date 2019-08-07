@@ -7,6 +7,7 @@ import Utils from "../components/Home/Utils.Home";
 import Analyzer from "../components/Home/Analyzer.Home";
 import Parallax from "../components/Home/Parallax.Home";
 import Services from "../components/Home/Services.Home";
+import Partners from "../components/Home/Partners.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
 
@@ -44,7 +45,7 @@ function Home() {
         <Services />
       </section>
       <section id="partners" className="section section-partners">
-        Partners
+        <Partners />
       </section>
       <section id="pricing-table" className="section section-pricing-table">
         Pricing Table
