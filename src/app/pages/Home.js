@@ -43,6 +43,30 @@ function Home() {
       <section id="services" className="section section-services">
         <Services />
       </section>
+      <section id="partners" className="section section-partners">
+        Partners
+      </section>
+      <section id="pricing-table" className="section section-pricing-table">
+        Pricing Table
+      </section>
+      <section id="video" className="section section-video">
+        Video
+      </section>
+      <section id="second-greenbox" className="section section-green-box">
+        <GreenBox />
+      </section>
+      <section id="skills" className="section section-skills">
+        Skills
+      </section>
+      <section id="latest-twitter" className="section section-twitter">
+        Lastest Twitter
+      </section>
+      <section id="lastest-blog" className="section section-latest-blog">
+        Lastest Blog
+      </section>
+      <section id="third-greenbox" className="section section-green-box">
+        <GreenBox />
+      </section>
     </div>
   );
 }
