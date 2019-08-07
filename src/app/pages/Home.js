@@ -5,6 +5,7 @@ import GreatTheme from "../components/Home/GreatTheme.Home";
 import GreenBox from "../components/GreenBox";
 import Utils from "../components/Home/Utils.Home";
 import Analyzer from "../components/Home/Analyzer.Home";
+import Parallax from "../components/Home/Parallax.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
 
@@ -34,6 +35,9 @@ function Home() {
       </section>
       <section id="analyzer" className="section section-analyzer">
         <Analyzer />
+      </section>
+      <section id="parallax" className="section section-parallax">
+        <Parallax />
       </section>
     </div>
   );
