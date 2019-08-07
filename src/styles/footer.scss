@@ -1,0 +1,85 @@
+@import "variables.scss";
+$topContentBg: #242427;
+$botContentBg: #1a1a1d;
+
+/* CSS for Footer */
+%top-footer-content {
+  .logo-footer {
+    width: 190px;
+  }
+
+  .contact-box {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.5;
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    > p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+%bot-footer-content {
+  .copyright {
+    @extend %flex-row-center-space-between;
+
+    .semibold {
+      font-weight: $semiBold;
+      color: $lightGrayColor;
+    }
+  }
+
+  .social .nav li {
+    margin: 0 15px;
+    font-size: 20px;
+
+    > a {
+      color: $lightGrayColor;
+      &:hover {
+        color: $whiteColor;
+      }
+    }
+  }
+}
+
+.page__footer {
+  display: flex;
+  flex-direction: column;
+
+  .top-content {
+    background-color: $topContentBg;
+    display: flex;
+    align-items: center;
+    min-height: 385px;
+    width: 100%;
+
+    .container {
+      @extend %flex-row-center-space-between;
+      padding-right: 70px;
+
+      @extend %top-footer-content;
+    }
+  }
+
+  .bot-content {
+    background-color: $botContentBg;
+    @extend %flex-row-center-space-between;
+    color: $mediumGrayColor;
+    min-height: 90px;
+    width: 100%;
+
+    .container {
+      @extend %flex-row-center-space-between;
+      font-size: 16px;
+
+      @extend %bot-footer-content;
+    }
+  }
+}

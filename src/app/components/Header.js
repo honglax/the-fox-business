@@ -2,21 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-import "../../styles/header.css";
-import logo from "../../assets/logo.png";
+import "../../styles/header.scss";
+import logo from "../../assets/logo-retina.png";
 
 function Header() {
   return (
-    <div className="Header">
+    <header className="header page__header">
       <Container>
         <Navbar>
           <NavLink to="/">
             <Navbar.Brand>
               <img src={logo} alt="The Fox Business" className="logo" />
             </Navbar.Brand>
-          </NavLink>
-          <NavLink to="/">
-            <Navbar.Brand className="title">TheFox Business</Navbar.Brand>
           </NavLink>
           <Nav className="ml-auto">
             <NavLink className="nav-link" exact to="/">
@@ -40,7 +37,7 @@ function Header() {
           </Nav>
         </Navbar>
       </Container>
-    </div>
+    </header>
   );
 }
 

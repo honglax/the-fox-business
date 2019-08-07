@@ -1,0 +1,156 @@
+@import "variables.scss";
+%functional-item-bg {
+  background: rgb(0, 240, 255);
+  background: linear-gradient(
+    42deg,
+    rgba(0, 240, 255, 1) 0%,
+    rgba(235, 172, 253, 1) 100%
+  );
+}
+$iconHoverBg: #4285f4;
+
+/* CSS for Homepage */
+*:focus {
+  outline: 0 !important;
+}
+
+.home__content {
+  // Begin slideshow
+  .slideshow {
+    position: relative;
+    background-image: url("../assets/slider_bg2.jpg");
+    width: 100%;
+    height: 990px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .banner-slideshow {
+      position: relative;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+
+      img {
+        margin-bottom: 30px;
+      }
+
+      .btn-group {
+        .btn {
+          width: 200px;
+          height: 55px;
+          margin: 10px;
+          border-radius: 5px;
+          font-size: 14px;
+          font-weight: 700;
+          color: #fff;
+          text-transform: uppercase;
+          border: 1px solid #fff;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        .btn-get-started {
+          background-color: #292b2d;
+          border-color: #292b2d;
+        }
+        .btn-purchase {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  // End Slideshow
+
+  .functionals .container {
+    width: 100%;
+    @extend %flex-row-center-space-between;
+
+    .functional-item {
+      @extend %flex-col-center-center;
+      width: 270px;
+      margin: 90px 10px;
+
+      .icon {
+        @extend %flex-row-center-center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        @extend %functional-item-bg;
+        margin-bottom: 25px;
+
+        .icon-img {
+          width: 30px;
+        }
+
+        &:hover {
+          background: $iconHoverBg;
+
+          + .title {
+            color: $blackColor;
+          }
+        }
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: $semiBold;
+        color: $darkGrayColor;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+
+      .content {
+        color: $mediumGrayColor;
+        font-size: 14px;
+        text-align: center;
+        padding: 0 10px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .greate-theme {
+    position: relative;
+    background-image: url("../assets/greate-theme-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 775px;
+    @extend %flex-col;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+      @extend %flex-col;
+      align-items: flex-start;
+      justify-content: center;
+
+      .box-content {
+        width: 600px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $lightenOverlay;
+      z-index: 1;
+    }
+  }
+}
