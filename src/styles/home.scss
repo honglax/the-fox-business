@@ -176,7 +176,7 @@ $iconHoverBg: #4285f4;
             bottom: 0;
             left: 0;
             width: 100px;
-            height: 2px;
+            height: 1px;
           }
         }
 
@@ -255,6 +255,7 @@ $iconHoverBg: #4285f4;
         .content {
           @include customFont($mediumGrayColor, 14px, $regularWeight, none);
           line-height: 30px;
+          text-align: justify;
           .title {
             @include customFont(
               $darkGrayColor,
@@ -267,6 +268,63 @@ $iconHoverBg: #4285f4;
             line-height: 18px;
           }
         }
+      }
+    }
+  }
+
+  .section-analyzer {
+    @extend %flex-row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .analyzer-item {
+      @extend %flex-col-center-center;
+      background-color: $analyzerBg;
+      width: 320px;
+      height: 280px;
+      border-right: 1px solid $secondaryBorderColor;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% + 1px);
+        height: 3px;
+        border: none;
+        z-index: 2;
+      }
+
+      &:last-child {
+        border-right-width: 0px;
+      }
+
+      .counter {
+        font-size: 60px;
+        line-height: 60px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        line-height: 60px;
+        position: relative;
+
+        &::after {
+          @include primaryGradientBg(90deg);
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 30px;
+          height: 1px;
+          margin-left: -15px;
+        }
+      }
+
+      .title {
+        @include customFont(#fff, 14px, $lightWeight, capitalize);
       }
     }
   }

@@ -4,6 +4,7 @@ import Functionals from "../components/Home/Functionals.Home";
 import GreatTheme from "../components/Home/GreatTheme.Home";
 import GreenBox from "../components/GreenBox";
 import Utils from "../components/Home/Utils.Home";
+import Analyzer from "../components/Home/Analyzer.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
 
@@ -30,6 +31,9 @@ function Home() {
         className="section section-greate-theme"
       >
         <GreatTheme alignItems="aife" />
+      </section>
+      <section id="analyzer" className="section section-analyzer">
+        <Analyzer />
       </section>
     </div>
   );
