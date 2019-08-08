@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { PrimaryButton, LearnMoreButton } from "../StyledComponent/style";
+import { LearnMoreButton } from "../StyledComponent/style";
+import DarkBox from "../StyledComponent/DarkBox";
 import webDesign from "../../../assets/services-icon/web-design.png";
 import eCommerce from "../../../assets/services-icon/ecommerce.png";
 import videoAd from "../../../assets/services-icon/video-advertise.png";
@@ -60,30 +61,20 @@ export default function Services() {
   ];
   return (
     <Container>
-      <div className="left-content">
-        <div className="title">What We Do</div>
-        <div className="content">
-          <p className="gray-text">
-            Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
-            Nulla vehicula nibh vel ante commodo feugiat.
-          </p>
-          <p>
-            TheFox include design that can be used for any type of website:
-            business, corporate, portfolio, blog, products, magazine, etc. Buy
-            TheFox and join our awesome community, let’s make TheFox better
-            together!
-          </p>
-          <ul className="doing-list">
-            {whatWeDo.map(line => (
-              <li key={whatWeDo.indexOf(line)}>{line}</li>
-            ))}
-          </ul>
-        </div>
-        <PrimaryButton width={270} height={55}>
-          <span className="icon ti-light-bulb mr-2" />
-          Take a tour
-        </PrimaryButton>
-      </div>
+      <DarkBox
+        title="What We Do"
+        grayText="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.<br/>Nulla vehicula nibh vel ante commodo feugiat."
+        content="TheFox include design that can be used for any type of website: business, corporate, portfolio, blog, products, magazine, etc. Buy TheFox and join our awesome community, let’s make TheFox better together!"
+        btnIcon="ti-light-bulb"
+        btnContent="Take a tour"
+      >
+        <ul className="doing-list">
+          {whatWeDo.map(line => (
+            <li key={whatWeDo.indexOf(line)}>{line}</li>
+          ))}
+        </ul>
+      </DarkBox>
+
       <div className="right-content">
         {services.map(service => (
           <div className="service-item" key={services.indexOf(service)}>

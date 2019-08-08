@@ -9,6 +9,7 @@ import Parallax from "../components/Home/Parallax.Home";
 import Services from "../components/Home/Services.Home";
 import Partners from "../components/Home/Partners.Home";
 import PricingTable from "../components/Home/PricingTable.Home";
+import Skills from "../components/Home/Skills.Home";
 import LastestBlog from "../components/Home/LastestBlog.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
@@ -76,7 +77,7 @@ Completed it with this theme in one day. Thanks guys!"
         <GreenBox />
       </section>
       <section id="skills" className="section section-skills">
-        Skills
+        <Skills />
       </section>
       <section id="lastest-twitter" className="section section-parallax">
         <Parallax

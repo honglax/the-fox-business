@@ -57,8 +57,7 @@ const gradientLine = (width, height) => `
   content: "";
   position: absolute;
   bottom: 0;
-  left: 50%;
-  margin-left: -${width / 2}px;
+  margin-left: ${width / 2}px;
   width: ${width}px;
   height: ${height}px;
 `;
@@ -85,7 +84,7 @@ export const PrimaryButton = styled.button`
   ${props =>
     customFontMixin(
       props.color,
-      undefined,
+      props.fontSize,
       undefined,
       700,
       props.transform || "uppercase"
@@ -142,14 +141,18 @@ export const BoxSectionStyle = styled.div`
       position: relative;
       margin-bottom: 25px;
       font-weight: 300;
+      text-align: ${props => props.textAlign || "center"};
 
       &::after {
         ${gradientLine(100, 1)};
+        left: ${props => (props.textAlign === "left" ? 0 : 50)}%;
+        margin-left: ${props => (props.textAlign === "left" ? 0 : -50)}px;
       }
     }
 
     .description {
       ${customFontMixin("#999", 18, 2, 300, "none")}
+      text-align: ${props => props.textAlign || "center"};
     }
   }
 `;
@@ -272,6 +275,39 @@ export const PricingItem = styled.div`
     .plan-btn button {
       background-color: #82b440;
       border-color: #82b440;
+    }
+  }
+`;
+
+export const SkillMeasure = styled.div`
+  ${customFontMixin("#fff", 18, 1.5, 400, "capitalize")}
+  width: 100%;
+  padding: 20px 0;
+
+  .skill-title {
+    margin-bottom: 15px;
+  }
+
+  .measure {
+    width: 100%;
+    height: 10px;
+    background-color: #131313;
+    border: 2px solid #131313;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgb(0, 240, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(0, 240, 255, 1) 0%,
+        rgba(235, 172, 253, 1) 100%
+      );
+      width: ${props => props.percent || 0}%;
+      height: 100%;
     }
   }
 `;

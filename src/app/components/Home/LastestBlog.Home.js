@@ -66,6 +66,7 @@ export default function LastestBlog() {
           <PrimaryButton
             width={300}
             height={30}
+            fontSize={18}
             transform="capitalize"
             bgColor="transparent"
             color="#4889f3"

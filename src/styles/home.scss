@@ -384,10 +384,15 @@ $iconHoverBg: #4285f4;
     }
   }
 
-  .section-services {
+  .section-services,
+  .section-skills {
     width: 100%;
 
     .container {
+      &.flex-row-reverse {
+        flex-direction: row-reverse !important;
+      }
+
       @extend %flex-row;
       @include customFont(#ccc, 14px, $regularWeight, none);
       flex-wrap: wrap;
@@ -395,13 +400,14 @@ $iconHoverBg: #4285f4;
       line-height: 30px;
       max-width: 100%;
       min-height: 800px;
-      height: 800px;
+      // height: 800px;
 
-      .left-content {
+      .dark-content {
         background-color: $homeServicesLeftBg;
         min-width: 775px;
         width: 775px;
         padding: 80px 100px;
+        min-height: 800px;
         height: 100%;
 
         .title {
@@ -451,7 +457,7 @@ $iconHoverBg: #4285f4;
       .right-content {
         @extend %flex-row;
         align-items: flex-start;
-        justify-content: space;
+        justify-content: space-between;
         flex-wrap: wrap;
         width: calc(100% - 775px);
         height: 100%;
@@ -604,6 +610,57 @@ $iconHoverBg: #4285f4;
 
     .icon {
       margin-right: 10px;
+    }
+  }
+
+  .section-skills {
+    .container {
+      align-items: flex-start;
+    }
+
+    .skills-box {
+      margin: 50px 0;
+    }
+
+    .why-choose-us {
+      @extend %flex-col;
+      width: calc(100% - 775px);
+      height: 100%;
+      padding: 80px 100px;
+
+      .title h4 {
+        color: $darkGrayColor;
+      }
+
+      .reasons {
+        @extend %flex-row-center-space-between;
+        margin-bottom: 60px;
+
+        .reason-item {
+          text-align: justify;
+          &:first-child {
+            margin-right: 40px;
+          }
+        }
+
+        .reason-img {
+          width: 100%;
+        }
+      }
+
+      .name {
+        @include customFont($darkGrayColor, 18, 600, capitalize);
+        margin: 20px 0 15px 0;
+      }
+
+      .reason-description {
+        color: $mediumGrayColor;
+      }
+
+      .reason-btn {
+        padding: 0;
+        border: 0;
+      }
     }
   }
 }
