@@ -9,32 +9,33 @@ function Header() {
   return (
     <header className="header page__header">
       <Container>
-        <Navbar>
-          <NavLink to="/">
-            <Navbar.Brand>
-              <img src={logo} alt="The Fox Business" className="logo" />
-            </Navbar.Brand>
+        <Navbar collapseOnSelect expand="xl">
+          <NavLink className="navbar-brand" to="/">
+            <img src={logo} alt="The Fox Business" className="logo" />
           </NavLink>
-          <Nav className="ml-auto">
-            <NavLink className="nav-link" exact to="/">
-              Home
-            </NavLink>
-            <NavLink className="nav-link" to="/about">
-              About Us
-            </NavLink>
-            <NavLink className="nav-link" to="/services">
-              Services
-            </NavLink>
-            <NavLink className="nav-link" to="/blog">
-              Blog
-            </NavLink>
-            <NavLink className="nav-link" to="/portfolio">
-              Portfolio
-            </NavLink>
-            <NavLink className="nav-link" to="/contact">
-              Contact
-            </NavLink>
-          </Nav>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ml-auto">
+              <NavLink className="nav-link" exact to="/">
+                Home
+              </NavLink>
+              <NavLink className="nav-link" to="/about">
+                About Us
+              </NavLink>
+              <NavLink className="nav-link" to="/services">
+                Services
+              </NavLink>
+              <NavLink className="nav-link" to="/blog">
+                Blog
+              </NavLink>
+              <NavLink className="nav-link" to="/portfolio">
+                Portfolio
+              </NavLink>
+              <NavLink className="nav-link" to="/contact">
+                Contact
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
       </Container>
     </header>

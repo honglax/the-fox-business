@@ -24,6 +24,13 @@ $secondaryBgColor: #f6f7f8;
 $homeServicesLeftBg: #1f252f;
 
 $postBgColor: #4889f3;
+
+// Responsive breakpoint
+$break-phoneOnly: 575.98px; // Phone Only
+$break-smallDevice: 767.98px; // Small devices (landscape phones, less than 768px)
+$break-mediumDevice: 991.98px; // Medium devices (tablets, less than 992px)
+$break-largeDevice: 1199.98px; // Large devices (desktops, less than 1200px)
+
 // Display Flex
 %flex-row {
   display: flex;
@@ -105,4 +112,25 @@ $postBgColor: #4889f3;
   background-color: $bgColor;
   border-radius: $borderRadius;
   border: $border;
+}
+
+// Mixin Responsive
+@mixin respond-to($media) {
+  @if $media == phone-only {
+    @media only screen and (max-width: $break-phoneOnly) {
+      @content;
+    }
+  } @else if $media == small-device {
+    @media only screen and (max-width: $break-smallDevice) {
+      @content;
+    }
+  } @else if $media == medium-device {
+    @media only screen and (max-width: $break-mediumDevice) {
+      @content;
+    }
+  } @else if $media == large-device {
+    @media only screen and (max-width: $break-largeDevice) {
+      @content;
+    }
+  }
 }

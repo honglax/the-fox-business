@@ -2,14 +2,31 @@
 
 .page__header {
   .container {
+    min-height: 90px;
+    padding: 25px;
+    @extend %flex-row-center-center;
+    @include respond-to(phone-only) {
+      padding: 20px 15px;
+      min-height: 60px;
+    }
     .navbar {
-      height: 90px;
+      width: 100%;
       padding: 0;
 
-      .navbar-brand .logo {
-        height: 30px;
-        &:hover {
-          text-decoration: none;
+      .navbar-brand {
+        width: 80%;
+        margin-right: 0;
+        max-width: 345px;
+        @include respond-to(phone-only) {
+          width: 75%;
+        }
+
+        .logo {
+          width: 100%;
+          max-height: 30px;
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
 
@@ -25,6 +42,9 @@
 
           &:hover {
             color: $primaryColor;
+          }
+          @include respond-to(large-device) {
+            margin: 15px 0;
           }
         }
 
