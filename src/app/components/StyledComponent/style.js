@@ -127,6 +127,7 @@ export const BoxSectionStyle = styled.div`
   .title {
     margin-bottom: 60px;
     text-align: center;
+    z-index: 10;
 
     h4 {
       ${customFontMixin("#333", 36, 1, 300, "capitalize")};
@@ -149,9 +150,12 @@ export const BoxSectionStyle = styled.div`
 export const PricingItem = styled.div`
   width: calc(100% / ${props => props.numOfItem});
   ${flexBoxMixin("column", "center", "center")}
-  padding: 40px 0 0 0;
+  padding: 70px 0 0 0;
   border: 1px solid #eaeaea;
   border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  ${customTransition()}
 
   .plan-title {
     ${flexBoxMixin("column", "center", "center")}
@@ -240,29 +244,27 @@ export const PricingItem = styled.div`
     padding: 40px 0;
   }
 
-  &.recommend {
+  &:hover {
     ${customBoxShadow(0, 0, 10, 0, "rgba(0,0,0,0.2)")}
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    ${customGradientBorder("0px", "5px", 0, 0)}
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    z-index: 2;
+    ${customTransition("all", 0.3)}
+  }
+
+  &.recommend {
     position: relative;
 
     .plan-btn button {
       background-color: #82b440;
       border-color: #82b440;
-    }
-
-    &:before {
-      content: "";
-      background: url("../../assets/recommend-label.png") no-repeat;
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 135px;
-      height: 135px;
-    }
-
-    &:after {
-      ${customGradientBorder("100%", "5px", 0, 0)}
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
     }
   }
 `;

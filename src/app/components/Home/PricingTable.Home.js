@@ -34,18 +34,19 @@ export default function PricingTable() {
       title="Pricing Tables"
       description="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.<br/>Nulla vehicula nibh vel ante commodo feugiat."
     >
-      <Container>
+      <Container className="pricing-features">
         {pricingData.map(item => (
           <PricingItem
             numOfItem={pricingData.length}
             key={pricingData.indexOf(item)}
             className={item.recommend ? "recommend" : ""}
           >
+            {item.recommend ? <div className="selected">Recommend</div> : ""}
             <div className="plan-title">
               <h4>{item.name}</h4>
               <p>
                 From <span className="price">${item.pricePerMonth}</span> Per
-                Months
+                Month
               </p>
             </div>
             <div className="plan-description">
@@ -61,7 +62,7 @@ export default function PricingTable() {
               </div>
               <div className="description-item">
                 <h5>
-                  {item.psdPack < 10
+                  {item.wordpressInstall < 10
                     ? "0" + item.wordpressInstall
                     : item.wordpressInstall}{" "}
                   Wordpress Install{item.wordpressInstall > 1 ? "s" : ""}
