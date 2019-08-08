@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import BoxSection from "../StyledComponent/BoxSection";
 
 import cubanese from "../../../assets/partners-logo/cubanese.png";
 import genuine from "../../../assets/partners-logo/genuine.png";
@@ -24,21 +25,23 @@ export default function Partners() {
 
   return (
     <Container>
-      <div className="title">The Best Partner</div>
-      <div className="description">
-        Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
-        <br />Nulla vehicula nibh vel ante commodo feugiat.
-      </div>
-      <div className="partner-logos">
-        {logos.map(logo => (
-          <img
-            src={logo}
-            alt="Partner Logo"
-            className="logo"
-            key={logos.indexOf(logo)}
-          />
-        ))}
-      </div>
+      <BoxSection
+        title="The Best Partner"
+        description="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
+        <br />
+        Nulla vehicula nibh vel ante commodo feugiat."
+      >
+        <div className="partner-logos">
+          {logos.map(logo => (
+            <img
+              src={logo}
+              alt="Partner Logo"
+              className="logo"
+              key={logos.indexOf(logo)}
+            />
+          ))}
+        </div>
+      </BoxSection>
     </Container>
   );
 }

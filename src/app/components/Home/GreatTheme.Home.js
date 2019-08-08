@@ -21,7 +21,7 @@ export default function GreatTheme(props) {
             venenatis faucibus. Praesent aliquet convallis.
           </p>
         </div>
-        <PrimaryButton>
+        <PrimaryButton width={270} height={55}>
           <span className="icon ti-light-bulb mr-2" />
           Take a tour
         </PrimaryButton>

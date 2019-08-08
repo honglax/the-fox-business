@@ -2,12 +2,13 @@ import React from "react";
 import Slideshow from "../components/Home/Slideshow.Home";
 import Functionals from "../components/Home/Functionals.Home";
 import GreatTheme from "../components/Home/GreatTheme.Home";
-import GreenBox from "../components/GreenBox";
+import GreenBox from "../components/StyledComponent/GreenBox";
 import Utils from "../components/Home/Utils.Home";
 import Analyzer from "../components/Home/Analyzer.Home";
 import Parallax from "../components/Home/Parallax.Home";
 import Services from "../components/Home/Services.Home";
 import Partners from "../components/Home/Partners.Home";
+import PricingTable from "../components/Home/PricingTable.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
 
@@ -44,11 +45,11 @@ function Home() {
       <section id="services" className="section section-services">
         <Services />
       </section>
-      <section id="partners" className="section section-partners">
+      <section id="partners" className="section section-partners pt-70">
         <Partners />
       </section>
-      <section id="pricing-table" className="section section-pricing-table">
-        Pricing Table
+      <section id="pricing-table" className="section section-pricing-table pt-70 pb-100">
+        <PricingTable />
       </section>
       <section id="video" className="section section-video">
         Video
