@@ -83,7 +83,13 @@ const customGradientBorder = (width, height, top, left) => `
 export const PrimaryButton = styled.button`
   ${flexBoxMixin("row", "center", "center")}
   ${props =>
-    customFontMixin(props.color, undefined, undefined, 700, "uppercase")}
+    customFontMixin(
+      props.color,
+      undefined,
+      undefined,
+      700,
+      props.transform || "uppercase"
+    )}
   background-color: ${props => props.bgColor || primaryColor};
   width: ${props => props.width}px;
   height: ${props => props.height}px;
@@ -92,7 +98,8 @@ export const PrimaryButton = styled.button`
   ${customTransition("all", 0.2, undefined)}
 
   &:hover {
-    ${customBoxShadow(0, 0, 10, 0, "rgba(0, 0, 0, 0.3)")}
+    ${props =>
+      props.notHover ? "" : customBoxShadow(0, 0, 10, 0, "rgba(0, 0, 0, 0.3)")}
   }
 
   .icon {

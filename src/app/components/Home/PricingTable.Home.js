@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { PricingItem, PrimaryButton } from "../StyledComponent/style";
 import BoxSection from "../StyledComponent/BoxSection";
+
 export default function PricingTable() {
   const pricingData = [
     {
@@ -25,7 +26,7 @@ export default function PricingTable() {
       pricePerMonth: 999,
       psdPack: 10,
       wordpressInstall: 30,
-      supportTicket: 0,
+      supportTicket: -1,
       recommend: false
     }
   ];
@@ -74,7 +75,7 @@ export default function PricingTable() {
               </div>
               <div className="description-item">
                 <h5>
-                  {item.supportTicket === 0
+                  {item.supportTicket === -1
                     ? "Suport Unlimited"
                     : `${item.supportTicket} Support Tickets`}
                 </h5>

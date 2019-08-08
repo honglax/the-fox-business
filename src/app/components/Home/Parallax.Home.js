@@ -1,18 +1,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-export default function Parallax() {
+export default function Parallax({ quote, author, description, children }) {
   return (
     <Container>
-      <div className="quote">
-        This is the best WordPress theme I have used to date... Incredible
-        Customizability and it is Incredible to work with I took a project I
-        couldnt complete and Completed it with this theme in one day. Thanks
-        guys!
-      </div>
+      {children}
+      <div className="quote" dangerouslySetInnerHTML={{ __html: quote }} />
       <div className="signing">
-        <p className="author">Austinthesing</p>
-        <p>Themeforest Customer</p>
+        <p className="author">{author}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </Container>
   );
