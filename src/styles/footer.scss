@@ -6,12 +6,28 @@ $botContentBg: #1a1a1d;
 %top-footer-content {
   .logo-footer {
     width: 190px;
+    @include respond-to(medium-device) {
+      margin-bottom: 20px;
+    }
   }
 
   .contact-box {
     font-size: 14px;
     color: #999;
     line-height: 1.5;
+
+    @include respond-to(medium-device) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+      width: 50%;
+    }
+
+    @include respond-to(phone-only) {
+      width: 100%;
+    }
 
     .title {
       font-size: 18px;
@@ -29,6 +45,9 @@ $botContentBg: #1a1a1d;
 %bot-footer-content {
   .copyright {
     @extend %flex-row-center-space-between;
+    @include respond-to(medium-device) {
+      margin-bottom: 20px;
+    }
 
     .semibold {
       font-weight: $semiBoldWeight;
@@ -65,6 +84,13 @@ $botContentBg: #1a1a1d;
       padding-right: 70px;
 
       @extend %top-footer-content;
+      @include respond-to(large-device) {
+        padding: 50px 20px 20px 20px;
+      }
+      @include respond-to(medium-device) {
+        flex-flow: row wrap;
+        justify-content: center;
+      }
     }
   }
 
@@ -78,6 +104,17 @@ $botContentBg: #1a1a1d;
     .container {
       @extend %flex-row-center-space-between;
       font-size: 16px;
+      padding: 20px;
+
+      @include respond-to(medium-device) {
+        flex-flow: column wrap;
+        align-items: center;
+        text-align: center;
+      }
+
+      @include respond-to(small-device) {
+        font-size: 14px;
+      }
 
       @extend %bot-footer-content;
     }

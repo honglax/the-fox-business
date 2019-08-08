@@ -9,7 +9,7 @@ function Footer() {
     <footer className="footer page__footer">
       <div className="top-content">
         <Container>
-          <div>
+          <div className="contact-box">
             <img
               className="logo-footer"
               src={footerLogo}
