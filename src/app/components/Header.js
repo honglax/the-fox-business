@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="header page__header">
       <Container>
-        <Navbar collapseOnSelect expand="xl">
+        <Navbar collapseOnSelect expand="lg">
           <NavLink className="navbar-brand" to="/">
             <img src={logo} alt="The Fox Business" className="logo" />
           </NavLink>

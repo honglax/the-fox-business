@@ -6,8 +6,16 @@ import { PrimaryButton } from "../StyledComponent/style";
 export default function SlideShow() {
   return (
     <div className="banner banner-slideshow">
-      <img src={dreamBig} alt="Dream Big. Think Different" />
-      <img src={neverEasy} alt="Creating a Website Has Never Been This Easy" />
+      <img
+        className="large-text"
+        src={dreamBig}
+        alt="Dream Big. Think Different"
+      />
+      <img
+        className="small-text"
+        src={neverEasy}
+        alt="Creating a Website Has Never Been This Easy"
+      />
       <div className="btn-group">
         <PrimaryButton
           width={200}

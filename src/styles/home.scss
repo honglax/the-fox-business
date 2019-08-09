@@ -39,7 +39,8 @@ $iconHoverBg: #4285f4;
     position: relative;
     background: url("../assets/slider_bg2.jpg") no-repeat center;
     width: 100%;
-    height: 990px;
+    max-height: 990px;
+    height: calc(100vh - 90px);
 
     &::after {
       content: "";
@@ -65,7 +66,25 @@ $iconHoverBg: #4285f4;
         margin-bottom: 30px;
       }
 
+      .large-text {
+        width: 80%;
+        max-width: 1077px;
+        // @include responde-to()
+      }
+
+      .small-text {
+        width: 60%;
+        max-width: 729px;
+      }
+
       .btn-group {
+        @include respond-to(phone-only) {
+          display: block;
+
+          .primary-btn {
+            margin: 20px 0;
+          }
+        }
         .primary-btn {
           margin: 10px;
           text-transform: uppercase;
@@ -86,11 +105,21 @@ $iconHoverBg: #4285f4;
   .section-functionals .container {
     width: 100%;
     @extend %flex-row-center-space-between;
+    flex-wrap: wrap;
 
     .functional-item {
       @extend %flex-col-center-center;
-      width: 270px;
-      margin: 90px 10px;
+      padding: 90px 10px;
+      flex-basis: calc(100% / 4);
+      @include respond-to(medium-device) {
+        flex-basis: calc(100% / 2);
+        padding: 50px 20px;
+      }
+
+      @include respond-to(small-device) {
+        flex-basis: 100%;
+        padding: 30px 20px;
+      }
 
       .icon {
         @extend %flex-row-center-center;
@@ -190,28 +219,6 @@ $iconHoverBg: #4285f4;
             margin-bottom: 15px;
           }
         }
-
-        // .take-a-tour {
-        //   @extend %flex-row-center-center;
-        //   @include customFont($whiteColor, 14px, $boldWeight, uppercase);
-        //   background-color: $primaryColor;
-        //   width: 270px;
-        //   height: 55px;
-        //   border-radius: 5px;
-        //   border: 1px solid $primaryBorderColor;
-        //   @include customTransition($duration: 0.2s);
-
-        //   &:hover {
-        //     @include customBoxShadow(
-        //       $blurRadius: 10px,
-        //       $shadowColor: rgba(0, 0, 0, 0.3)
-        //     );
-        //   }
-
-        //   .icon {
-        //     font-weight: bold;
-        //   }
-        // }
       }
     }
 
@@ -667,7 +674,7 @@ $iconHoverBg: #4285f4;
 }
 
 #first-greate-theme {
-  background-image: url("../assets/greate-theme-bg.jpg");
+  background: url("../assets/greate-theme-bg.jpg") no-repeat center;
 }
 
 #second-greate-theme {
