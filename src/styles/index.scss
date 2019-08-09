@@ -63,6 +63,35 @@ p {
   }
 }
 
+.scroll-up-container {
+  position: fixed;
+  right: -100px;
+  bottom: 50px;
+  transition: right 0.5s;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 25px;
+  padding: 10px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  @extend %flex-row-center-center;
+
+  @include respond-to(phone-only) {
+    bottom: 20px;
+  }
+}
+
+.scroll-up-transition {
+  right: 30px;
+
+  @include respond-to(phone-only) {
+    right: 15px;
+  }
+}
+
 @include respond-to(phone-only) {
   section .pricing-item .plan-title h4 {
     font-size: 26px;
