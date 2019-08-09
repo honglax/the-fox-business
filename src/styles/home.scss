@@ -69,7 +69,6 @@ $iconHoverBg: #4285f4;
       .large-text {
         width: 80%;
         max-width: 1077px;
-        // @include responde-to()
       }
 
       .small-text {
@@ -887,6 +886,12 @@ $iconHoverBg: #4285f4;
 
       .other-posts .post .title {
         margin-top: 0;
+      }
+    }
+
+    @include respond-to(phone-only) {
+      .post {
+        min-height: 210px;
       }
     }
   }
