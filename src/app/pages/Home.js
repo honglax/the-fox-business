@@ -28,7 +28,7 @@ function Home() {
       </section>
       <section
         id="first-greate-theme"
-        className="section section-greate-theme dark-overlay"
+        className="section section-greate-theme light-overlay"
       >
         <GreatTheme alignItems="aifs" />
       </section>
@@ -62,10 +62,7 @@ Completed it with this theme in one day. Thanks guys!"
       <section id="partners" className="section section-partners light-overlay">
         <Partners />
       </section>
-      <section
-        id="pricing-table"
-        className="section section-pricing-table pt-70 pb-100"
-      >
+      <section id="pricing-table" className="section section-pricing-table">
         <PricingTable />
       </section>
       <section id="video" className="section section-parallax dark-overlay">
@@ -91,9 +88,9 @@ Completed it with this theme in one day. Thanks guys!"
           <span className="ti-twitter icon" />
         </Parallax>
       </section>
-      <section id="lastest-blog" className="section section-lastest-blog pt-70">
+      {/* <section id="lastest-blog" className="section section-lastest-blog pt-70">
         <LastestBlog />
-      </section>
+      </section> */}
       <section id="third-greenbox" className="section section-green-box">
         <GreenBox />
       </section>

@@ -57,7 +57,8 @@ const gradientLine = (width, height) => `
   content: "";
   position: absolute;
   bottom: 0;
-  margin-left: ${width / 2}px;
+  left: 50%;
+  margin-left: -${width / 2}px;
   width: ${width}px;
   height: ${height}px;
 `;
@@ -134,6 +135,7 @@ export const BoxSectionStyle = styled.div`
     margin-bottom: 60px;
     text-align: center;
     z-index: 10;
+    padding: 0 30px;
 
     h4 {
       ${customFontMixin("#333", 36, 1, 300, "capitalize")};
@@ -251,7 +253,12 @@ export const PricingItem = styled.div`
   .plan-btn {
     ${flexBoxMixin("row", "center", "center")}
     width: 100%;
-    padding: 40px 0;
+    padding: 40px 20px;
+
+    button {
+      width: 100%;
+      max-width: 220px;
+    }
   }
 
   &:hover {

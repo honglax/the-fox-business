@@ -40,7 +40,9 @@ export default function PricingTable() {
           <PricingItem
             numOfItem={pricingData.length}
             key={pricingData.indexOf(item)}
-            className={item.recommend ? "recommend" : ""}
+            className={
+              item.recommend ? "recommend pricing-item" : "pricing-item"
+            }
           >
             {item.recommend ? <div className="selected">Recommend</div> : ""}
             <div className="plan-title">

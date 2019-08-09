@@ -16,13 +16,13 @@ p {
 
 .section-green-box {
   background-color: $greenBoxBg;
-  height: 180px;
+  // min-height: 180px;
   width: 100%;
 
   .container {
     @extend %flex-row-center-space-between;
     flex-wrap: wrap;
-    height: 100%;
+    min-height: 180px;
     padding: 0 20px;
 
     .text {
@@ -35,6 +35,10 @@ p {
 
       @include respond-to(small-device) {
         font-size: 24px;
+      }
+
+      @include respond-to(phone-only) {
+        font-size: 20px;
       }
     }
 
@@ -51,6 +55,10 @@ p {
         text-align: center;
         margin-bottom: 20px;
       }
+    }
+
+    @include respond-to(phone-only) {
+      padding: 20px;
     }
   }
 }
