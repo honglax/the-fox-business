@@ -26,7 +26,10 @@ function Home() {
       <section id="functionals" className="section section-functionals">
         <Functionals />
       </section>
-      <section id="first-greate-theme" className="section section-greate-theme">
+      <section
+        id="first-greate-theme"
+        className="section section-greate-theme dark-overlay"
+      >
         <GreatTheme alignItems="aifs" />
       </section>
       <section id="first-greenbox" className="section section-green-box">
@@ -37,7 +40,7 @@ function Home() {
       </section>
       <section
         id="second-greate-theme"
-        className="section section-greate-theme"
+        className="section section-greate-theme light-overlay"
       >
         <GreatTheme alignItems="aife" />
       </section>
@@ -56,7 +59,7 @@ Completed it with this theme in one day. Thanks guys!"
       <section id="services" className="section section-services">
         <Services />
       </section>
-      <section id="partners" className="section section-partners pt-70">
+      <section id="partners" className="section section-partners light-overlay">
         <Partners />
       </section>
       <section
@@ -65,7 +68,7 @@ Completed it with this theme in one day. Thanks guys!"
       >
         <PricingTable />
       </section>
-      <section id="video" className="section section-parallax">
+      <section id="video" className="section section-parallax dark-overlay">
         <Parallax
           quote="Awesome Design and Great Support! Highly Recommend!"
           author="jame Potter"
@@ -76,9 +79,9 @@ Completed it with this theme in one day. Thanks guys!"
       <section id="second-greenbox" className="section section-green-box">
         <GreenBox />
       </section>
-      <section id="skills" className="section section-skills">
+      {/* <section id="skills" className="section section-skills">
         <Skills />
-      </section>
+      </section> */}
       <section id="lastest-twitter" className="section section-parallax">
         <Parallax
           quote="Check this Premium <b>#WordPress #Theme</b> 'TheFox | Ultimate Multi-Purpose WP' by <b>@jasonlax</b> on #themeforest!!! <b><a href='https://jasonlax.info'/>https://jasonlax.info</a></b>"

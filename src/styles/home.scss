@@ -158,6 +158,10 @@ $iconHoverBg: #4285f4;
         line-height: 30px;
       }
     }
+
+    @include respond-to(small-device) {
+      padding: 20px 0;
+    }
   }
 
   .section-greate-theme {
@@ -165,7 +169,8 @@ $iconHoverBg: #4285f4;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 775px;
+    height: 100vh;
+    max-height: 775px;
     align-items: center;
     justify-content: center;
 
@@ -177,6 +182,9 @@ $iconHoverBg: #4285f4;
     .aife {
       // Align item: flex-end
       align-items: flex-end;
+      @include respond-to(small-device) {
+        align-items: flex-start;
+      }
     }
 
     .container {
@@ -185,6 +193,7 @@ $iconHoverBg: #4285f4;
 
       .box-content {
         max-width: 600px;
+        padding-left: 20px;
 
         .title {
           position: relative;
@@ -219,18 +228,20 @@ $iconHoverBg: #4285f4;
             margin-bottom: 15px;
           }
         }
-      }
-    }
 
-    &::after {
-      // content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $lightenOverlay;
-      z-index: 1;
+        @include respond-to(large-device) {
+          padding: 0 30px;
+        }
+
+        @include respond-to(small-device) {
+          max-width: 100%;
+          padding: 20px;
+
+          .title {
+            font-size: 30px;
+          }
+        }
+      }
     }
   }
 
@@ -240,14 +251,15 @@ $iconHoverBg: #4285f4;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      height: 555px;
+      // height: 555px;
       padding: 100px 0;
 
       .util-item {
         @extend %flex-row;
         align-items: flex-start;
         justify-content: space-between;
-        width: 370px;
+        // max-width: 370px;
+        flex-basis: 370px;
         min-height: 160px;
 
         .icon {
@@ -273,6 +285,21 @@ $iconHoverBg: #4285f4;
           }
         }
       }
+
+      @include respond-to(large-device) {
+        padding: 50px 10px;
+        .util-item {
+          flex-basis: calc(100% / 2);
+          padding: 20px 30px;
+        }
+      }
+
+      @include respond-to(small-device) {
+        padding: 20px;
+        .util-item {
+          flex-basis: 100%;
+        }
+      }
     }
   }
 
@@ -286,8 +313,7 @@ $iconHoverBg: #4285f4;
 
     .analyzer-item {
       @extend %flex-col-center-center;
-      max-width: 320px;
-      width: calc(100% / 6);
+      flex-basis: calc(100% / 6);
       height: 280px;
       border-right: 1px solid $secondaryBorderColor;
       position: relative;
@@ -326,6 +352,18 @@ $iconHoverBg: #4285f4;
 
       .title {
         @include customFont(#fff, 14px, $lightWeight, capitalize);
+      }
+
+      @include respond-to(large-device) {
+        flex-basis: calc(100% / 3);
+      }
+
+      @include respond-to(small-device) {
+        flex-basis: calc(100% / 2);
+      }
+
+      @include respond-to(phone-only) {
+        flex-basis: 100%;
       }
     }
   }
@@ -380,20 +418,24 @@ $iconHoverBg: #4285f4;
       }
     }
 
-    &::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.3);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+    @include respond-to(medium-device) {
+      height: 100vh;
+      background-size: auto 100vh !important;
+
+      .container {
+        padding: 20px;
+
+        .quote {
+          font-size: 26px;
+        }
+      }
     }
   }
 
   .section-services,
   .section-skills {
+    display: flex;
+    flex-flow: row wrap;
     width: 100%;
 
     .container {
@@ -406,14 +448,16 @@ $iconHoverBg: #4285f4;
       flex-wrap: wrap;
       align-items: center;
       line-height: 30px;
-      max-width: 100%;
-      min-height: 800px;
+      min-width: 100%;
+      // min-height: 800px;
       // height: 800px;
 
       .dark-content {
         background-color: $homeServicesLeftBg;
-        min-width: 775px;
-        width: 775px;
+        @extend %flex-col;
+        align-items: flex-start;
+        justify-content: center;
+        flex-basis: 775px;
         padding: 80px 100px;
         min-height: 800px;
         height: 100%;
@@ -467,7 +511,7 @@ $iconHoverBg: #4285f4;
         align-items: flex-start;
         justify-content: space-between;
         flex-wrap: wrap;
-        width: calc(100% - 775px);
+        flex-basis: calc(100% - 775px);
         height: 100%;
 
         .service-item {
@@ -482,11 +526,11 @@ $iconHoverBg: #4285f4;
           border-right: 1px solid $serviceBoxBorder;
 
           &:nth-child(-n + 3) {
-            border-top-color: transparent;
+            border-top-width: 0;
           }
 
           &:nth-child(3n + 0) {
-            border-right-color: transparent;
+            border-right-width: 0;
           }
 
           &:hover {
@@ -509,12 +553,72 @@ $iconHoverBg: #4285f4;
           }
         }
       }
+
+      @include respond-to(extra-large-device) {
+        .dark-content {
+          padding: 60px;
+          flex-basis: 50%;
+        }
+        .right-content {
+          min-width: 50%;
+          flex-basis: 50%;
+          justify-content: space-around;
+
+          .service-item {
+            flex-basis: calc(100% / 2);
+
+            &:nth-child(3n),
+            &:nth-child(3n + 0) {
+              border-top-width: 1px;
+              border-right-width: 1px;
+            }
+
+            &:nth-child(2n + 0) {
+              border-right-width: 0;
+            }
+          }
+        }
+      }
+
+      @include respond-to(large-device) {
+        .dark-content,
+        .right-content {
+          flex-basis: 100%;
+          height: auto;
+        }
+      }
+
+      @include respond-to(phone-only) {
+        .dark-content button {
+          width: 100%;
+          max-width: 270px;
+        }
+
+        .right-content .service-item {
+          flex-basis: 100%;
+          padding: 30px;
+          height: auto;
+          border-right-width: 0;
+
+          &:nth-child(3n),
+          &:nth-child(3n + 0) {
+            border-right-width: 0;
+          }
+
+          &:nth-child(2n) {
+            border-top-width: 1px;
+          }
+        }
+      }
     }
   }
 
   .section-partners {
-    background: url("../assets/partner-bg.jpg") no-repeat;
-    height: 1296px;
+    background: url("../assets/partner-bg.jpg") no-repeat center;
+    background-size: cover;
+    max-height: 1296px;
+    height: 100vh;
+    padding: 70px 0;
 
     .partner-logos {
       @extend %flex-row;
@@ -529,11 +633,50 @@ $iconHoverBg: #4285f4;
         border-right: 1px solid #c7c4c8;
 
         &:nth-child(-n + 4) {
-          border-top-color: transparent;
+          border-top-width: 0;
         }
 
         &:nth-child(4n + 0) {
-          border-right-color: transparent;
+          border-right-width: 0;
+        }
+      }
+    }
+
+    @include respond-to(large-device) {
+      height: auto;
+    }
+
+    @include respond-to(medium-device) {
+      padding: 50px 0;
+      .partner-logos {
+        padding: 0 50px;
+        .logo {
+          width: calc(100% / 2);
+
+          &:nth-child(n + 3) {
+            border-top-width: 1px;
+          }
+
+          &:nth-child(2n + 0) {
+            border-right-width: 0;
+          }
+        }
+      }
+    }
+
+    @include respond-to(phone-only) {
+      padding: 30px 40px;
+      max-height: 100%;
+      .partner-logos {
+        padding: 10px 0;
+
+        .logo {
+          width: 100%;
+          border-right-width: 0;
+
+          &:nth-child(2) {
+            border-top-width: 1px;
+          }
         }
       }
     }
@@ -673,6 +816,30 @@ $iconHoverBg: #4285f4;
   }
 }
 
+.dark-overlay {
+  position: relative;
+
+  * {
+    z-index: 2;
+  }
+
+  &::after {
+    @include customOverlay(rgba(0, 0, 0, 0.2));
+  }
+}
+
+.light-overlay {
+  position: relative;
+
+  * {
+    z-index: 2;
+  }
+
+  &::after {
+    @include customOverlay(rgba(255, 255, 255, 0.3));
+  }
+}
+
 #first-greate-theme {
   background: url("../assets/greate-theme-bg.jpg") no-repeat center;
 }
@@ -681,6 +848,15 @@ $iconHoverBg: #4285f4;
   background: $secondaryBgColor url("../assets//macbook-bg.png") no-repeat left
     center;
   background-size: 700px;
+  @include respond-to(large-device) {
+    background-size: 40%;
+  }
+
+  @include respond-to(small-device) {
+    background-position-x: left;
+    background-position-y: 20px;
+    max-height: 100vh;
+  }
 }
 
 #parallax {

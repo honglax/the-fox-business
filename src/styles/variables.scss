@@ -30,6 +30,7 @@ $break-phoneOnly: 575.98px; // Phone Only
 $break-smallDevice: 767.98px; // Small devices (landscape phones, less than 768px)
 $break-mediumDevice: 991.98px; // Medium devices (tablets, less than 992px)
 $break-largeDevice: 1199.98px; // Large devices (desktops, less than 1200px)
+$break-extraLargeDevice: 1699.98px; // Extra large devices (large desktop, less than 1700px)
 
 // Display Flex
 %flex-row {
@@ -114,6 +115,18 @@ $break-largeDevice: 1199.98px; // Large devices (desktops, less than 1200px)
   border: $border;
 }
 
+// Overlay
+@mixin customOverlay($bgColor) {
+  content: "";
+  background-color: $bgColor;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
 // Mixin Responsive
 @mixin respond-to($media) {
   @if $media == phone-only {
@@ -130,6 +143,10 @@ $break-largeDevice: 1199.98px; // Large devices (desktops, less than 1200px)
     }
   } @else if $media == large-device {
     @media only screen and (max-width: $break-largeDevice) {
+      @content;
+    }
+  } @else if $media == extra-large-device {
+    @media only screen and (max-width: $break-extraLargeDevice) {
       @content;
     }
   }

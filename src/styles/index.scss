@@ -21,20 +21,36 @@ p {
 
   .container {
     @extend %flex-row-center-space-between;
+    flex-wrap: wrap;
     height: 100%;
-  }
+    padding: 0 20px;
 
-  .text {
-    @include customFont(
-      $color: $whiteColor,
-      $fontSize: 30px,
-      $fontWeight: $lightWeight,
-      $textTransform: capitalize
-    );
-  }
+    .text {
+      @include customFont(
+        $color: $whiteColor,
+        $fontSize: 30px,
+        $fontWeight: $lightWeight,
+        $textTransform: capitalize
+      );
 
-  .btn-purchase {
-    @include customBtn(270px, 55px, transparent, solid 1px $whiteColor, 5px);
-    @include customFont($whiteColor, 14px, $boldWeight, uppercase);
+      @include respond-to(small-device) {
+        font-size: 24px;
+      }
+    }
+
+    .btn-purchase {
+      @include customBtn(270px, 55px, transparent, solid 1px $whiteColor, 5px);
+      @include customFont($whiteColor, 14px, $boldWeight, uppercase);
+    }
+
+    @include respond-to(large-device) {
+      flex-direction: column;
+      justify-content: center;
+
+      .text {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
