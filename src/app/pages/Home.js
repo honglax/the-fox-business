@@ -76,9 +76,9 @@ Completed it with this theme in one day. Thanks guys!"
       <section id="second-greenbox" className="section section-green-box">
         <GreenBox />
       </section>
-      {/* <section id="skills" className="section section-skills">
+      <section id="skills" className="section section-skills">
         <Skills />
-      </section> */}
+      </section>
       <section id="lastest-twitter" className="section section-parallax">
         <Parallax
           quote="Check this Premium <b>#WordPress #Theme</b> 'TheFox | Ultimate Multi-Purpose WP' by <b>@jasonlax</b> on #themeforest!!! <b><a href='https://jasonlax.info'/>https://jasonlax.info</a></b>"
@@ -88,9 +88,9 @@ Completed it with this theme in one day. Thanks guys!"
           <span className="ti-twitter icon" />
         </Parallax>
       </section>
-      {/* <section id="lastest-blog" className="section section-lastest-blog pt-70">
+      <section id="lastest-blog" className="section section-lastest-blog">
         <LastestBlog />
-      </section> */}
+      </section>
       <section id="third-greenbox" className="section section-green-box">
         <GreenBox />
       </section>

@@ -380,6 +380,7 @@ $iconHoverBg: #4285f4;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 
     .container {
       @extend %flex-col-center-center;
@@ -444,6 +445,10 @@ $iconHoverBg: #4285f4;
 
       .container .quote {
         font-size: 20px;
+      }
+
+      .container .icon {
+        margin-bottom: 20px;
       }
     }
   }
@@ -604,6 +609,12 @@ $iconHoverBg: #4285f4;
         }
       }
 
+      @include respond-to(medium-device) {
+        .dark-content {
+          padding: 30px 60px;
+        }
+      }
+
       @include respond-to(phone-only) {
         .dark-content {
           padding: 30px;
@@ -711,10 +722,15 @@ $iconHoverBg: #4285f4;
       padding: 0 30px;
       flex-wrap: wrap;
     }
+
     @include respond-to(medium-device) {
-      padding-bottom: 30px;
+      padding: 70px 0;
       .plan-btn {
         padding: 30px 20px;
+      }
+
+      .plan-description {
+        padding: 0 20px;
       }
     }
 
@@ -762,13 +778,14 @@ $iconHoverBg: #4285f4;
   }
 
   .section-lastest-blog {
+    padding: 70px 0 50px;
     .container {
       @extend %flex-col;
-      padding-bottom: 50px;
     }
     .posts {
       @extend %flex-row;
       align-items: flex-start;
+      // flex-wrap: wrap;
       justify-content: space-between;
       height: 730px;
       margin-bottom: 50px;
@@ -791,6 +808,7 @@ $iconHoverBg: #4285f4;
       @include customFont($lightGrayColor, 14px, 400, none);
       align-items: flex-start;
       justify-content: flex-end;
+      // flex-basis: 570px;
       width: 570px;
       height: 100%;
       padding: 50px;
@@ -800,16 +818,76 @@ $iconHoverBg: #4285f4;
         @include customFont($whiteColor, 24px, 600, none);
         text-align: left;
         margin: 25px 0;
+        padding: 0;
       }
 
       &.bg-blue {
         background-color: $postBgColor;
         color: $whiteColor;
       }
+
+      @include respond-to(phone-only) {
+        .title {
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
+      }
     }
 
     .icon {
       margin-right: 10px;
+    }
+
+    @include respond-to(large-device) {
+      .posts {
+        padding: 0 30px;
+        height: 600px;
+      }
+
+      .post {
+        // flex-basis: 50%;
+        width: calc(50% - 15px);
+        height: 100%;
+        padding: 40px;
+      }
+
+      .other-posts {
+        width: calc(50% - 15px);
+        .post {
+          width: 100%;
+        }
+      }
+    }
+
+    @include respond-to(medium-device) {
+      padding: 30px 0;
+
+      .posts {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-bottom: 30px;
+      }
+
+      .post,
+      .other-posts {
+        width: 100%;
+        max-width: 570px;
+        height: auto;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .post {
+        padding: 30px 20px;
+      }
+
+      .other-posts .post .title {
+        margin-top: 0;
+      }
     }
   }
 
@@ -828,8 +906,15 @@ $iconHoverBg: #4285f4;
       height: 100%;
       padding: 80px 100px;
 
+      .title {
+        padding: 0;
+      }
+
       .title h4 {
         color: $darkGrayColor;
+        padding: 0;
+        padding-bottom: 10px;
+        line-height: 64px;
       }
 
       .reasons {
@@ -849,7 +934,7 @@ $iconHoverBg: #4285f4;
       }
 
       .name {
-        @include customFont($darkGrayColor, 18, 600, capitalize);
+        @include customFont($darkGrayColor, 18px, 600, capitalize);
         margin: 20px 0 15px 0;
       }
 
@@ -860,6 +945,44 @@ $iconHoverBg: #4285f4;
       .reason-btn {
         padding: 0;
         border: 0;
+      }
+    }
+
+    @include respond-to(extra-large-device) {
+      .why-choose-us {
+        width: 50%;
+        padding: 60px;
+
+        .title {
+          padding: 0;
+        }
+      }
+    }
+
+    @include respond-to(large-device) {
+      .why-choose-us {
+        width: 100%;
+      }
+    }
+
+    @include respond-to(medium-device) {
+      .why-choose-us {
+        padding: 30px 60px;
+      }
+    }
+
+    @include respond-to(small-device) {
+      .why-choose-us {
+        padding: 30px;
+        .reasons {
+          flex-direction: column;
+          margin-bottom: 25px;
+
+          .reason-item:first-child {
+            margin-right: 0;
+            margin-bottom: 40px;
+          }
+        }
       }
     }
   }
@@ -915,9 +1038,11 @@ $iconHoverBg: #4285f4;
 }
 
 #video {
-  background: url("../assets/video-bg.jpg") no-repeat center;
+  // background: url("../assets/video-bg.jpg") no-repeat center;
+  background-image: url("../assets/video-bg.jpg");
 }
 
 #lastest-twitter {
-  background: url("../assets/twitter-bg.jpg") no-repeat center;
+  // background: url("../assets/twitter-bg.jpg") no-repeat center;
+  background-image: url("../assets/twitter-bg.jpg");
 }

@@ -62,3 +62,13 @@ p {
     }
   }
 }
+
+@include respond-to(phone-only) {
+  section .pricing-item .plan-title h4 {
+    font-size: 26px;
+  }
+
+  section .box-section .title h4 {
+    font-size: 32px;
+  }
+}

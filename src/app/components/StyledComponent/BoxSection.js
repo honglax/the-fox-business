@@ -3,7 +3,7 @@ import { BoxSectionStyle } from "./style";
 
 export default function BoxSection(props) {
   return (
-    <BoxSectionStyle textAlign={props.alignment}>
+    <BoxSectionStyle className="box-section" textAlign={props.alignment}>
       <div className="title">
         <h4>{props.title}</h4>
         <div
