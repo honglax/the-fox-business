@@ -1,62 +1,76 @@
 @import "variables.scss";
 
 .page__header {
+  .navbar {
+    background-color: #fff;
+    width: 100%;
+    padding: 0;
+
+    &.fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+
+      .container {
+        padding: 0 25px;
+      }
+    }
+  }
   .container {
     min-height: 90px;
     padding: 25px;
-    @extend %flex-row-center-center;
+    @extend %flex-row-center-space-between;
     @include respond-to(phone-only) {
       padding: 20px 15px;
       min-height: 60px;
     }
-    .navbar {
-      width: 100%;
-      padding: 0;
 
-      .navbar-brand {
-        width: 80%;
-        margin-right: 0;
-        max-width: 345px;
-        @include respond-to(medium-device) {
-          margin-bottom: 10px;
+    .navbar-brand {
+      width: 80%;
+      margin-right: 0;
+      max-width: 345px;
+      @include respond-to(phone-only) {
+        width: 75%;
+      }
+
+      .logo {
+        width: 100%;
+        max-height: 30px;
+        &:hover {
+          text-decoration: none;
         }
+
         @include respond-to(phone-only) {
-          width: 75%;
+          width: 90%;
         }
+      }
+    }
 
-        .logo {
-          width: 100%;
-          max-height: 30px;
-          &:hover {
-            text-decoration: none;
-          }
+    .navbar-nav {
+      .nav-link {
+        text-transform: uppercase;
+        font-size: 15px;
+        margin: 20px;
+        padding: 0;
+        font-weight: $semiBoldWeight;
+        color: $darkGrayColor;
+        @include customTransition($duration: 0.2s);
+
+        &:hover {
+          color: $primaryColor;
+        }
+        @include respond-to(large-device) {
+          margin: 15px;
+        }
+        @include respond-to(medium-device) {
+          margin: 10px 0;
         }
       }
 
-      .navbar-nav {
-        .nav-link {
-          text-transform: uppercase;
-          font-size: 15px;
-          margin: 20px;
-          padding: 0;
-          font-weight: $semiBoldWeight;
-          color: $darkGrayColor;
-          @include customTransition($duration: 0.2s);
-
-          &:hover {
-            color: $primaryColor;
-          }
-          @include respond-to(large-device) {
-            margin: 15px;
-          }
-          @include respond-to(medium-device) {
-            margin: 10px 0;
-          }
-        }
-
-        .active {
-          color: $primaryColor;
-        }
+      .active {
+        color: $primaryColor;
       }
     }
   }
