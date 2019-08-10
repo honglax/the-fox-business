@@ -1,8 +1,8 @@
 import React from "react";
-import Slideshow from "../components/Home/Slideshow.Home";
+import Slideshow from "../components/StyledComponent/Slideshow";
 import Functionals from "../components/Home/Functionals.Home";
 import GreatTheme from "../components/Home/GreatTheme.Home";
-import GreenBox from "../components/StyledComponent/GreenBox";
+import PurchaseBox from "../components/StyledComponent/PurchaseBox";
 import Utils from "../components/Home/Utils.Home";
 import Analyzer from "../components/Home/Analyzer.Home";
 import Parallax from "../components/Home/Parallax.Home";
@@ -14,14 +14,42 @@ import LastestBlog from "../components/Home/LastestBlog.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
 
+import { PrimaryButton } from "../components/StyledComponent/style";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
+  let greenColor = "#82b440";
+
   return (
     <div className="home home__content">
       <section id="slideshow" className="section section-slideshow">
-        <Slideshow />
+        <Slideshow
+          largeText="Dream Big. Think Different"
+          smallText="Creating a Website Has Never Been This Easy"
+        >
+          <div className="btn-group">
+            <PrimaryButton
+              width={200}
+              height={55}
+              bgColor="#292b2d"
+              borderColor="#292b2d"
+              className="primary-btn"
+            >
+              Get Started
+            </PrimaryButton>
+            <PrimaryButton
+              width={200}
+              height={55}
+              bgColor="rgba(0, 0, 0, 0.2)"
+              borderColor="#fff"
+              className="primary-btn"
+            >
+              Purchase Now
+            </PrimaryButton>
+          </div>
+        </Slideshow>
       </section>
       <section id="functionals" className="section section-functionals">
         <Functionals />
@@ -32,8 +60,8 @@ function Home() {
       >
         <GreatTheme alignItems="aifs" />
       </section>
-      <section id="first-greenbox" className="section section-green-box">
-        <GreenBox />
+      <section id="first-PurchaseBox" className="section section-green-box">
+        <PurchaseBox />
       </section>
       <section id="utils" className="section section-utils">
         <Utils />
@@ -73,8 +101,8 @@ Completed it with this theme in one day. Thanks guys!"
           <FontAwesomeIcon icon={faPlayCircle} className="icon" />
         </Parallax>
       </section>
-      <section id="second-greenbox" className="section section-green-box">
-        <GreenBox />
+      <section id="second-PurchaseBox" className="section">
+        <PurchaseBox bgColor={greenColor} />
       </section>
       <section id="skills" className="section section-skills">
         <Skills />
@@ -91,8 +119,8 @@ Completed it with this theme in one day. Thanks guys!"
       <section id="lastest-blog" className="section section-lastest-blog">
         <LastestBlog />
       </section>
-      <section id="third-greenbox" className="section section-green-box">
-        <GreenBox />
+      <section id="third-PurchaseBox" className="section">
+        <PurchaseBox bgColor={greenColor} />
       </section>
     </div>
   );

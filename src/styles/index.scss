@@ -14,9 +14,98 @@ p {
   padding: 0;
 }
 
-.section-green-box {
-  background-color: $greenBoxBg;
-  // min-height: 180px;
+.banner {
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  padding: 0 20px;
+  width: 100%;
+  max-height: 990px;
+  height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    z-index: 2;
+  }
+
+  .large-text {
+    @include customFont(
+      $color: $whiteColor,
+      $fontSize: 70px,
+      $fontWeight: $regularWeight,
+      $textTransform: uppercase
+    );
+    margin-bottom: 25px;
+  }
+
+  .small-text {
+    @include customFont(
+      $color: $whiteColor,
+      $fontSize: 30px,
+      $fontWeight: $lightWeight,
+      $textTransform: capitalize
+    );
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  @include respond-to(large-device) {
+    .large-text {
+      font-size: 50px;
+    }
+
+    .small-text {
+      font-size: 26px;
+    }
+  }
+
+  @include respond-to(medium-device) {
+    line-height: 1.5;
+    .large-text {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .small-text {
+      font-size: 22px;
+    }
+  }
+
+  @include respond-to(small-device) {
+    // line-height: 1.5;
+    .large-text {
+      font-size: 36px;
+    }
+    .small-text {
+      font-size: 18px;
+      line-height: 2;
+    }
+  }
+
+  @include respond-to(phone-only) {
+    .large-text {
+      font-size: 30px;
+    }
+  }
+}
+
+.blog__content .banner {
+  max-height: 500px;
+}
+
+.purchase-box {
   width: 100%;
 
   .container {
@@ -77,10 +166,15 @@ p {
   width: 50px;
   height: 50px;
   border-radius: 5px;
+  @include customTransition($duration: 0.3s);
   @extend %flex-row-center-center;
 
   @include respond-to(phone-only) {
     bottom: 20px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -90,6 +184,21 @@ p {
   @include respond-to(phone-only) {
     right: 15px;
   }
+}
+
+.contact .section-slideshow {
+  background: url("../assets/contact-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.about-us .section-slideshow {
+  background: url("../assets/about-us-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.blog-page .section-slideshow {
+  background: url("../assets/blog-page-bg.jpg") no-repeat center;
+  background-size: cover;
 }
 
 @include respond-to(phone-only) {

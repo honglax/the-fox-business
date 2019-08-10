@@ -1,9 +1,17 @@
 import React from "react";
+import SlideShow from "../components/StyledComponent/Slideshow";
 
-export default function Services() {
+function Services() {
   return (
-    <div>
-      <h1>Services</h1>
+    <div id="services" className="services__content">
+      <section className="section section-slideshow">
+        <SlideShow
+          largeText="Our Services"
+          smallText="Dream big. Think different. Do great"
+        />
+      </section>
     </div>
   );
 }
+
+export default Services;
