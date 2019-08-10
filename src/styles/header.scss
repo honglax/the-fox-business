@@ -23,6 +23,7 @@
     min-height: 90px;
     padding: 25px;
     @extend %flex-row-center-space-between;
+    @include customTransition($timingFunction: linear, $duration: 0.2s);
     @include respond-to(phone-only) {
       padding: 20px 15px;
       min-height: 60px;
