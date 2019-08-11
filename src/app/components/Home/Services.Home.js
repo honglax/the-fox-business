@@ -70,7 +70,9 @@ export default function Services() {
       >
         <ul className="doing-list">
           {whatWeDo.map(line => (
-            <li key={whatWeDo.indexOf(line)}>{line}</li>
+            <li className="arrow-list-item" key={whatWeDo.indexOf(line)}>
+              {line}
+            </li>
           ))}
         </ul>
       </DarkBox>

@@ -1,9 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { PrimaryButton } from "../StyledComponent/style";
 
-export default function GreatTheme(props) {
-  let { alignItems } = props;
+export default function Introduce({ alignItems, children }) {
   return (
     <Container className={alignItems}>
       <div className="box-content">
@@ -21,10 +19,7 @@ export default function GreatTheme(props) {
             venenatis faucibus. Praesent aliquet convallis.
           </p>
         </div>
-        <PrimaryButton width={270} height={55}>
-          <span className="icon ti-light-bulb mr-2" />
-          Take a tour
-        </PrimaryButton>
+        {children}
       </div>
     </Container>
   );

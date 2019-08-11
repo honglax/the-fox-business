@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-export default function Utils() {
-  let utils = [
+export default function AdditionalFeatures() {
+  let additionalFeatures = [
     {
       icon: "ti-layout",
       title: "Multiple Layouts",
@@ -42,12 +42,15 @@ export default function Utils() {
   return (
     <div>
       <Container>
-        {utils.map(item => (
-          <div className="util-item" key={utils.indexOf(item)}>
-            <span className={item.icon + " icon"} />
+        {additionalFeatures.map(feature => (
+          <div
+            className="additional-feature-item"
+            key={additionalFeatures.indexOf(feature)}
+          >
+            <span className={feature.icon + " icon"} />
             <div className="content">
-              <div className="title">{item.title}</div>
-              <p>{item.content}</p>
+              <div className="title">{feature.title}</div>
+              <p>{feature.content}</p>
             </div>
           </div>
         ))}

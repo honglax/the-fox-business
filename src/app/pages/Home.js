@@ -1,15 +1,15 @@
 import React from "react";
 import Slideshow from "../components/StyledComponent/Slideshow";
-import Functionals from "../components/Home/Functionals.Home";
-import GreatTheme from "../components/Home/GreatTheme.Home";
+import AdditionalFeatures from "../components/StyledComponent/AdditionalFeatures";
+import Introduce from "../components/StyledComponent/Introduce.js";
 import PurchaseBox from "../components/StyledComponent/PurchaseBox";
-import Utils from "../components/Home/Utils.Home";
+import KeyFeatures from "../components/StyledComponent/KeyFeatures";
 import Analyzer from "../components/Home/Analyzer.Home";
-import Parallax from "../components/Home/Parallax.Home";
+import Parallax from "../components/StyledComponent/Parallax";
 import Services from "../components/Home/Services.Home";
 import Partners from "../components/Home/Partners.Home";
 import PricingTable from "../components/Home/PricingTable.Home";
-import Skills from "../components/Home/Skills.Home";
+import Skills from "../components/StyledComponent/Skills";
 import LastestBlog from "../components/Home/LastestBlog.Home";
 import "../../styles/home.scss";
 import "../../styles/themify-icons.css";
@@ -51,26 +51,39 @@ function Home() {
           </div>
         </Slideshow>
       </section>
-      <section id="functionals" className="section section-functionals">
-        <Functionals />
+      <section id="key-features" className="section section-key-features">
+        <KeyFeatures />
       </section>
       <section
-        id="first-greate-theme"
-        className="section section-greate-theme light-overlay"
+        id="first-home-introduce"
+        className="section section-introduce light-overlay"
       >
-        <GreatTheme alignItems="aifs" />
+        <Introduce alignItems="aifs">
+          <PrimaryButton width={270} height={55}>
+            <span className="icon ti-light-bulb mr-2" />
+            Take a tour
+          </PrimaryButton>
+        </Introduce>
       </section>
       <section id="first-PurchaseBox" className="section section-green-box">
-        <PurchaseBox />
-      </section>
-      <section id="utils" className="section section-utils">
-        <Utils />
+        <PurchaseBox bgColor={greenColor} />
       </section>
       <section
-        id="second-greate-theme"
-        className="section section-greate-theme light-overlay"
+        id="additional-features"
+        className="section section-additional-features"
       >
-        <GreatTheme alignItems="aife" />
+        <AdditionalFeatures />
+      </section>
+      <section
+        id="second-home-introduce"
+        className="section section-introduce light-overlay"
+      >
+        <Introduce alignItems="aife">
+          <PrimaryButton width={270} height={55}>
+            <span className="icon ti-light-bulb mr-2" />
+            Take a tour
+          </PrimaryButton>
+        </Introduce>
       </section>
       <section id="analyzer" className="section section-analyzer">
         <Analyzer />
@@ -105,7 +118,7 @@ Completed it with this theme in one day. Thanks guys!"
         <PurchaseBox bgColor={greenColor} />
       </section>
       <section id="skills" className="section section-skills">
-        <Skills />
+        <Skills isReversed={true} />
       </section>
       <section id="lastest-twitter" className="section section-parallax">
         <Parallax

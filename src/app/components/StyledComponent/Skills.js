@@ -6,7 +6,7 @@ import BoxSection from "../StyledComponent/BoxSection";
 import doBestEver from "../../../assets/why-choose-us-1.jpg";
 import customerDesire from "../../../assets/why-choose-us-2.jpg";
 
-export default function Skills() {
+export default function Skills({ isReversed }) {
   const skills = [
     {
       title: "Web Design",
@@ -42,7 +42,7 @@ export default function Skills() {
   ];
 
   return (
-    <Container className="flex-row-reverse">
+    <Container className={isReversed ? "flex-row-reverse" : ""}>
       <DarkBox
         title="Incredible Skills"
         grayText="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.<br/>Nulla vehicula nibh vel ante commodo feugiat."

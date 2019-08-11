@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-export default function HomeFunctionals() {
-  let functionals = [
+export default function KeyFeatures() {
+  let features = [
     {
       icon: "ti-desktop",
       title: "100% Responsive",
@@ -30,15 +30,15 @@ export default function HomeFunctionals() {
 
   return (
     <Container>
-      {functionals.map(item => (
-        <div className="functional-item" key={functionals.indexOf(item)}>
+      {features.map(feature => (
+        <div className="feature-item" key={features.indexOf(feature)}>
           <div className="icon">
-            <span className={item.icon + " icon-img"} />
+            <span className={feature.icon + " icon-img"} />
           </div>
-          <p className="title">{item.title}</p>
+          <p className="title">{feature.title}</p>
           <p
             className="content"
-            dangerouslySetInnerHTML={{ __html: item.content }}
+            dangerouslySetInnerHTML={{ __html: feature.content }}
           />
         </div>
       ))}

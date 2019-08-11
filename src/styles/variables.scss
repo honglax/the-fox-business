@@ -22,8 +22,12 @@ $analyzerBg: #1f252f;
 $primaryBgColor: #fff;
 $secondaryBgColor: #f6f7f8;
 $homeServicesLeftBg: #1f252f;
+$additionalFeaturesBg: #f6f7f8;
+$aboutUsPartnerBg: #373c46;
 
 $postBgColor: #4889f3;
+
+$iconHoverBg: #4285f4;
 
 // Responsive breakpoint
 $break-phoneOnly: 575.98px; // Phone Only
@@ -125,6 +129,26 @@ $break-extraLargeDevice: 1699.98px; // Extra large devices (large desktop, less 
   left: 0;
   position: absolute;
   z-index: 1;
+}
+
+@mixin primaryGradientBg($deg: 0deg) {
+  background: rgb(0, 240, 255);
+  background: linear-gradient(
+    $deg,
+    rgba(0, 240, 255, 1) 0%,
+    rgba(235, 172, 253, 1) 100%
+  );
+}
+
+@mixin primaryGradientColor($deg: 0deg) {
+  background: -webkit-linear-gradient(
+    $deg,
+    rgba(0, 240, 255, 1) 0%,
+    rgba(235, 172, 253, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 // Mixin Responsive
