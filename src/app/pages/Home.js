@@ -51,9 +51,11 @@ function Home() {
           </div>
         </Slideshow>
       </section>
+
       <section id="key-features" className="section section-key-features">
         <KeyFeatures />
       </section>
+
       <section
         id="first-home-introduce"
         className="section section-introduce light-overlay"
@@ -65,15 +67,18 @@ function Home() {
           </PrimaryButton>
         </Introduce>
       </section>
+
       <section id="first-PurchaseBox" className="section section-green-box">
         <PurchaseBox bgColor={greenColor} />
       </section>
+
       <section
         id="additional-features"
         className="section section-additional-features"
       >
         <AdditionalFeatures />
       </section>
+
       <section
         id="second-home-introduce"
         className="section section-introduce light-overlay"
@@ -85,9 +90,11 @@ function Home() {
           </PrimaryButton>
         </Introduce>
       </section>
+
       <section id="analyzer" className="section section-analyzer">
         <Analyzer />
       </section>
+
       <section id="parallax" className="section section-parallax">
         <Parallax
           quote="This is the best WordPress theme I have used to date... Incredible Customizability 
@@ -97,9 +104,11 @@ Completed it with this theme in one day. Thanks guys!"
           description="Themeforest Customer"
         />
       </section>
+
       <section id="services" className="section section-services">
         <Services />
       </section>
+
       <section id="partners" className="section section-partners light-overlay">
         <Partners />
       </section>

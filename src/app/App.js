@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
+import ScrollToTop from "../app/components/ScrollToTop";
 import ScrollUpButton from "react-scroll-up-button";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,14 +27,16 @@ class App extends Component {
     return (
       <Router>
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/services" component={Services} />
-          <Route path="/about" component={AboutUs} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/services" component={Services} />
+            <Route path="/about" component={AboutUs} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/portfolio" component={Portfolio} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </ScrollToTop>
         <Footer />
         <ScrollUpButton
           ContainerClassName="scroll-up-container"

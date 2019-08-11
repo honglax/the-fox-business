@@ -12,10 +12,15 @@ class Header extends Component {
     this.state = {};
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   handleScroll() {
     this.setState({ scroll: window.scrollY });
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
 
   componentDidMount() {
@@ -45,28 +50,53 @@ class Header extends Component {
       <header className="header page__header">
         <Navbar collapseOnSelect expand="lg">
           <Container>
-            <NavLink className="navbar-brand" to="/">
+            <NavLink onClick={this.scrollToTop} className="navbar-brand" to="/">
               <img src={logo} alt="The Fox Business" className="logo" />
             </NavLink>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto">
-                <NavLink className="nav-link" exact to="/">
+                <NavLink
+                  onClick={this.scrollToTop}
+                  className="nav-link"
+                  exact
+                  to="/"
+                >
                   Home
                 </NavLink>
-                <NavLink className="nav-link" to="/about">
+                <NavLink
+                  onClick={this.scrollToTop}
+                  className="nav-link"
+                  to="/about"
+                >
                   About Us
                 </NavLink>
-                <NavLink className="nav-link" to="/services">
+                <NavLink
+                  onClick={this.scrollToTop}
+                  className="nav-link"
+                  to="/services"
+                >
                   Services
                 </NavLink>
-                <NavLink className="nav-link" to="/blog">
+                <NavLink
+                  onClick={this.scrollToTop}
+                  className="nav-link"
+                  to="/blog"
+                >
                   Blog
                 </NavLink>
-                <NavLink className="nav-link" to="/portfolio">
+                <NavLink
+                  onClick={this.scrollToTop}
+                  className="nav-link"
+                  to="/portfolio"
+                >
                   Portfolio
                 </NavLink>
-                <NavLink className="nav-link" to="/contact">
+                <NavLink
+                  onClick={this.scrollToTop}
+                  className="nav-link"
+                  to="/contact"
+                >
                   Contact
                 </NavLink>
               </Nav>

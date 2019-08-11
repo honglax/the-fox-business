@@ -7,6 +7,8 @@ import Parallax from "../components/StyledComponent/Parallax";
 import Skills from "../components/StyledComponent/Skills";
 import Partners from "../components/About/Partners.About";
 
+import Fade from "react-reveal";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/index.scss";
 
@@ -21,7 +23,8 @@ export default function AboutUs() {
     "Cross-Browser Compatibility: Chrome, Firefox, Safari, IE9 ~ IE11"
   ];
   return (
-    <div id="about-us" className="about-us about__content">
+    // <Fade bottom>
+    <section id="about-us" className="about-us about__content">
       <section id="slideshow" className="section section-slideshow">
         <SlideShow
           largeText="We do the best design"
@@ -68,6 +71,7 @@ Completed it with this theme in one day. Thanks guys!"
       <section id="about-partners" className="section section-about-partner">
         <Partners />
       </section>
-    </div>
+    </section>
+    // </Fade>
   );
 }
