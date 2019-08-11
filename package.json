@@ -13,11 +13,13 @@
     "pure-react-carousel": "^1.21.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
+    "react-countup": "^4.2.1",
     "react-dom": "^16.8.6",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll-up-button": "^1.6.4",
+    "react-visibility-sensor": "^5.1.1",
     "styled-components": "^4.3.2"
   },
   "scripts": {

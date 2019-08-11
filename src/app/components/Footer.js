@@ -17,7 +17,12 @@ function Footer() {
       <div className="top-content">
         <Container>
           <div className="contact-box">
-            <Link onClick={scrollToTop} className="nav-link" exact to="/">
+            <Link
+              onClick={scrollToTop}
+              className="nav-link"
+              exact="true"
+              to="/"
+            >
               {" "}
               <img
                 className="logo-footer"

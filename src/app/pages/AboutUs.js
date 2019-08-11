@@ -7,8 +7,6 @@ import Parallax from "../components/StyledComponent/Parallax";
 import Skills from "../components/StyledComponent/Skills";
 import Partners from "../components/About/Partners.About";
 
-import Fade from "react-reveal";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/index.scss";
 
