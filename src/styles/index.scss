@@ -985,20 +985,31 @@ p {
     padding: 0 20px;
     margin-bottom: 50px;
 
+    .input-group {
+      margin-bottom: 20px;
+      .error-msg {
+        @include customFont(red, 13px, $lightWeight, none);
+        font-style: italic;
+        margin-top: 5px;
+        text-align: right;
+        width: 100%;
+      }
+    }
+
     input,
     select,
     textarea {
-      @include customFont($lightGrayColor, 16px, $lightWeight, capitalize);
+      @include customFont($lightGrayColor, 16px, $lightWeight, none);
       background-color: transparent;
       border-radius: 5px;
       line-height: 36px;
       padding: 10px 30px;
       width: 100%;
-      margin-bottom: 20px;
     }
 
     textarea,
     select {
+      margin-bottom: 20px;
       position: relative;
       appearance: none;
       -webkit-appearance: none;
