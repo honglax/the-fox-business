@@ -36,7 +36,17 @@ export default function AboutUs() {
         <AdditionalFeatures />
       </section>
       <div id="introduce" className="section section-introduce">
-        <Introduce alignItems="aife">
+        <Introduce
+          alignItems="aife"
+          title="Greate Theme for Your Business"
+          grayText="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
+            <br />
+            Nulla vehicula nibh vel ante commodo feugiat."
+          content="Cras gravida arcu tincidunt, suscipit velit sed, porta sapien.
+            Maecenas a aliquam lectus. Vivamus consequat purus quis ligula
+            vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet
+            venenatis faucibus. Praesent aliquet convallis."
+        >
           <ul className="introduce-list">
             {introduceList.map(item => (
               <li className="arrow-list-item" key={introduceList.indexOf(item)}>

@@ -1,23 +1,30 @@
 import React from "react";
+import classNames from "classnames";
 import { Container } from "react-bootstrap";
 
-export default function Introduce({ alignItems, children }) {
+export default function Introduce({
+  alignItems,
+  textAlignment,
+  title,
+  grayText,
+  content,
+  children
+}) {
+  let blockClassName = classNames(
+    "introduce",
+    alignItems || "aifs",
+    textAlignment || "txt-al-l"
+  );
   return (
-    <Container className={alignItems}>
+    <Container className={blockClassName}>
       <div className="box-content">
-        <div className="title">Greate Theme for Your Business</div>
+        <div className="title">{title}</div>
         <div className="content">
-          <p className="gray-text">
-            Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
-            <br />
-            Nulla vehicula nibh vel ante commodo feugiat.
-          </p>
-          <p>
-            Cras gravida arcu tincidunt, suscipit velit sed, porta sapien.
-            Maecenas a aliquam lectus. Vivamus consequat purus quis ligula
-            vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet
-            venenatis faucibus. Praesent aliquet convallis.
-          </p>
+          <p
+            className="gray-text"
+            dangerouslySetInnerHTML={{ __html: grayText }}
+          />
+          <p dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         {children}
       </div>

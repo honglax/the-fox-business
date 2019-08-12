@@ -6,7 +6,7 @@ import PurchaseBox from "../components/StyledComponent/PurchaseBox";
 import KeyFeatures from "../components/StyledComponent/KeyFeatures";
 import Analyzer from "../components/Home/Analyzer.Home";
 import Parallax from "../components/StyledComponent/Parallax";
-import Services from "../components/Home/Services.Home";
+import BestServices from "../components/StyledComponent/BestServices";
 import Partners from "../components/Home/Partners.Home";
 import PricingTable from "../components/Home/PricingTable.Home";
 import Skills from "../components/StyledComponent/Skills";
@@ -60,7 +60,17 @@ function Home() {
         id="first-home-introduce"
         className="section section-introduce light-overlay"
       >
-        <Introduce alignItems="aifs">
+        <Introduce
+          alignItems="aifs"
+          title="Greate Theme for Your Business"
+          grayText="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
+            <br />
+            Nulla vehicula nibh vel ante commodo feugiat."
+          content="Cras gravida arcu tincidunt, suscipit velit sed, porta sapien.
+            Maecenas a aliquam lectus. Vivamus consequat purus quis ligula
+            vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet
+            venenatis faucibus. Praesent aliquet convallis."
+        >
           <PrimaryButton width={270} height={55}>
             <span className="icon ti-light-bulb mr-2" />
             Take a tour
@@ -83,7 +93,17 @@ function Home() {
         id="second-home-introduce"
         className="section section-introduce light-overlay"
       >
-        <Introduce alignItems="aife">
+        <Introduce
+          alignItems="aife"
+          title="Greate Theme for Your Business"
+          grayText="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.
+            <br />
+            Nulla vehicula nibh vel ante commodo feugiat."
+          content="Cras gravida arcu tincidunt, suscipit velit sed, porta sapien.
+            Maecenas a aliquam lectus. Vivamus consequat purus quis ligula
+            vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet
+            venenatis faucibus. Praesent aliquet convallis."
+        >
           <PrimaryButton width={270} height={55}>
             <span className="icon ti-light-bulb mr-2" />
             Take a tour
@@ -105,8 +125,8 @@ Completed it with this theme in one day. Thanks guys!"
         />
       </section>
 
-      <section id="services" className="section section-services">
-        <Services />
+      <section id="best-services" className="section section-best-services">
+        <BestServices />
       </section>
 
       <section id="partners" className="section section-partners light-overlay">

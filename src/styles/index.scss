@@ -255,6 +255,32 @@ p {
     @extend %flex-col;
     justify-content: center;
 
+    &.txt-al-l {
+      // Text align left
+      text-align: left;
+    }
+
+    &.txt-al-r {
+      // Text align right
+      text-align: right;
+      .box-content {
+        padding-left: 0;
+        padding-right: 20px;
+        .title::after {
+          left: auto;
+          right: 0;
+        }
+
+        @include respond-to(large-device) {
+          padding: 0 30px;
+        }
+
+        @include respond-to(small-device) {
+          padding: 20px;
+        }
+      }
+    }
+
     .box-content {
       max-width: 600px;
       padding-left: 20px;
@@ -403,7 +429,7 @@ p {
   }
 }
 
-.section-services,
+.section-best-services,
 .section-skills {
   display: flex;
   flex-flow: row wrap;
@@ -478,7 +504,7 @@ p {
         @include customFont($mediumGrayColor, 14px, $regularWeight, none);
         @include customTransition($duration: 0.3s);
         width: calc(100% / 3);
-        height: 400px;
+        height: 50%;
         padding: 60px;
         text-align: center;
         border-top: 1px solid $serviceBoxBorder;
@@ -524,7 +550,9 @@ p {
         justify-content: space-around;
 
         .service-item {
-          flex-basis: calc(100% / 2);
+          width: calc(100% / 2);
+          height: calc(100% / 3);
+          min-height: 400px;
 
           &:nth-child(3n),
           &:nth-child(3n + 0) {
@@ -565,10 +593,15 @@ p {
       }
 
       .right-content .service-item {
-        flex-basis: 100%;
+        width: 100%;
         padding: 30px;
         height: auto;
+        min-height: 300px;
         border-right-width: 0;
+
+        .title {
+          margin-top: 30px;
+        }
 
         &:nth-child(3n),
         &:nth-child(3n + 0) {
@@ -849,4 +882,84 @@ p {
 #about-us .section-introduce {
   background: $whiteColor url("../assets/about-introduce-bg.png") no-repeat
     bottom;
+}
+
+#services #wordpress-introduce {
+  background: $secondaryBgColor url("../assets/wp-bg.png") no-repeat center;
+}
+
+#services #web-design {
+  background: $whiteColor url("../assets/web-design-bg.png") no-repeat center;
+}
+
+#services .section-best-services{
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 100px;
+
+  @include respond-to(medium-device) {
+    padding: 40px 0;
+  }
+
+  @include respond-to(small-device) {
+    padding-bottom: 0;
+  }
+
+  .container {
+    min-width: auto;
+    max-width: 1170px;
+  
+    .right-content {
+      flex-basis: 100%;
+      justify-content: center;
+      align-items: center;
+  
+      @include respond-to(extra-large-device) {
+        .service-item {
+          width: calc(100% / 3);
+          height: calc(100% / 2);
+          min-height: 400px;
+  
+          &:nth-child(2n) {
+            border-right-width: 1px;
+          }
+  
+          &:nth-child(3n + 3) {
+            border-right-width: 0px;
+          }
+        }
+      }
+  
+      @include respond-to(medium-device) {
+        .service-item {
+          width: calc(100% / 2);
+          height: calc(100% / 3);
+          min-height: 350px;
+          // max-height: 350px;
+          padding: 30px;
+  
+          &:nth-child(2n) {
+            border-right-width: 0px;
+          }
+  
+          &:nth-child(odd) {
+            border-right-width: 1px;
+          }
+        }
+      }
+  
+      @include respond-to(small-device) {
+        .service-item {
+          width: 100%;
+          border-top-width: 1px;
+          border-right-width: 0px;
+          min-height: 300px;
+  
+          &:first-child {
+            border-top-width: 0px;
+          }
+        }
+      }
+    }
+  }
 }
