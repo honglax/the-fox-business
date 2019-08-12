@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import BoxSection from "./BoxSection";
 import { PrimaryButton } from "./style";
+import classNames from "classnames";
 
 export default class ContactForm extends Component {
   constructor(props) {
@@ -18,11 +19,24 @@ export default class ContactForm extends Component {
     e.preventDefault();
   };
 
+  componentDidMount() {
+    const el = document.getElementById("contact-form");
+    if (el.childNodes[0].className.includes("dark-form")) {
+      el.style.backgroundColor = "#15181d";
+    } else {
+      el.style.backgroundColor = "#fff";
+    }
+  }
+
   render() {
-    let { boxSectionContent } = this.props;
+    let { boxSectionContent, isDarkForm, hasTextArea, btnValue } = this.props;
+    let contactClass = classNames(
+      "contact-form",
+      isDarkForm ? "dark-form" : "light-form"
+    );
 
     return (
-      <Container className="contact-form">
+      <Container className={contactClass}>
         <BoxSection
           title={boxSectionContent.title}
           description={boxSectionContent.description}
@@ -49,9 +63,10 @@ export default class ContactForm extends Component {
                 ))}
               </select>
             </div>
+            {hasTextArea ? <textarea placeholder="" cols="1" row="30" /> : ""}
             <PrimaryButton width={"100%"} height={"70px"}>
               <span className="ti-check mr-2" />
-              Get Started Now
+              {btnValue}
             </PrimaryButton>
           </form>
           <p className="required-note">All fields are required</p>

@@ -964,19 +964,11 @@ p {
       }
     }
   }
-
-  .section-contact-form {
-    background-color: $servicesContactFormBg;
-
-    .box-section .title h4 {
-      color: $whiteColor;
-    }
-  }
 }
 
 // Begin Contact Form
 .contact-form {
-  padding-bottom: 50px;
+  padding: 50px 0;
   .box-section {
     @extend %flex-col;
     align-items: center;
@@ -994,28 +986,37 @@ p {
     margin-bottom: 50px;
 
     input,
-    select {
-      border: 1px solid #444957;
+    select,
+    textarea {
+      @include customFont($lightGrayColor, 16px, $lightWeight, capitalize);
       background-color: transparent;
       border-radius: 5px;
-      @include customFont($lightGrayColor, 16px, $lightWeight, capitalize);
       line-height: 36px;
       padding: 10px 30px;
       width: 100%;
       margin-bottom: 20px;
     }
 
+    textarea,
+    select {
+      position: relative;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      z-index: 2;
+    }
+
+    textarea {
+      resize: none;
+      height: 200px;
+    }
+
     .select-div {
       position: relative;
       select {
-        position: relative;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        z-index: 2;
       }
 
       &::after {
@@ -1029,6 +1030,36 @@ p {
         top: 16px;
         z-index: 1;
       }
+    }
+  }
+
+  &.dark-form {
+    input,
+    select,
+    textarea {
+      border: 1px solid #444957;
+    }
+
+    .box-section {
+      .title h4 {
+        color: $whiteColor;
+      }
+    }
+  }
+
+  @include respond-to(medium-device) {
+    padding: 0 0 30px;
+
+    .form-inside-input {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.light-form {
+    input,
+    select,
+    textarea {
+      border: 1px solid #e8e8e8;
     }
   }
 }

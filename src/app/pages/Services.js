@@ -85,11 +85,13 @@ function Services() {
       </section>
       <section id="contact-form" className="section section-contact-form">
         <ContactForm
+          isDarkForm={true}
           boxSectionContent={{
             title: "Contact Us Today. Let‘s Work Together",
             description:
               "Whether you're a local or national business, big brand or high profile celebrity, we’ve worked with them all – we can help you get where you want to be."
           }}
+          btnValue="Get started now"
         />
       </section>
       <section className="section section-purchase-box">
