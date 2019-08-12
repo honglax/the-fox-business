@@ -88,7 +88,7 @@ export default function PricingTable() {
               </div>
             </div>
             <div className="plan-btn">
-              <PrimaryButton width={220} height={55}>
+              <PrimaryButton width="220px" height="55px">
                 Get Started Now
               </PrimaryButton>
             </div>

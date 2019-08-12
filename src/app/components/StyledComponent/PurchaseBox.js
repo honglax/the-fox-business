@@ -8,8 +8,8 @@ export default function PurchaseBox({ bgColor }) {
       <Container>
         <p className="text">Become A Part Of TheFox Business Community Today</p>
         <PrimaryButton
-          width={270}
-          height={55}
+          width="270px"
+          height="55px"
           bgColor="transparent"
           borderColor="#fff"
         >

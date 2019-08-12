@@ -31,8 +31,8 @@ function Home() {
         >
           <div className="btn-group">
             <PrimaryButton
-              width={200}
-              height={55}
+              width="200px"
+              height="55px"
               bgColor="#292b2d"
               borderColor="#292b2d"
               className="primary-btn"
@@ -40,8 +40,8 @@ function Home() {
               Get Started
             </PrimaryButton>
             <PrimaryButton
-              width={200}
-              height={55}
+              width="200px"
+              height="55px"
               bgColor="rgba(0, 0, 0, 0.2)"
               borderColor="#fff"
               className="primary-btn"
@@ -71,7 +71,7 @@ function Home() {
             vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet
             venenatis faucibus. Praesent aliquet convallis."
         >
-          <PrimaryButton width={270} height={55}>
+          <PrimaryButton width="270px" height="55px">
             <span className="icon ti-light-bulb mr-2" />
             Take a tour
           </PrimaryButton>
@@ -104,7 +104,7 @@ function Home() {
             vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet
             venenatis faucibus. Praesent aliquet convallis."
         >
-          <PrimaryButton width={270} height={55}>
+          <PrimaryButton width="270px" height="55px">
             <span className="icon ti-light-bulb mr-2" />
             Take a tour
           </PrimaryButton>

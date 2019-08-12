@@ -6,7 +6,7 @@ import Parallax from "../components/StyledComponent/Parallax";
 import Introduce from "../components/StyledComponent/Introduce";
 import BestServices from "../components/StyledComponent/BestServices";
 import BoxSection from "../components/StyledComponent/BoxSection";
-
+import ContactForm from "../components/StyledComponent/ContactForm";
 import { PrimaryButton } from "../components/StyledComponent/style";
 import "../../styles/index.scss";
 
@@ -40,7 +40,7 @@ function Services() {
             venenatis faucibus. Praesent aliquet convallis."
         >
           <div className="btn-group">
-            <PrimaryButton width={270} height={55}>
+            <PrimaryButton width={"270px"} height={"55px"}>
               <span className="icon ti-light-bulb mr-2" />
               Take a tour
             </PrimaryButton>
@@ -76,9 +76,21 @@ function Services() {
         </Parallax>
       </section>
       <section id="best-services" className="section section-best-services">
-        <BoxSection title="The Best Services" description="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.<br/>Nulla vehicula nibh vel ante commodo feugiat.">
+        <BoxSection
+          title="The Best Services"
+          description="Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra.<br/>Nulla vehicula nibh vel ante commodo feugiat."
+        >
           <BestServices hideLeft={true} />
         </BoxSection>
+      </section>
+      <section id="contact-form" className="section section-contact-form">
+        <ContactForm
+          boxSectionContent={{
+            title: "Contact Us Today. Let‘s Work Together",
+            description:
+              "Whether you're a local or national business, big brand or high profile celebrity, we’ve worked with them all – we can help you get where you want to be."
+          }}
+        />
       </section>
       <section className="section section-purchase-box">
         <PurchaseBox bgColor={lightBlueColor} />

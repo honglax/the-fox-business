@@ -34,7 +34,7 @@ export default function LastestBlog() {
       <Container>
         <div className="posts">
           <div className="post featured-post">
-            <PrimaryButton width={150} height={40} transform="capitalize">
+            <PrimaryButton width="150px" height="40px" transform="capitalize">
               Featured Post
             </PrimaryButton>
             <p className="title">{featuredPost.title}</p>

@@ -91,8 +91,8 @@ export const PrimaryButton = styled.button`
       props.transform || "uppercase"
     )}
   background-color: ${props => props.bgColor || primaryColor};
-  width: ${props => props.width}px;
-  height: ${props => props.height}px;
+  width: ${props => props.width};
+  height: ${props => props.height};
   border-radius: 5px;
   border: 1px solid ${props => props.borderColor || primaryBorderColor};
   ${customTransition("all", 0.2, undefined)}

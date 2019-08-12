@@ -888,78 +888,149 @@ p {
   background: $secondaryBgColor url("../assets/wp-bg.png") no-repeat center;
 }
 
-#services #web-design {
-  background: $whiteColor url("../assets/web-design-bg.png") no-repeat center;
-}
-
-#services .section-best-services{
-  align-items: center;
-  justify-content: center;
-  padding: 70px 0 100px;
-
-  @include respond-to(medium-device) {
-    padding: 40px 0;
+#services {
+  #web-design {
+    background: $whiteColor url("../assets/web-design-bg.png") no-repeat center;
   }
 
-  @include respond-to(small-device) {
-    padding-bottom: 0;
-  }
+  .section-best-services {
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0 100px;
 
-  .container {
-    min-width: auto;
-    max-width: 1170px;
-  
-    .right-content {
-      flex-basis: 100%;
-      justify-content: center;
-      align-items: center;
-  
-      @include respond-to(extra-large-device) {
-        .service-item {
-          width: calc(100% / 3);
-          height: calc(100% / 2);
-          min-height: 400px;
-  
-          &:nth-child(2n) {
-            border-right-width: 1px;
-          }
-  
-          &:nth-child(3n + 3) {
-            border-right-width: 0px;
-          }
-        }
-      }
-  
-      @include respond-to(medium-device) {
-        .service-item {
-          width: calc(100% / 2);
-          height: calc(100% / 3);
-          min-height: 350px;
-          // max-height: 350px;
-          padding: 30px;
-  
-          &:nth-child(2n) {
-            border-right-width: 0px;
-          }
-  
-          &:nth-child(odd) {
-            border-right-width: 1px;
+    @include respond-to(medium-device) {
+      padding: 40px 0;
+    }
+
+    @include respond-to(small-device) {
+      padding-bottom: 0;
+    }
+
+    .container {
+      min-width: auto;
+      max-width: 1170px;
+
+      .right-content {
+        flex-basis: 100%;
+        justify-content: center;
+        align-items: center;
+
+        @include respond-to(extra-large-device) {
+          .service-item {
+            width: calc(100% / 3);
+            height: calc(100% / 2);
+            min-height: 400px;
+
+            &:nth-child(2n) {
+              border-right-width: 1px;
+            }
+
+            &:nth-child(3n + 3) {
+              border-right-width: 0px;
+            }
           }
         }
-      }
-  
-      @include respond-to(small-device) {
-        .service-item {
-          width: 100%;
-          border-top-width: 1px;
-          border-right-width: 0px;
-          min-height: 300px;
-  
-          &:first-child {
-            border-top-width: 0px;
+
+        @include respond-to(medium-device) {
+          .service-item {
+            width: calc(100% / 2);
+            height: calc(100% / 3);
+            min-height: 350px;
+            // max-height: 350px;
+            padding: 30px;
+
+            &:nth-child(2n) {
+              border-right-width: 0px;
+            }
+
+            &:nth-child(odd) {
+              border-right-width: 1px;
+            }
+          }
+        }
+
+        @include respond-to(small-device) {
+          .service-item {
+            width: 100%;
+            border-top-width: 1px;
+            border-right-width: 0px;
+            min-height: 300px;
+
+            &:first-child {
+              border-top-width: 0px;
+            }
           }
         }
       }
     }
   }
+
+  .section-contact-form {
+    background-color: $servicesContactFormBg;
+
+    .box-section .title h4 {
+      color: $whiteColor;
+    }
+  }
 }
+
+// Begin Contact Form
+.contact-form {
+  padding-bottom: 50px;
+  .box-section {
+    @extend %flex-col;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .required-note {
+    @include customFont($mediumGrayColor, 14px, $lightWeight, none);
+  }
+
+  .form-inside-input {
+    width: 100%;
+    max-width: 540px;
+    padding: 0 20px;
+    margin-bottom: 50px;
+
+    input,
+    select {
+      border: 1px solid #444957;
+      background-color: transparent;
+      border-radius: 5px;
+      @include customFont($lightGrayColor, 16px, $lightWeight, capitalize);
+      line-height: 36px;
+      padding: 10px 30px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .select-div {
+      position: relative;
+      select {
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "\f078";
+        font-family: FontAweSome;
+        position: absolute;
+        color: $lightGrayColor;
+        right: 30px;
+        width: 16px;
+        height: 16px;
+        top: 16px;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// End Contact Form

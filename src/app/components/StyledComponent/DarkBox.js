@@ -19,7 +19,7 @@ export default function DarkBox({
         />
         <p dangerouslySetInnerHTML={{ __html: content }} />
         {children}
-        <PrimaryButton width={270} height={55}>
+        <PrimaryButton width="270px" height="55px">
           <span className={btnIcon ? `icon ${btnIcon} mr-2` : ""} />
           <span dangerouslySetInnerHTML={{ __html: btnContent }} />
         </PrimaryButton>
