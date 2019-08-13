@@ -20,12 +20,13 @@ p {
   line-height: 1;
   padding: 0 20px;
   width: 100%;
-  max-height: 990px;
-  height: calc(100vh - 112px);
+  // max-height: 990px;
+  // height: calc(100vh - 92px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-size: cover;
 
   * {
     z-index: 2;
@@ -211,8 +212,9 @@ p {
     }
 
     @include respond-to(large-device) {
-      padding: 50px 10px;
-      .util-item {
+      padding: 50px 20px;
+      justify-content: space-around;
+      .additional-feature-item {
         flex-basis: calc(100% / 2);
         padding: 20px 30px;
       }
@@ -220,7 +222,7 @@ p {
 
     @include respond-to(small-device) {
       padding: 20px;
-      .util-item {
+      .additional-feature-item {
         flex-basis: 100%;
         padding: 20px 5px;
       }
@@ -988,7 +990,7 @@ p {
     .input-group {
       margin-bottom: 20px;
       .error-msg {
-        @include customFont(red, 13px, $lightWeight, none);
+        @include customFont($errorColor, 13px, $lightWeight, none);
         font-style: italic;
         margin-top: 5px;
         text-align: right;
@@ -1025,10 +1027,16 @@ p {
       height: 200px;
     }
 
+    input.error {
+      border-color: $errorColor;
+      @include customBoxShadow(
+        $blurRadius: 4px,
+        $shadowColor: rgba(0, 0, 0, 0.1)
+      );
+    }
+
     .select-div {
       position: relative;
-      select {
-      }
 
       &::after {
         content: "\f078";

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import classNames from "classnames";
 
 export default class FormInput extends Component {
   constructor(props) {
@@ -64,10 +65,13 @@ export default class FormInput extends Component {
 
   render() {
     let { name, type, placeholder, isRequired } = this.props;
-    // let isInputValid = this.state.errorMsg.length > 0;
+    let inputClass = classNames({
+      error: this.state.errorMsg.length > 0
+    });
     return (
       <div className="input-group">
         <input
+          className={inputClass}
           name={name}
           type={type}
           placeholder={placeholder}

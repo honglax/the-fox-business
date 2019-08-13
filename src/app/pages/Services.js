@@ -20,7 +20,7 @@ function Services() {
   const lightBlueColor = "#35c2ea";
   return (
     <div id="services" className="services__content">
-      <section className="section section-slideshow">
+      <section id="slideshow" className="section section-slideshow">
         <SlideShow
           largeText="Our Services"
           smallText="Dream big. Think different. Do great"

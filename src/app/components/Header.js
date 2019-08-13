@@ -9,19 +9,27 @@ class Header extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      navExpanded: false
+    };
 
     this.handleScroll = this.handleScroll.bind(this);
-    this.scrollToTop = this.scrollToTop.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.setNavExpanded = this.setNavExpanded.bind(this);
+  }
+
+  setNavExpanded(expanded) {
+    this.setState({ navExpanded: expanded });
   }
 
   handleScroll() {
     this.setState({ scroll: window.scrollY });
   }
 
-  scrollToTop() {
+  handleClick = e => {
+    this.setState({ navExpanded: false });
     window.scroll({ top: 0, left: 0, behavior: "smooth" });
-  }
+  };
 
   componentDidMount() {
     const el = document.querySelector("nav");
@@ -48,16 +56,21 @@ class Header extends Component {
   render() {
     return (
       <header className="header page__header">
-        <Navbar collapseOnSelect expand="lg">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          onToggle={this.setNavExpanded}
+          expanded={this.state.navExpanded}
+        >
           <Container>
-            <NavLink onClick={this.scrollToTop} className="navbar-brand" to="/">
+            <NavLink onClick={this.handleClick} className="navbar-brand" to="/">
               <img src={logo} alt="The Fox Business" className="logo" />
             </NavLink>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="ml-auto">
+              <Nav className="ml-auto" onClick={this.handleClick}>
                 <NavLink
-                  onClick={this.scrollToTop}
+                  // onClick={this.handleClick}
                   className="nav-link"
                   exact
                   to="/"
@@ -65,35 +78,35 @@ class Header extends Component {
                   Home
                 </NavLink>
                 <NavLink
-                  onClick={this.scrollToTop}
+                  // onClick={this.handleClick}
                   className="nav-link"
                   to="/about"
                 >
                   About Us
                 </NavLink>
                 <NavLink
-                  onClick={this.scrollToTop}
+                  // onClick={this.handleClick}
                   className="nav-link"
                   to="/services"
                 >
                   Services
                 </NavLink>
                 <NavLink
-                  onClick={this.scrollToTop}
+                  // onClick={this.handleClick}
                   className="nav-link"
                   to="/blog"
                 >
                   Blog
                 </NavLink>
                 <NavLink
-                  onClick={this.scrollToTop}
+                  // onClick={this.handleClick}
                   className="nav-link"
                   to="/portfolio"
                 >
                   Portfolio
                 </NavLink>
                 <NavLink
-                  onClick={this.scrollToTop}
+                  // onClick={this.handleClick}
                   className="nav-link"
                   to="/contact"
                 >

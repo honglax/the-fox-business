@@ -14,18 +14,18 @@
       right: 0;
       z-index: 1030;
 
-      .container {
-        padding: 10px 25px;
-      }
+      // .container {
+      //   padding: 15px 20px;
+      // }
     }
   }
   .container {
     min-height: 90px;
-    padding: 25px;
+    padding: 20px;
     @extend %flex-row-center-space-between;
     @include customTransition($timingFunction: linear, $duration: 0.2s);
     @include respond-to(phone-only) {
-      padding: 20px 15px;
+      // padding: 20px;
       min-height: 60px;
     }
 

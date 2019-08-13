@@ -25,7 +25,7 @@ export default class ContactForm extends Component {
   }
 
   isAllFieldValid = ({ name, errorMsg }) => {
-    console.log(name, errorMsg);
+    // console.log(name, errorMsg);
     if (errorMsg.length > 0) {
       this.setState({
         errors: {
