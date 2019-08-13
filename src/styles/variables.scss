@@ -8,6 +8,7 @@ $blackColor: #000;
 $primaryBorderColor: #2c6cd6;
 $secondaryBorderColor: #363b44;
 $serviceBoxBorder: #f1f0f0;
+$postPreviewBorderColor: #ebebeb;
 
 $lightenOverlay: rgba(0, 0, 0, 0.2);
 
@@ -31,6 +32,8 @@ $postBgColor: #4889f3;
 $iconHoverBg: #4285f4;
 
 $errorColor: #b00020;
+
+$shadowColorOverlay: rgba(0, 0, 0, 0.3);
 
 // Responsive breakpoint
 $break-phoneOnly: 575.98px; // Phone Only

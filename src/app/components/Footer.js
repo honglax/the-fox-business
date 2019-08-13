@@ -12,6 +12,34 @@ function scrollToTop() {
 }
 
 function Footer() {
+  let socialIcons = [
+    {
+      url: "https://facebook.com",
+      library: "fab",
+      name: "facebook-f"
+    },
+    {
+      url: "https://vn.linkedin.com/",
+      library: "fab",
+      name: "linkedin-in"
+    },
+    {
+      url: "https://twitter.com/",
+      library: "fab",
+      name: "twitter"
+    },
+    {
+      url: "https://vimeo.com/",
+      library: "fab",
+      name: "vimeo-v"
+    },
+    {
+      url: "https://www.pinterest.com/",
+      library: "fab",
+      name: "pinterest-p"
+    }
+  ];
+
   return (
     <footer className="footer page__footer">
       <div className="top-content">
@@ -67,31 +95,13 @@ function Footer() {
           </div>
           <div className="social">
             <ul className="nav">
-              <li>
-                <a href="https://facebook.com">
-                  <FontAwesomeIcon icon={["fab", "facebook-f"]} />
-                </a>
-              </li>
-              <li>
-                <a href="https://vn.linkedin.com/">
-                  <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/">
-                  <FontAwesomeIcon icon={["fab", "twitter"]} />
-                </a>
-              </li>
-              <li>
-                <a href="https://vimeo.com/">
-                  <FontAwesomeIcon icon={["fab", "vimeo-v"]} />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.pinterest.com/">
-                  <FontAwesomeIcon icon={["fab", "pinterest-p"]} />
-                </a>
-              </li>
+              {socialIcons.map((icon, index) => (
+                <li key={index}>
+                  <a href={icon.url}>
+                    <FontAwesomeIcon icon={[icon.library, icon.name]} />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </Container>

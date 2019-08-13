@@ -1,0 +1,166 @@
+@import "variables.scss";
+
+#blog .container {
+  @extend %flex-row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-container {
+  flex-basis: 800px;
+  padding-top: 100px;
+  padding-right: 100px;
+
+  .content__post-preview {
+    padding: 60px 0;
+    border-bottom: 1px solid $postPreviewBorderColor;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .post-preview__top {
+    width: 100%;
+    @extend %flex-row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    .post__author {
+      @extend %flex-row;
+      align-items: flex-start;
+      justify-content: center;
+      .author__avatar {
+        background-color: $lightGrayColor;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .author__info {
+        @extend %flex-col;
+        align-items: flex-start;
+        justify-content: center;
+        height: 50px;
+        line-height: 1.5;
+        .author__info--name {
+          @include customFont(
+            $darkGrayColor,
+            16px,
+            $semiBoldWeight,
+            capitalize
+          );
+        }
+
+        .author__info--post-at {
+          @include customFont($lightGrayColor, 14px, $regularWeight, none);
+        }
+      }
+    }
+
+    .post__categories {
+      @extend %flex-row;
+      align-items: flex-end;
+      justify-content: center;
+
+      .category__detail {
+        @include customFont($lightGrayColor, 14px, $regularWeight, none);
+        @include customTransition($duration: 0.2s);
+        background-color: #f6f7f8;
+        width: 130px;
+        height: 40px;
+        border: 1px solid #e6e6e6;
+        margin-left: 10px;
+
+        &:hover {
+          background-color: $whiteColor;
+          @include customBoxShadow(
+            $blurRadius: 5px,
+            $shadowColor: $shadowColorOverlay
+          );
+        }
+      }
+    }
+  }
+
+  .post-preview__middle {
+    color: $mediumGrayColor;
+    margin-bottom: 30px;
+    .post__preview-img {
+      margin-bottom: 40px;
+    }
+
+    .post__title {
+      @include customFont($darkGrayColor, 30px, $lightWeight, capitalize);
+      line-height: 50px;
+    }
+
+    $font-size: 15px;
+    $line-height: 2;
+    $lines-to-show: 3;
+    .post__content-preview {
+      display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
+      line-height: $line-height;
+      -webkit-line-clamp: $lines-to-show;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .post-preview__bottom {
+    @extend %flex-row;
+    align-items: center;
+    justify-content: flex-start;
+
+    .bottom__block {
+      @extend %flex-row;
+      align-items: center;
+      justify-content: center;
+      color: $lightGrayColor;
+      padding: 0 15px;
+      line-height: 20px;
+      border-right: 1px solid $postPreviewBorderColor;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        border-right-width: 0;
+      }
+
+      button {
+        @include customTransition($duration: 0.2s);
+        color: $lightGrayColor;
+        appearance: none;
+        border: none;
+
+        &:hover {
+          color: $blackColor;
+        }
+      }
+
+      .social-icon__container {
+        display: flex;
+        margin-bottom: 0;
+        flex-flow: row nowrap;
+        li {
+          list-style: none;
+          display: inline;
+          margin-right: 25px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.right-container {
+  width: calc(100% - 800px);
+}
