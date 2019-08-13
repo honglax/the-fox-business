@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import smoothscroll from "smoothscroll-polyfill";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/index.scss";
 import Header from "./components/Header";
@@ -22,6 +24,9 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
 library.add(fab, fas, far);
+// kick off the polyfill!
+smoothscroll.polyfill();
+
 class App extends Component {
   render() {
     return (
