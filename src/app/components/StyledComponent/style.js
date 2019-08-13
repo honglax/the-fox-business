@@ -102,6 +102,12 @@ export const PrimaryButton = styled.button`
       props.notHover ? "" : customBoxShadow(0, 0, 10, 0, "rgba(0, 0, 0, 0.3)")}
   }
 
+  &:disabled {
+    background-color: #999;
+    border-color: #999;
+    box-shadow: none;
+  }
+
   .icon {
     font-weight: bold;
   }

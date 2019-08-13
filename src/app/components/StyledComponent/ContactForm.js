@@ -11,7 +11,20 @@ export default class ContactForm extends Component {
     super(props);
 
     this.state = {
-      errors: []
+      errors: [
+        {
+          fieldName: "name",
+          errorMsg: ""
+        },
+        {
+          fieldName: "email",
+          errorMsg: ""
+        },
+        {
+          fieldName: "phoneNumber",
+          errorMsg: ""
+        }
+      ]
     };
 
     this.onSubmit = this.onSubmit.bind(this);

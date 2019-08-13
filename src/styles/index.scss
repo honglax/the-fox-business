@@ -795,8 +795,13 @@ p {
   }
 }
 
-.contact .section-slideshow {
+.contact__content .section-slideshow {
   background: url("../assets/contact-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.services__content .section-slideshow {
+  background: url("../assets/services-bg.jpg") no-repeat center;
   background-size: cover;
 }
 
