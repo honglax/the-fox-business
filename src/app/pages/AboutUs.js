@@ -11,8 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/index.scss";
 
 export default function AboutUs() {
-  let lightBlueColor = "#35c2ea";
-  let introduceList = [
+  const lightBlueColor = "#35c2ea";
+  const introduceList = [
     "Clean, modern, multi-purpose design can be used for any type of website",
     "The New Ultimate Multi-Purpose WordPress Theme",
     "WordPress 4.1 Tested and Approved",

@@ -11,9 +11,15 @@ export default class ContactForm extends Component {
     super(props);
 
     this.state = {
-      errors: {}
+      errors: []
     };
+
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  onSubmit = e => {
+    e.preventDefault();
+  };
 
   componentDidMount() {
     const el = document.getElementById("contact-form");
@@ -24,16 +30,34 @@ export default class ContactForm extends Component {
     }
   }
 
-  isAllFieldValid = ({ name, errorMsg }) => {
-    // console.log(name, errorMsg);
+  componentDidUpdate() {
+    document.getElementById("submit-form-btn").disabled =
+      this.state.errors.length > 0;
+  }
+
+  isAllFieldValid = ({ fieldName, errorMsg }) => {
     if (errorMsg.length > 0) {
-      this.setState({
-        errors: {
-          name: name,
-          errorMsg: errorMsg
+      let count = 0;
+      let newErrors = this.state.errors.map(error => {
+        if (error.fieldName === fieldName) {
+          error.errorMsg = errorMsg;
+          count++;
         }
+        return error;
+      });
+      if (count === 0) {
+        newErrors = newErrors.concat({
+          fieldName: fieldName,
+          errorMsg: errorMsg
+        });
+      }
+      this.setState({
+        errors: newErrors
       });
     } else {
+      this.setState({
+        errors: this.state.errors.filter(error => error.fieldName !== fieldName)
+      });
     }
   };
 
@@ -98,7 +122,8 @@ export default class ContactForm extends Component {
             </div>
             {hasTextArea ? <textarea placeholder="" cols="1" row="30" /> : ""}
             <PrimaryButton
-              disabled={!this.state.allFieldValid}
+              id="submit-form-btn"
+              disabled
               width={"100%"}
               height={"70px"}
             >

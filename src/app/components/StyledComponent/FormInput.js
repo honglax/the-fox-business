@@ -60,7 +60,10 @@ export default class FormInput extends Component {
     this.setState({
       errorMsg: errorMsg
     });
-    this.props.callBackFromParent({ name: e.target.name, errorMsg: errorMsg });
+    this.props.callBackFromParent({
+      fieldName: e.target.name,
+      errorMsg: errorMsg
+    });
   };
 
   render() {
