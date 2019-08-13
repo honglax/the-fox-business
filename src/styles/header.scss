@@ -20,18 +20,19 @@
     }
   }
   .container {
-    min-height: 90px;
+    // min-height: 90px;
     padding: 20px;
     @extend %flex-row-center-space-between;
     @include customTransition($timingFunction: linear, $duration: 0.2s);
-    @include respond-to(phone-only) {
+    @include respond-to(large-device) {
       // padding: 20px;
-      min-height: 60px;
+      min-height: 80px;
     }
 
     .navbar-brand {
       width: 80%;
       margin-right: 0;
+      font-size: 0;
       max-width: 345px;
       @include respond-to(phone-only) {
         width: 75%;

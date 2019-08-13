@@ -29,7 +29,7 @@ Your app is ready to be deployed!
 
 ## Information
 
- **Apps Cyclone - 168/6 Bui Thi Xuan, Ward 3, District Tan Binh, Ho Chi Minh City**  
+ **Apps Cyclone - 168/6 Bui Thi Xuan, Ward 3, Tan Binh, Ho Chi Minh City**  
 *Web Department*  
 *La Xuan Hong - Front end Developer*  
 
