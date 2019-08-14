@@ -982,81 +982,6 @@ p {
     justify-content: center;
   }
 
-  .required-note {
-    @include customFont($mediumGrayColor, 14px, $lightWeight, none);
-  }
-
-  .form-inside-input {
-    width: 100%;
-    max-width: 540px;
-    padding: 0 20px;
-    margin-bottom: 50px;
-
-    .input-group {
-      margin-bottom: 20px;
-      .error-msg {
-        @include customFont($errorColor, 13px, $lightWeight, none);
-        font-style: italic;
-        margin-top: 5px;
-        text-align: right;
-        width: 100%;
-      }
-    }
-
-    input,
-    select,
-    textarea {
-      @include customFont($lightGrayColor, 16px, $lightWeight, none);
-      background-color: transparent;
-      border-radius: 5px;
-      line-height: 36px;
-      padding: 10px 30px;
-      width: 100%;
-    }
-
-    textarea,
-    select {
-      margin-bottom: 20px;
-      position: relative;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      z-index: 2;
-    }
-
-    textarea {
-      resize: none;
-      height: 200px;
-    }
-
-    input.error {
-      border-color: $errorColor;
-      @include customBoxShadow(
-        $blurRadius: 4px,
-        $shadowColor: rgba(0, 0, 0, 0.1)
-      );
-    }
-
-    .select-div {
-      position: relative;
-
-      &::after {
-        content: "\f078";
-        font-family: FontAweSome;
-        position: absolute;
-        color: $lightGrayColor;
-        right: 30px;
-        width: 16px;
-        height: 16px;
-        top: 16px;
-        z-index: 1;
-      }
-    }
-  }
-
   &.dark-form {
     input,
     select,
@@ -1086,6 +1011,87 @@ p {
       border: 1px solid #e8e8e8;
     }
   }
+}
+
+.form-inside-input {
+  width: 100%;
+  max-width: 540px;
+  padding: 0 20px;
+  margin-bottom: 50px;
+
+  .input-group {
+    margin-bottom: 20px;
+    .error-msg {
+      @include customFont($errorColor, 13px, $lightWeight, none);
+      font-style: italic;
+      margin-top: 5px;
+      text-align: right;
+      width: 100%;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    @include customFont($mediumGrayColor, 16px, $lightWeight, none);
+    background-color: transparent;
+    border-radius: 5px;
+    line-height: 36px;
+    padding: 10px 30px;
+    width: 100%;
+
+    &::placeholder,
+    option:disabled {
+      color: $lightGrayColor;
+    }
+  }
+
+  textarea,
+  select {
+    margin-bottom: 20px;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    z-index: 2;
+  }
+
+  textarea {
+    resize: none;
+    height: 200px;
+  }
+
+  input.error {
+    border-color: $errorColor !important;
+    @include customBoxShadow(
+      $blurRadius: 4px,
+      $shadowColor: rgba(0, 0, 0, 0.1)
+    );
+  }
+
+  .select-div {
+    position: relative;
+
+    &::after {
+      content: "\f078";
+      font-family: FontAweSome;
+      position: absolute;
+      color: $lightGrayColor;
+      right: 30px;
+      width: 16px;
+      height: 16px;
+      top: 16px;
+      z-index: 1;
+    }
+  }
+}
+
+.required-note {
+  @include customFont($mediumGrayColor, 14px, $lightWeight, none);
+  text-align: center;
 }
 
 // End Contact Form

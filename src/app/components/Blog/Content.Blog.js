@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import PostPreview from "./PostPreview.Blog";
+import RightContainer from "./RightContainer.Blog";
 
 import avatar1 from "../../../assets/avatar/av1-50x50.jpg";
 import avatar2 from "../../../assets/avatar/av2-50x50.jpg";
@@ -12,8 +13,8 @@ const posts = [
     id: 0,
     avatar: avatar1,
     author: "Brian Alvarado",
-    postAt: "1 day ago",
-    categories: ["Recruitment"],
+    postedAt: "1 day ago",
+    tags: ["Recruitment"],
     previewImg: "",
     postTitle:
       "11 Impossible Tech Interview Questions You Don't Want To Be Asked",
@@ -25,8 +26,8 @@ const posts = [
     id: 1,
     avatar: avatar2,
     author: "Justin Smith",
-    postAt: "June, 25th 2020",
-    categories: ["Tech", "Commercial"],
+    postedAt: "June, 25th 2020",
+    tags: ["Tech", "Commercial"],
     previewImg: "",
     postTitle:
       "The World's First Commercial Jetpack Will Arrive In 2016, And It'll Cost You $150,000",
@@ -38,8 +39,8 @@ const posts = [
     id: 2,
     avatar: avatar3,
     author: "Thomas Clark",
-    postAt: "June, 25th 2020",
-    categories: ["Quote", "Hardwork"],
+    postedAt: "June, 25th 2020",
+    tags: ["Quote", "Hardwork"],
     previewImg: "",
     postTitle:
       "If today were the last day of your life, would you want to do?<br/>What you are about to do today?",
@@ -50,8 +51,8 @@ const posts = [
     id: 3,
     avatar: avatar4,
     author: "Susan Baker",
-    postAt: "1 day ago",
-    categories: ["Recruitment"],
+    postedAt: "1 day ago",
+    tags: ["Recruitment"],
     previewImg: "",
     postTitle:
       "People Are Tweeting Their Rage At Scalia - But They're Making One Crucial Mistake",
@@ -63,8 +64,8 @@ const posts = [
     id: 4,
     avatar: "",
     author: "Jesse Harris",
-    postAt: "2 days ago",
-    categories: ["Recruitment"],
+    postedAt: "2 days ago",
+    tags: ["Recruitment"],
     previewImg: "",
     postTitle:
       "How E-Commerce Is Finally Disrupting The $600 Billion-A-Year Grocery Industry",
@@ -83,8 +84,8 @@ function Content() {
             key={index}
             avatar={post.avatar}
             authorName={post.author}
-            postAt={post.postAt}
-            categories={post.categories}
+            postedAt={post.postedAt}
+            tags={post.tags}
             previewImg={post.previewImg}
             postTitle={post.postTitle}
             contentPreview={post.contentPreview}
@@ -93,7 +94,7 @@ function Content() {
         ))}
       </div>
       <div className="right-container">
-        <p>Right Container</p>
+        <RightContainer />
       </div>
     </Container>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import classNames from "classnames";
@@ -6,6 +7,10 @@ import classNames from "classnames";
 import "../../../styles/blog.scss";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
 import defaultAvatar from "../../../assets/avatar/default-avatar.png";
+
+const backToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+};
 
 function PostPreview(props) {
   let socialIcons = [
@@ -44,8 +49,8 @@ function PostPreview(props) {
   let {
     avatar,
     authorName,
-    postAt,
-    categories,
+    postedAt,
+    tags,
     previewImg,
     postTitle,
     contentPreview,
@@ -76,14 +81,14 @@ function PostPreview(props) {
           />
           <div className="author__info">
             <p className="author__info--name">{authorName}</p>
-            <p className="author__info--post-at">{postAt}</p>
+            <p className="author__info--post-at">{postedAt}</p>
           </div>
         </div>
 
-        <div className="post__categories">
-          {categories.map((category, index) => (
-            <button key={index} className="category__detail">
-              {category}
+        <div className="post__tags">
+          {tags.map((tag, index) => (
+            <button key={index} className="tag__detail">
+              {tag}
             </button>
           ))}
         </div>
@@ -112,13 +117,15 @@ function PostPreview(props) {
       </div>
       <div className="post-preview__bottom">
         <div className="bottom__block">
-          <a href="/">Continue Reading</a>
+          <Link onClick={backToTop} to="/blog">
+            Continue Reading
+          </Link>
         </div>
         <div className="bottom__block">
           <button className="block__like">Like this</button>
         </div>
         <div className="bottom__block">
-          <div className="block__share--text">Share this</div>
+          <div className="block__share--text">Share this:</div>
           <div className="block__share--social-icon">
             <ul className="social-icon__container">
               {socialIcons.map((icon, index) => (
