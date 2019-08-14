@@ -2,10 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
 
-const backToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-};
-
 function PopularPost(props) {
   let { previewImg, title, postedAt } = props;
   return (

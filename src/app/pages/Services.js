@@ -21,10 +21,7 @@ function Services() {
   return (
     <div id="services" className="services__content">
       <section id="slideshow" className="section section-slideshow">
-        <SlideShow
-          largeText="Our Services"
-          smallText="Dream big. Think different. Do great"
-        />
+        <SlideShow />
       </section>
       <section id="key-features" className="section section-key-features">
         <KeyFeatures />

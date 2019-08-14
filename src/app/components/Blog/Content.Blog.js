@@ -1,5 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { Container } from "react-bootstrap";
+import { Route, Switch } from "react-router-dom";
+
+import BlogDetail from "./BlogDetail.Blog";
 import PostPreview from "./PostPreview.Blog";
 import RightContainer from "./RightContainer.Blog";
 
@@ -75,29 +78,59 @@ const posts = [
   }
 ];
 
-function BlogContent() {
-  return (
-    <Container id="blog__container" className="blog__content">
-      <div id="left-container" className="left-container">
-        {posts.map((post, index) => (
-          <PostPreview
-            key={index}
-            avatar={post.avatar}
-            authorName={post.author}
-            postedAt={post.postedAt}
-            tags={post.tags}
-            previewImg={post.previewImg}
-            postTitle={post.postTitle}
-            contentPreview={post.contentPreview}
-            isQuote={post.isQuote}
-          />
-        ))}
-      </div>
-      <div id="right-container" className="right-container">
-        <RightContainer />
-      </div>
-    </Container>
-  );
+class BlogContent extends Component {
+  setGrayBg() {
+    const grayBg = document.getElementById("blog__gray-bg");
+    const container = document.getElementById("post-content");
+    const blog__container = document.getElementById("blog__container");
+    // const rightContainer = document.getElementById("right-container");
+    grayBg.style.width = `${370 + blog__container.offsetLeft}px`;
+    grayBg.style.height = `${container.offsetHeight}px`;
+  }
+
+  componentDidMount() {
+    this.setGrayBg();
+    window.addEventListener("resize", this.setGrayBg);
+  }
+
+  componentDidUpdate() {
+    this.setGrayBg();
+  }
+
+  render() {
+    return (
+      <Container id="blog__container" className="blog__content">
+        <div id="left-container" className="left-container">
+          <Switch>
+            <Route
+              exact
+              path="/blog"
+              component={() =>
+                posts.map((post, id) => (
+                  <PostPreview
+                    key={id}
+                    id={id}
+                    avatar={post.avatar}
+                    authorName={post.author}
+                    postedAt={post.postedAt}
+                    tags={post.tags}
+                    previewImg={post.previewImg}
+                    postTitle={post.postTitle}
+                    contentPreview={post.contentPreview}
+                    isQuote={post.isQuote}
+                  />
+                ))
+              }
+            />
+            <Route path="/blog/:id" component={BlogDetail} />
+          </Switch>
+        </div>
+        <div id="right-container" className="right-container">
+          <RightContainer />
+        </div>
+      </Container>
+    );
+  }
 }
 
 export default BlogContent;

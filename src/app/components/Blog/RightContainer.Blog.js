@@ -75,10 +75,6 @@ const archives = [
   "December"
 ];
 
-const backToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-};
-
 class RightContainer extends Component {
   constructor(props) {
     super(props);
@@ -90,26 +86,6 @@ class RightContainer extends Component {
   onSubmit = e => {
     e.preventDefault();
   };
-
-  setGrayBg() {
-    const grayBg = document.getElementById("blog__gray-bg");
-    const container = document.getElementById("post-content");
-    const blog__container = document.getElementById("blog__container");
-    const rightContainer = document.getElementById("right-container");
-    grayBg.style.width = `${rightContainer.offsetWidth +
-      blog__container.offsetLeft}px`;
-    console.log(container.offsetHeight);
-    grayBg.style.height = `${container.offsetHeight}px`;
-  }
-
-  componentDidMount() {
-    this.setGrayBg();
-    window.addEventListener("resize", this.setGrayBg);
-  }
-
-  componentDidUpdate() {
-    this.setGrayBg();
-  }
 
   render() {
     return (

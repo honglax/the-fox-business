@@ -25,31 +25,7 @@ function Home() {
   return (
     <div className="home home__content">
       <section id="slideshow" className="section section-slideshow">
-        <Slideshow
-          largeText="Dream Big. Think Different"
-          smallText="Creating a Website Has Never Been This Easy"
-        >
-          <div className="btn-group">
-            <PrimaryButton
-              width="200px"
-              height="55px"
-              bgColor="#292b2d"
-              borderColor="#292b2d"
-              className="primary-btn"
-            >
-              Get Started
-            </PrimaryButton>
-            <PrimaryButton
-              width="200px"
-              height="55px"
-              bgColor="rgba(0, 0, 0, 0.2)"
-              borderColor="#fff"
-              className="primary-btn"
-            >
-              Purchase Now
-            </PrimaryButton>
-          </div>
-        </Slideshow>
+        <Slideshow />
       </section>
 
       <section id="key-features" className="section section-key-features">

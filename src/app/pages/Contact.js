@@ -8,10 +8,7 @@ function Contact() {
   return (
     <div id="contact-page" className="contact__content">
       <section id="slideshow" className="section section-slideshow">
-        <SlideShow
-          largeText="Contact Us"
-          smallText="Dream big. Think different."
-        />
+        <SlideShow />
       </section>
       <section id="contact-form" className="section section-contact-form">
         <ContactForm

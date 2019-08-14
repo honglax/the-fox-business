@@ -8,10 +8,6 @@ import "../../../styles/blog.scss";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
 import defaultAvatar from "../../../assets/avatar/default-avatar.png";
 
-const backToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-};
-
 function PostPreview(props) {
   let socialIcons = [
     {
@@ -47,6 +43,7 @@ function PostPreview(props) {
   ];
 
   let {
+    id,
     avatar,
     authorName,
     postedAt,
@@ -117,7 +114,7 @@ function PostPreview(props) {
       </div>
       <div className="post-preview__bottom">
         <div className="bottom__block">
-          <Link to="/blog/12">Continue Reading</Link>
+          <Link to={"/blog/" + id}>Continue Reading</Link>
         </div>
         <div className="bottom__block">
           <button className="block__like">Like this</button>

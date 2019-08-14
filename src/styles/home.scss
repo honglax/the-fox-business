@@ -15,32 +15,8 @@
   }
   // Begin slideshow
   .section-slideshow {
-    background: url("../assets/slider_bg2.jpg") no-repeat center;
-    background-size: cover;
-
-    .btn-group {
-      margin-top: 25px;
-      @include respond-to(phone-only) {
-        margin-top: 20px;
-        display: block;
-
-        .primary-btn {
-          margin: 20px 0;
-        }
-      }
-      .primary-btn {
-        margin: 10px;
-        text-transform: uppercase;
-
-        &:focus {
-          box-shadow: none;
-        }
-
-        &:hover {
-          box-shadow: none;
-        }
-      }
-    }
+    // background: url("../assets/slider_bg2.jpg") no-repeat center;
+    // background-size: cover;
   }
   // End Slideshow
 

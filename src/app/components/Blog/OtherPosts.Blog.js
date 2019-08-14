@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function BlogDetail() {
+export default function OtherPost() {
   return (
     <div>
-      <p>Blog Detail</p>
+      <p>Other Posts</p>
     </div>
   );
 }
