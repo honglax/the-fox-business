@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import PostPreview from "./PostPreview.Blog";
 import RightContainer from "./RightContainer.Blog";
@@ -11,7 +11,7 @@ import avatar4 from "../../../assets/avatar/av4-50x50.jpg";
 const posts = [
   {
     id: 0,
-    avatar: avatar1,
+    avatar: avatar4,
     author: "Brian Alvarado",
     postedAt: "1 day ago",
     tags: ["Recruitment"],
@@ -49,7 +49,7 @@ const posts = [
   },
   {
     id: 3,
-    avatar: avatar4,
+    avatar: avatar1,
     author: "Susan Baker",
     postedAt: "1 day ago",
     tags: ["Recruitment"],
@@ -75,29 +75,44 @@ const posts = [
   }
 ];
 
-function Content() {
-  return (
-    <Container className="blog__content">
-      <div className="left-container">
-        {posts.map((post, index) => (
-          <PostPreview
-            key={index}
-            avatar={post.avatar}
-            authorName={post.author}
-            postedAt={post.postedAt}
-            tags={post.tags}
-            previewImg={post.previewImg}
-            postTitle={post.postTitle}
-            contentPreview={post.contentPreview}
-            isQuote={post.isQuote}
-          />
-        ))}
-      </div>
-      <div className="right-container">
-        <RightContainer />
-      </div>
-    </Container>
-  );
+class BlogContent extends Component {
+  setGrayBg() {
+    const grayBg = document.getElementById("blog__gray-bg");
+    const container = document.getElementById("blog-content");
+    const leftContainer = document.getElementById("left-container");
+    grayBg.style.width = `${window.innerWidth -
+      container.offsetLeft -
+      leftContainer.offsetWidth}px`;
+  }
+
+  componentDidMount() {
+    this.setGrayBg();
+    window.addEventListener("resize", this.setGrayBg);
+  }
+  render() {
+    return (
+      <Container id="blog-content" className="blog__content">
+        <div id="left-container" className="left-container">
+          {posts.map((post, index) => (
+            <PostPreview
+              key={index}
+              avatar={post.avatar}
+              authorName={post.author}
+              postedAt={post.postedAt}
+              tags={post.tags}
+              previewImg={post.previewImg}
+              postTitle={post.postTitle}
+              contentPreview={post.contentPreview}
+              isQuote={post.isQuote}
+            />
+          ))}
+        </div>
+        <div id="right-container" className="right-container">
+          <RightContainer />
+        </div>
+      </Container>
+    );
+  }
 }
 
-export default Content;
+export default BlogContent;

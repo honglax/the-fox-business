@@ -16,6 +16,7 @@ function Blog() {
         />
       </section>
       <section id="post-content" className="section section-post-content">
+        <div id="blog__gray-bg" className="gray-background" />
         <BlogContent />
       </section>
       <section id="purchase-box" className="section section-purchase-box">
