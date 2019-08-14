@@ -31,6 +31,7 @@ export default class FormInput extends Component {
       return "Email is required.";
     } else {
       // Get this regexp from https://emailregex.com
+      // eslint-disable-next-line
       const regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       const checkingResult = regexp.exec(inputEmail);
       return checkingResult === null ? "Wrong format of email." : "";

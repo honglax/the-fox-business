@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import classNames from "classnames";
 
 import "../../../styles/blog.scss";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
@@ -47,7 +48,8 @@ function PostPreview(props) {
     categories,
     previewImg,
     postTitle,
-    contentPreview
+    contentPreview,
+    isQuote
   } = props;
 
   const SocialIconLink = styled.a`
@@ -57,6 +59,12 @@ function PostPreview(props) {
       color: ${props => props.hoverColor};
     }
   `;
+
+  let postPreviewMiddleClass = classNames({
+    "post-preview__middle": true,
+    "post-preview__quote": isQuote
+  });
+
   return (
     <div className="content__post-preview">
       <div className="post-preview__top">
@@ -80,12 +88,18 @@ function PostPreview(props) {
           ))}
         </div>
       </div>
-      <div className="post-preview__middle">
-        <img
-          src={previewImg || defaultPreviewImg}
-          alt={postTitle}
-          className="post__preview-img"
-        />
+      <div className={postPreviewMiddleClass}>
+        <div className="post__preview-img">
+          <img src={previewImg || defaultPreviewImg} alt={postTitle} />
+        </div>
+        {isQuote ? (
+          <div
+            className="post__quote"
+            dangerouslySetInnerHTML={{ __html: postTitle }}
+          />
+        ) : (
+          ""
+        )}
         {postTitle ? <h5 className="post__title">{postTitle}</h5> : ""}
         {contentPreview ? (
           <p
@@ -98,7 +112,7 @@ function PostPreview(props) {
       </div>
       <div className="post-preview__bottom">
         <div className="bottom__block">
-          <a href="#">Continue Reading</a>
+          <a href="/">Continue Reading</a>
         </div>
         <div className="bottom__block">
           <button className="block__like">Like this</button>
@@ -108,8 +122,12 @@ function PostPreview(props) {
           <div className="block__share--social-icon">
             <ul className="social-icon__container">
               {socialIcons.map((icon, index) => (
-                <li key={index}>
-                  <SocialIconLink href={icon.url} hoverColor={icon.color}>
+                <li key={index} className="social-icon__item">
+                  <SocialIconLink
+                    className="social-icon__link"
+                    href={icon.url}
+                    hoverColor={icon.color}
+                  >
                     <FontAwesomeIcon
                       className="icon"
                       icon={[icon.library, icon.name]}

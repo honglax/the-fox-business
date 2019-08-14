@@ -18,7 +18,8 @@ const posts = [
     postTitle:
       "11 Impossible Tech Interview Questions You Don't Want To Be Asked",
     contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis."
+      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
+    isQuote: false
   },
   {
     id: 1,
@@ -30,7 +31,8 @@ const posts = [
     postTitle:
       "The World's First Commercial Jetpack Will Arrive In 2016, And It'll Cost You $150,000",
     contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis."
+      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
+    isQuote: false
   },
   {
     id: 2,
@@ -39,8 +41,10 @@ const posts = [
     postAt: "June, 25th 2020",
     categories: ["Quote", "Hardwork"],
     previewImg: "",
-    postTitle: "",
-    contentPreview: ""
+    postTitle:
+      "If today were the last day of your life, would you want to do?<br/>What you are about to do today?",
+    contentPreview: "",
+    isQuote: true
   },
   {
     id: 3,
@@ -52,7 +56,8 @@ const posts = [
     postTitle:
       "People Are Tweeting Their Rage At Scalia - But They're Making One Crucial Mistake",
     contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis."
+      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
+    isQuote: false
   },
   {
     id: 4,
@@ -64,7 +69,8 @@ const posts = [
     postTitle:
       "How E-Commerce Is Finally Disrupting The $600 Billion-A-Year Grocery Industry",
     contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis. Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis."
+      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis. Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
+    isQuote: false
   }
 ];
 
@@ -82,6 +88,7 @@ function Content() {
             previewImg={post.previewImg}
             postTitle={post.postTitle}
             contentPreview={post.contentPreview}
+            isQuote={post.isQuote}
           />
         ))}
       </div>
