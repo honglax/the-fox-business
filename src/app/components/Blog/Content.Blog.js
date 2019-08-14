@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import PostPreview from "./PostPreview.Blog";
 import RightContainer from "./RightContainer.Blog";
@@ -75,44 +75,29 @@ const posts = [
   }
 ];
 
-class BlogContent extends Component {
-  setGrayBg() {
-    const grayBg = document.getElementById("blog__gray-bg");
-    const container = document.getElementById("blog-content");
-    const leftContainer = document.getElementById("left-container");
-    grayBg.style.width = `${window.innerWidth -
-      container.offsetLeft -
-      leftContainer.offsetWidth}px`;
-  }
-
-  componentDidMount() {
-    this.setGrayBg();
-    window.addEventListener("resize", this.setGrayBg);
-  }
-  render() {
-    return (
-      <Container id="blog-content" className="blog__content">
-        <div id="left-container" className="left-container">
-          {posts.map((post, index) => (
-            <PostPreview
-              key={index}
-              avatar={post.avatar}
-              authorName={post.author}
-              postedAt={post.postedAt}
-              tags={post.tags}
-              previewImg={post.previewImg}
-              postTitle={post.postTitle}
-              contentPreview={post.contentPreview}
-              isQuote={post.isQuote}
-            />
-          ))}
-        </div>
-        <div id="right-container" className="right-container">
-          <RightContainer />
-        </div>
-      </Container>
-    );
-  }
+function BlogContent() {
+  return (
+    <Container id="blog__container" className="blog__content">
+      <div id="left-container" className="left-container">
+        {posts.map((post, index) => (
+          <PostPreview
+            key={index}
+            avatar={post.avatar}
+            authorName={post.author}
+            postedAt={post.postedAt}
+            tags={post.tags}
+            previewImg={post.previewImg}
+            postTitle={post.postTitle}
+            contentPreview={post.contentPreview}
+            isQuote={post.isQuote}
+          />
+        ))}
+      </div>
+      <div id="right-container" className="right-container">
+        <RightContainer />
+      </div>
+    </Container>
+  );
 }
 
 export default BlogContent;

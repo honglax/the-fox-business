@@ -16,7 +16,7 @@ function PopularPost(props) {
         className="preview__img"
       />
       <div className="preview__info">
-        <Link onClick={backToTop} to="/blog" className="preview__title">
+        <Link to="/blog/12" className="preview__title">
           {title}
         </Link>
         <p className="preview__postedAt">{postedAt}</p>

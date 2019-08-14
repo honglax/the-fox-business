@@ -91,6 +91,26 @@ class RightContainer extends Component {
     e.preventDefault();
   };
 
+  setGrayBg() {
+    const grayBg = document.getElementById("blog__gray-bg");
+    const container = document.getElementById("post-content");
+    const blog__container = document.getElementById("blog__container");
+    const rightContainer = document.getElementById("right-container");
+    grayBg.style.width = `${rightContainer.offsetWidth +
+      blog__container.offsetLeft}px`;
+    console.log(container.offsetHeight);
+    grayBg.style.height = `${container.offsetHeight}px`;
+  }
+
+  componentDidMount() {
+    this.setGrayBg();
+    window.addEventListener("resize", this.setGrayBg);
+  }
+
+  componentDidUpdate() {
+    this.setGrayBg();
+  }
+
   render() {
     return (
       <div>
@@ -149,9 +169,7 @@ class RightContainer extends Component {
           <div className="categories__content">
             {categories.map((category, index) => (
               <div className="linked-container" key={index}>
-                <Link onClick={backToTop} to="/blog">
-                  {category}
-                </Link>
+                <Link to="/blog/12">{category}</Link>
               </div>
             ))}
           </div>
@@ -161,13 +179,12 @@ class RightContainer extends Component {
           <div className="archive__content">
             {archives.map((archive, index) => (
               <div className="linked-container" key={index}>
-                <Link onClick={backToTop} to="/blog">
-                  {archive}
-                </Link>
+                <Link to="/blog/12">{archive}</Link>
               </div>
             ))}
           </div>
         </div>
+        <div id="blog__gray-bg" className="gray-background" />
       </div>
     );
   }

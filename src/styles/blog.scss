@@ -2,30 +2,6 @@
 
 #post-content {
   position: relative;
-  .gray-background {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background-color: $secondaryBgColor;
-    z-index: 1;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: -15px;
-      top: 100px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 15px 15px 15px 0;
-      border-color: transparent $secondaryBgColor transparent transparent;
-    }
-
-    @include respond-to(large-device) {
-      display: none;
-    }
-  }
 }
 
 #blog .blog__content.container {
@@ -37,7 +13,7 @@
   justify-content: space-between;
 
   @include respond-to(large-device) {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 }
@@ -169,11 +145,13 @@
     }
 
     &.post-preview__quote {
-      width: 700px;
+      width: 100%;
+      max-width: 700px;
       height: 400px;
       background-color: $postBgColor;
       position: relative;
       padding: 100px;
+      z-index: 2;
 
       &::after {
         position: absolute;
@@ -199,6 +177,10 @@
       .post__title,
       .post__content-preview {
         display: none;
+      }
+
+      @include respond-to(large-device) {
+        padding: 70px;
       }
     }
 
@@ -305,12 +287,17 @@
   }
 
   @include respond-to(large-device) {
-    padding-right: 0;
-    max-width: 700px;
+    padding: 100px 30px 0;
+    max-width: calc(100% - 370px);
+
+    .post__preview-img img {
+      width: 100%;
+    }
   }
 
   @include respond-to(medium-device) {
     padding-top: 50px;
+    max-width: 700px;
   }
 
   @include respond-to(small-device) {
@@ -329,9 +316,38 @@
   padding: 30px;
   padding-right: 0;
   width: calc(100% - 800px);
+  min-width: 370px;
   background-color: transparent;
+  position: relative;
+  z-index: 2;
+
+  .gray-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $secondaryBgColor;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 100px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 15px 15px 0;
+      border-color: transparent $secondaryBgColor transparent transparent;
+    }
+
+    @include respond-to(medium-device) {
+      display: none;
+    }
+  }
 
   .right__component {
+    position: relative;
+    z-index: 2;
     width: 100%;
     margin-top: 60px;
 
@@ -513,7 +529,7 @@
     }
   }
 
-  @include respond-to(large-device) {
+  @include respond-to(medium-device) {
     display: none;
   }
 }

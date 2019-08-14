@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
@@ -37,9 +38,10 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/services" component={Services} />
             <Route path="/about" component={AboutUs} />
-            <Route path="/blog" component={Blog} />
+            <Route exact path="/blog" component={Blog} />
             <Route path="/portfolio" component={Portfolio} />
             <Route path="/contact" component={Contact} />
+            <Route path="/blog/12" component={BlogDetail} />
           </Switch>
         </ScrollToTopControlller>
         <Footer />
