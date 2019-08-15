@@ -24,7 +24,7 @@ export default function AboutUs() {
     // <Fade bottom>
     <section id="about-us" className="about-us about__content">
       <section id="slideshow" className="section section-slideshow">
-        <SlideShow />
+        <SlideShow page="about" />
       </section>
       <section
         id="additional-features"

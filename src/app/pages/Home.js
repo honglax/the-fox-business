@@ -25,7 +25,7 @@ function Home() {
   return (
     <div className="home home__content">
       <section id="slideshow" className="section section-slideshow">
-        <Slideshow />
+        <Slideshow page="home" />
       </section>
 
       <section id="key-features" className="section section-key-features">

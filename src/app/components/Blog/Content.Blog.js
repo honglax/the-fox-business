@@ -80,12 +80,13 @@ const posts = [
 
 class BlogContent extends Component {
   setGrayBg() {
-    const grayBg = document.getElementById("blog__gray-bg");
-    const container = document.getElementById("post-content");
-    const blog__container = document.getElementById("blog__container");
-    // const rightContainer = document.getElementById("right-container");
-    grayBg.style.width = `${370 + blog__container.offsetLeft}px`;
-    grayBg.style.height = `${container.offsetHeight}px`;
+    if (window.matchMedia("(min-width: 992px").matches) {
+      const grayBg = document.getElementById("blog__gray-bg");
+      const container = document.getElementById("post-content");
+      const blog__container = document.getElementById("blog__container");
+      grayBg.style.width = `${370 + blog__container.offsetLeft}px`;
+      grayBg.style.height = `${container.offsetHeight}px`;
+    }
   }
 
   componentDidMount() {

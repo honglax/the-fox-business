@@ -16,7 +16,7 @@ function Blog() {
         path="/blog"
         component={() => (
           <section id="slideshow" className="section section-slideshow">
-            <SlideShow />
+            <SlideShow page="blog" />
           </section>
         )}
       />

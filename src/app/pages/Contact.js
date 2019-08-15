@@ -8,7 +8,7 @@ function Contact() {
   return (
     <div id="contact-page" className="contact__content">
       <section id="slideshow" className="section section-slideshow">
-        <SlideShow />
+        <SlideShow page="contact" />
       </section>
       <section id="contact-form" className="section section-contact-form">
         <ContactForm
