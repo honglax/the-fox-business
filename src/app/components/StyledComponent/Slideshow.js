@@ -80,22 +80,26 @@ class SlideShow extends Component {
                 <div className="carousel__inner">
                   <p className="large-text">{item.largeText}</p>
                   <p className="small-text">{item.smallText}</p>
-                  <div className="btn-group">
-                    <PrimaryButton
-                      width="200px"
-                      height="55px"
-                      className="primary-btn slider__btn"
-                    >
-                      Get Started
-                    </PrimaryButton>
-                    <PrimaryButton
-                      width="200px"
-                      height="55px"
-                      className="primary-btn slider__btn"
-                    >
-                      Purchase Now
-                    </PrimaryButton>
-                  </div>
+                  {page !== "blog" ? (
+                    <div className="btn-group">
+                      <PrimaryButton
+                        width="200px"
+                        height="55px"
+                        className="primary-btn slider__btn"
+                      >
+                        Get Started
+                      </PrimaryButton>
+                      <PrimaryButton
+                        width="200px"
+                        height="55px"
+                        className="primary-btn slider__btn"
+                      >
+                        Purchase Now
+                      </PrimaryButton>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </Carousel.Item>
             ))}
