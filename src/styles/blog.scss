@@ -651,8 +651,16 @@
     &.prev-btn {
       left: 50px;
     }
+
     &.next-btn {
       right: 50px;
+    }
+
+    &.scroll-down-btn {
+      top: auto;
+      left: 50%;
+      margin-left: -35px;
+      bottom: 0;
     }
 
     @include respond-to(large-device) {

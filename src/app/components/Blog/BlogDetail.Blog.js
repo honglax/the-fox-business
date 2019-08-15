@@ -7,7 +7,7 @@ import { socialIcons } from "./Data.Blog";
 export default function BlogDetail({ match }) {
   // let postId = match.params.id;
   return (
-    <div className="blog__detail">
+    <div id="blog-detail" className="blog__detail">
       <div className="detail__introduction">
         <p>
           You may purchase phone plans with more than enough data to cover

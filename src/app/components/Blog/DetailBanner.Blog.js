@@ -22,7 +22,7 @@ class DetailBanner extends Component {
 
   componentDidMount() {
     this.handleSetHeight();
-    window.addEventListener("resize", this.handleSetHeight);
+    window.addEventListener("resize", this.handleSetHeight, false);
   }
 
   componentDidUpdate() {
@@ -36,6 +36,16 @@ class DetailBanner extends Component {
   disableAnchor = e => {
     e.preventDefault();
   };
+
+  scrollToContent() {
+    const blogDetail = document.getElementById("post-content");
+    const header = document.querySelector("header");
+    window.scroll({
+      top: blogDetail.offsetTop - header.offsetHeight,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
 
   render() {
     let { match } = this.props;
@@ -89,7 +99,12 @@ class DetailBanner extends Component {
             />
           </button>
         </Link>
-        {/* <button className="summary__btn scroll-down-btn">Sroll down</button> */}
+        <button
+          onClick={this.scrollToContent}
+          className="summary__btn scroll-down-btn"
+        >
+          <FontAwesomeIcon icon={["fas", "chevron-down"]} />
+        </button>
       </div>
     );
   }

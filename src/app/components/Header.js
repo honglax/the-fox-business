@@ -51,6 +51,16 @@ class Header extends Component {
         .filter(className => className !== "fixed-nav")
         .join(" ");
     }
+
+    const detailBanner = document.getElementById("post-detail-banner");
+    if (detailBanner) {
+      detailBanner.style.height = `${window.innerHeight -
+        (window.innerWidth < 991.98 ? 80 : el.offsetHeight)}px`;
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll, false);
   }
 
   render() {
