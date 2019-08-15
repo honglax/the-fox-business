@@ -568,6 +568,7 @@
       @include customFont($whiteColor, 56px, $lightWeight, capitalize);
       line-height: 90px;
       margin-bottom: 50px;
+      padding: 0 30px;
     }
 
     .summary__avatar {
@@ -584,11 +585,45 @@
     .summary__postedAt {
       @include customFont($whiteColor, 14px, $regularWeight, capitalize);
     }
+
+    @include respond-to(large-device) {
+      .summary__title {
+        font-size: 48px;
+        line-height: 1.8;
+      }
+    }
+
+    @include respond-to(medium-device) {
+      .summary__title {
+        padding: 0;
+        font-size: 40px;
+      }
+    }
+
+    @include respond-to(small-device) {
+      padding: 20px 40px;
+      .summary__title {
+        font-size: 30px;
+      }
+    }
+
+    @include respond-to(phone-only) {
+      .summary__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .summary__avatar {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+      }
+    }
   }
   .summary__btn {
     @include customFont($whiteColor, 12px, $boldWeight, uppercase);
     line-height: 1;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
     border-radius: 5px;
     padding: 0 30px;
@@ -598,12 +633,19 @@
     top: 50%;
     margin-top: -25px;
 
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
     span {
       margin: 0 10px;
     }
 
     &:disabled {
       padding: 0 20px;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
     }
 
     &.prev-btn {
@@ -611,6 +653,31 @@
     }
     &.next-btn {
       right: 50px;
+    }
+
+    @include respond-to(large-device) {
+      &.prev-btn {
+        left: 30px;
+      }
+      &.next-btn {
+        right: 30px;
+      }
+    }
+
+    @include respond-to(medium-device) {
+      padding: 0 20px;
+      &.prev-btn {
+        left: 10px;
+      }
+      &.next-btn {
+        right: 10px;
+      }
+    }
+
+    @include respond-to(phone-only) {
+      padding: 0 10px;
+      width: 40px;
+      height: 40px;
     }
   }
 }
@@ -634,6 +701,9 @@
     background-color: rgba(0, 0, 0, 0.4);
     top: 50%;
     margin-top: -25px;
+    @include respond-to(medium-device) {
+      display: none;
+    }
   }
 
   .carousel-control-next {

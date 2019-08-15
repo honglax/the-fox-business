@@ -5,6 +5,14 @@ import { posts } from "./Data.Blog";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class DetailBanner extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+
+    this.disableAnchor = this.disableAnchor.bind(this);
+  }
+
   handleSetHeight() {
     const detailBanner = document.getElementById("post-detail-banner");
     const header = document.querySelector("header");
@@ -25,6 +33,10 @@ class DetailBanner extends Component {
     window.removeEventListener("resize", this.handleSetHeight, false);
   }
 
+  disableAnchor = e => {
+    e.preventDefault();
+  };
+
   render() {
     let { match } = this.props;
     let post = posts[match.params.id];
@@ -43,21 +55,34 @@ class DetailBanner extends Component {
           <div className="summary__author">{post.author}</div>
           <div className="summary__postedAt">{post.postedAt}</div>
         </Container>
-        <Link to={`/blog/${post.id - 1}`}>
-          <button disabled={post.id === 0} className="summary__btn prev-btn">
+        <Link
+          // onClick={post.id === 0 ? this.disableAnchor : null}
+          to={
+            post.id === 0 ? `/blog/${posts.length - 1}` : `/blog/${post.id - 1}`
+          }
+        >
+          <button className="summary__btn prev-btn">
             <FontAwesomeIcon
               className="arrow-icon"
               icon={["fas", "chevron-left"]}
             />
-            {post.id === 0 ? "" : <span>Previous Post</span>}
+            {post.id === 0 || window.innerWidth < 1191.98 ? (
+              ""
+            ) : (
+              <span>Previous Post</span>
+            )}
           </button>
         </Link>
-        <Link to={`/blog/${post.id + 1}`}>
-          <button
-            disabled={post.id === posts.length - 1}
-            className="summary__btn next-btn"
-          >
-            {post.id === posts.length - 1 ? "" : <span>Next Post</span>}
+        <Link
+          // onClick={post.id === posts.length - 1 ? this.disableAnchor : null}
+          to={post.id === posts.length - 1 ? "/blog/0" : `/blog/${post.id + 1}`}
+        >
+          <button className="summary__btn next-btn">
+            {post.id === posts.length - 1 || window.innerWidth < 1191.98 ? (
+              ""
+            ) : (
+              <span>Next Post</span>
+            )}
             <FontAwesomeIcon
               className="arrow-icon"
               icon={["fas", "chevron-right"]}
