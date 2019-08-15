@@ -41,7 +41,9 @@ class DetailBanner extends Component {
     const blogDetail = document.getElementById("post-content");
     const header = document.querySelector("header");
     window.scroll({
-      top: blogDetail.offsetTop - header.offsetHeight,
+      top:
+        blogDetail.offsetTop -
+        (window.innerWidth < 991.98 ? 80 : header.offsetHeight),
       left: 0,
       behavior: "smooth"
     });
