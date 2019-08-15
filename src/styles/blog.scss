@@ -747,6 +747,22 @@
     .others__title {
       @include customFont($whiteColor, 48px, $lightWeight, capitalize);
       line-height: 70px;
+
+      @include respond-to(large-device) {
+        font-size: 36px;
+      }
+
+      @include respond-to(medium-device) {
+        font-size: 30px;
+      }
+
+      @include respond-to(small-device) {
+        font-size: 24px;
+      }
+
+      @include respond-to(phone-only) {
+        font-size: 20px;
+      }
     }
 
     .others__read-more-btn {
@@ -755,6 +771,98 @@
       background-color: rgba(0, 0, 0, 0.4);
       margin-top: 30px;
       border: none;
+    }
+
+    @include respond-to(phone-only) {
+      padding: 20px;
+    }
+  }
+
+  @include respond-to(large-device) {
+    .carousel-control-next {
+      right: 30px;
+    }
+
+    .carousel-control-prev {
+      left: 30px;
+    }
+  }
+
+  @include respond-to(small-device) {
+    height: calc(100vh - 80px);
+  }
+}
+
+.blog__detail {
+  color: $mediumGrayColor;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-bottom: 30px;
+
+  p {
+    margin-bottom: 30px;
+    text-align: justify;
+  }
+
+  .detail__introduction {
+    color: $darkGrayColor;
+    font-size: 18px;
+  }
+
+  .content__img {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 24px;
+    color: $darkGrayColor;
+    margin-bottom: 20px;
+  }
+
+  .blue-text {
+    color: $primaryColor;
+  }
+
+  .content__quote-box {
+    width: 100%;
+    padding: 50px;
+    @include customFont($lightGrayColor, 24px, $lightWeight, none);
+    font-style: italic;
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+  }
+
+  .detail__social-btn {
+    @extend %flex-row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .social-btn {
+      flex-basis: calc((100% / 5) - 5px);
+      // margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include respond-to(small-device) {
+    padding-bottom: 0;
+    .detail__social-btn {
+      justify-content: flex-start;
+      .social-btn {
+        flex-basis: calc((100% / 3) - 4px);
+        margin-right: 6px;
+        margin-bottom: 6px;
+
+        &:nth-child(3n + 3) {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
