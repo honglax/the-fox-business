@@ -70,7 +70,7 @@ export const posts = [
   },
   {
     id: 5,
-    avatar: avatar2,
+    avatar: "http://lorempixel.com/300/300/people/3",
     author: "Thomas Clark",
     postedAt: "June, 25th 2020",
     tags: ["Tech"],

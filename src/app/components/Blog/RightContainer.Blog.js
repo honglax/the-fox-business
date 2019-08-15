@@ -84,7 +84,7 @@ class RightContainer extends Component {
           <div className="categories__content">
             {categories.map((category, index) => (
               <div className="linked-container" key={index}>
-                <Link to="/blog/12">{category}</Link>
+                <Link to="/blog/1">{category}</Link>
               </div>
             ))}
           </div>
@@ -94,7 +94,7 @@ class RightContainer extends Component {
           <div className="archive__content">
             {archives.map((archive, index) => (
               <div className="linked-container" key={index}>
-                <Link to="/blog/12">{archive}</Link>
+                <Link to="/blog/1">{archive}</Link>
               </div>
             ))}
           </div>

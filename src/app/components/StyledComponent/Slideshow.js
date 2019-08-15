@@ -37,11 +37,6 @@ class SlideShow extends Component {
   handleSetHeight() {
     const banner = document.getElementById("slideshow");
     const header = document.querySelector("header");
-
-    // banner.children[0].style.height = `${window.innerHeight -
-    //   (window.matchMedia("(max-width: 991.98px)").matches
-    //     ? 80
-    //     : header.offsetHeight)}px`;
     banner.children[0].style.height = `${window.innerHeight -
       (window.innerWidth < 991.98 ? 80 : header.offsetHeight)}px`;
   }

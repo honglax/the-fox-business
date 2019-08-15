@@ -43,7 +43,7 @@ class DetailBanner extends Component {
           <div className="summary__author">{post.author}</div>
           <div className="summary__postedAt">{post.postedAt}</div>
         </Container>
-        <Link to={"/blog/" + (post.id - 1)}>
+        <Link to={`/blog/${post.id - 1}`}>
           <button disabled={post.id === 0} className="summary__btn prev-btn">
             <FontAwesomeIcon
               className="arrow-icon"
@@ -52,7 +52,7 @@ class DetailBanner extends Component {
             {post.id === 0 ? "" : <span>Previous Post</span>}
           </button>
         </Link>
-        <Link to={"/blog/" + (post.id + 1)}>
+        <Link to={`/blog/${post.id + 1}`}>
           <button
             disabled={post.id === posts.length - 1}
             className="summary__btn next-btn"
