@@ -99,7 +99,15 @@ export const PrimaryButton = styled.button`
 
   &:hover {
     ${props =>
-      props.notHover ? "" : customBoxShadow(0, 0, 10, 0, "rgba(0, 0, 0, 0.3)")}
+      props.notHover
+        ? ""
+        : customBoxShadow(
+            0,
+            0,
+            5,
+            0,
+            `${props.boxShadowColor || "rgba(0, 0, 0, 0.3)"}`
+          )}
   }
 
   &:disabled {

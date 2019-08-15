@@ -859,11 +859,18 @@
 
     .social-btn {
       flex-basis: calc((100% / 5) - 5px);
-      // margin-right: 5px;
+
+      a {
+        color: $whiteColor;
+      }
 
       &:last-child {
         margin-right: 0;
       }
+
+      // &:hover {
+      //   box-shadow: none;
+      // }
     }
   }
 

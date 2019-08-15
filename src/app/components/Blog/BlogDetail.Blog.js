@@ -92,17 +92,22 @@ export default function BlogDetail({ match }) {
         </p>
       </div>
       <div className="detail__social-btn">
-        {socialIcons.map((icon, index) => (
-          <PrimaryButton
-            key={index}
-            bgColor={icon.color}
-            borderColor={icon.color}
-            height="40px"
-            className="social-btn"
-          >
-            <FontAwesomeIcon icon={[icon.library, icon.name]} />
-          </PrimaryButton>
-        ))}
+        {socialIcons.map((icon, index) => {
+          return (
+            <PrimaryButton
+              key={index}
+              bgColor={icon.color}
+              borderColor={icon.color}
+              height="40px"
+              boxShadowColor={icon.color}
+              className="social-btn"
+            >
+              <a href={icon.url}>
+                <FontAwesomeIcon icon={[icon.library, icon.name]} />
+              </a>
+            </PrimaryButton>
+          );
+        })}
       </div>
     </div>
   );

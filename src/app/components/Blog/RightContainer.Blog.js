@@ -7,6 +7,7 @@ import NewsLetter from "./NewsLetter.Blog";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
 
 import {
+  posts,
   popularPosts,
   trendingTags,
   unplashImg,
@@ -26,6 +27,10 @@ class RightContainer extends Component {
     e.preventDefault();
   };
 
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   render() {
     return (
       <div>
@@ -43,6 +48,7 @@ class RightContainer extends Component {
             {popularPosts.map((post, index) => (
               <PopularPost
                 key={index}
+                numOfPost={posts.length}
                 previewImg={post.previewImg}
                 title={post.title}
                 postedAt={post.postedAt}
@@ -84,7 +90,9 @@ class RightContainer extends Component {
           <div className="categories__content">
             {categories.map((category, index) => (
               <div className="linked-container" key={index}>
-                <Link to="/blog/1">{category}</Link>
+                <Link to={`/blog/${this.getRandomInt(posts.length)}`}>
+                  {category}
+                </Link>
               </div>
             ))}
           </div>
@@ -94,7 +102,9 @@ class RightContainer extends Component {
           <div className="archive__content">
             {archives.map((archive, index) => (
               <div className="linked-container" key={index}>
-                <Link to="/blog/1">{archive}</Link>
+                <Link to={`/blog/${this.getRandomInt(posts.length)}`}>
+                  {archive}
+                </Link>
               </div>
             ))}
           </div>
