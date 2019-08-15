@@ -6,81 +6,11 @@ import BlogDetail from "./BlogDetail.Blog";
 import PostPreview from "./PostPreview.Blog";
 import RightContainer from "./RightContainer.Blog";
 
-import avatar1 from "../../../assets/avatar/av1-50x50.jpg";
-import avatar2 from "../../../assets/avatar/av2-50x50.jpg";
-import avatar3 from "../../../assets/avatar/av3-50x50.jpg";
-import avatar4 from "../../../assets/avatar/av4-50x50.jpg";
-
-const posts = [
-  {
-    id: 0,
-    avatar: avatar4,
-    author: "Brian Alvarado",
-    postedAt: "1 day ago",
-    tags: ["Recruitment"],
-    previewImg: "",
-    postTitle:
-      "11 Impossible Tech Interview Questions You Don't Want To Be Asked",
-    contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
-    isQuote: false
-  },
-  {
-    id: 1,
-    avatar: avatar2,
-    author: "Justin Smith",
-    postedAt: "June, 25th 2020",
-    tags: ["Tech", "Commercial"],
-    previewImg: "",
-    postTitle:
-      "The World's First Commercial Jetpack Will Arrive In 2016, And It'll Cost You $150,000",
-    contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
-    isQuote: false
-  },
-  {
-    id: 2,
-    avatar: avatar3,
-    author: "Thomas Clark",
-    postedAt: "June, 25th 2020",
-    tags: ["Quote", "Hardwork"],
-    previewImg: "",
-    postTitle:
-      "If today were the last day of your life, would you want to do?<br/>What you are about to do today?",
-    contentPreview: "",
-    isQuote: true
-  },
-  {
-    id: 3,
-    avatar: avatar1,
-    author: "Susan Baker",
-    postedAt: "1 day ago",
-    tags: ["Recruitment"],
-    previewImg: "",
-    postTitle:
-      "People Are Tweeting Their Rage At Scalia - But They're Making One Crucial Mistake",
-    contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
-    isQuote: false
-  },
-  {
-    id: 4,
-    avatar: "",
-    author: "Jesse Harris",
-    postedAt: "2 days ago",
-    tags: ["Recruitment"],
-    previewImg: "",
-    postTitle:
-      "How E-Commerce Is Finally Disrupting The $600 Billion-A-Year Grocery Industry",
-    contentPreview:
-      "Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis. Cras gravida arcu tincidunt, suscipit velit sed, porta sapien. Maecenas a aliquam lectus. Vivamus consequat purus quis ligula vestibulum, eget mattis ex fermentum. Donec placerat felis sit amet venenatis faucibus. Praesent aliquet convallis.",
-    isQuote: false
-  }
-];
+import { posts } from "./Data.Blog.js";
 
 class BlogContent extends Component {
   setGrayBg() {
-    if (window.matchMedia("(min-width: 992px").matches) {
+    if (window.innerWidth > 991.98) {
       const grayBg = document.getElementById("blog__gray-bg");
       const container = document.getElementById("post-content");
       const blog__container = document.getElementById("blog__container");
@@ -96,6 +26,10 @@ class BlogContent extends Component {
 
   componentDidUpdate() {
     this.setGrayBg();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.setGrayBg);
   }
 
   render() {
@@ -117,7 +51,7 @@ class BlogContent extends Component {
                     tags={post.tags}
                     previewImg={post.previewImg}
                     postTitle={post.postTitle}
-                    contentPreview={post.contentPreview}
+                    postContent={post.postContent}
                     isQuote={post.isQuote}
                   />
                 ))

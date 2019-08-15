@@ -6,74 +6,13 @@ import PopularPost from "./PopularPost.Blog";
 import NewsLetter from "./NewsLetter.Blog";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
 
-const popularPosts = [
-  {
-    previewImg: "",
-    title: "Totally Free Photos For Personal And Commercial Use",
-    postedAt: "1 day ago"
-  },
-  {
-    previewImg: "",
-    title: "Comments tab redesign and Author Response Time",
-    postedAt: "June 23th, 2015"
-  },
-  {
-    previewImg: "",
-    title: "Wallpaper Design Contest #4: Urban - Winner Announced",
-    postedAt: "1 day ago"
-  },
-  {
-    previewImg: "",
-    title: "Envato's Most Wanted Winners: Micro Niche Themes",
-    postedAt: "June 28th, 2015"
-  },
-  {
-    previewImg: "",
-    title: "Envato's Most Wanted Winners: Micro Niche Themes",
-    postedAt: "June 30th, 2015"
-  }
-];
-
-const trendingTags = [
-  "Recruitment",
-  "Tech",
-  "Android",
-  "TheFox Wordpress",
-  "Photography",
-  "Evanto",
-  "Themeforest",
-  "Art work",
-  "Fonts",
-  "WordPress Theme",
-  "Design"
-];
-
-const unplashImg = ["", "", "", "", "", "", "", "", ""];
-
-const categories = [
-  "Design",
-  "Tech",
-  "Strategy",
-  "Read",
-  "Markets",
-  "Life",
-  "Finance"
-];
-
-const archives = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
+import {
+  popularPosts,
+  trendingTags,
+  unplashImg,
+  archives,
+  categories
+} from "./Data.Blog";
 
 class RightContainer extends Component {
   constructor(props) {

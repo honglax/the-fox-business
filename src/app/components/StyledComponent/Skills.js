@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import DarkBox from "../StyledComponent/DarkBox";
 import { SkillMeasure, PrimaryButton } from "../StyledComponent/style";
 import BoxSection from "../StyledComponent/BoxSection";
@@ -81,20 +82,22 @@ export default function Skills({ isReversed }) {
               </div>
             ))}
           </div>
-          <PrimaryButton
-            width={220}
-            height={30}
-            transform="capitalize"
-            bgColor="transparent"
-            color="#4889f3"
-            fontSize={18}
-            borderColor="transparent"
-            notHover={true}
-            className="reason-btn"
-          >
-            <span className="ti-star icon mr-2" />
-            Learn more about us
-          </PrimaryButton>
+          <Link to="/about">
+            <PrimaryButton
+              width={220}
+              height={30}
+              transform="capitalize"
+              bgColor="transparent"
+              color="#4889f3"
+              fontSize={18}
+              borderColor="transparent"
+              notHover={true}
+              className="reason-btn"
+            >
+              <span className="ti-star icon mr-2" />
+              Learn more about us
+            </PrimaryButton>
+          </Link>
         </BoxSection>
       </div>
     </Container>

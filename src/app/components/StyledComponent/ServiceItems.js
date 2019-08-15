@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { LearnMoreButton } from "../StyledComponent/style";
 
 import webDesign from "../../../assets/services-icon/web-design.png";
@@ -52,7 +53,9 @@ export default function ServiceItems() {
       <img src={service.icon} alt={service.title} className="icon" />
       <p className="title">{service.title}</p>
       <p className="content">{service.content}</p>
-      <LearnMoreButton href="#">Learn More</LearnMoreButton>
+      <Link to="/services">
+        <LearnMoreButton href="#">Learn More</LearnMoreButton>
+      </Link>
     </div>
   ));
 }

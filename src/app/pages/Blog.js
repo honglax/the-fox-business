@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import SlideShow from "../components/StyledComponent/Slideshow";
 import PurchaseBox from "../components/StyledComponent/PurchaseBox";
 import OtherPosts from "../components/Blog/OtherPosts.Blog";
+import DetailBanner from "../components/Blog/DetailBanner.Blog";
 
 import BlogContent from "../components/Blog/Content.Blog";
 import "../../styles/blog.scss";
@@ -20,7 +21,7 @@ function Blog() {
           </section>
         )}
       />
-      <Route path="/blog/:id" component={() => <div>Next Post</div>} />
+      <Route path="/blog/:id" component={DetailBanner} />
       <section id="post-content" className="section section-post-content">
         <BlogContent />
       </section>

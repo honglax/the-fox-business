@@ -14,7 +14,7 @@ import Blog from "./pages/Blog";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
-import ScrollToTopControlller from "../app/components/ScrollToTop";
+import ScrollToTopControlller from "../app/components/ScrollToTopController";
 import ScrollUpButton from "react-scroll-up-button";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

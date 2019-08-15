@@ -113,7 +113,7 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-export const LearnMoreButton = styled.a`
+export const LearnMoreButton = styled.span`
   ${customFontMixin("#4285f4", 12, undefined, 700, "uppercase")}
   display: inline-block;
   padding: 10px 20px;

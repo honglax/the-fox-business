@@ -8,40 +8,9 @@ import "../../../styles/blog.scss";
 import defaultPreviewImg from "../../../assets/default-post-preview.jpg";
 import defaultAvatar from "../../../assets/avatar/default-avatar.png";
 
-function PostPreview(props) {
-  let socialIcons = [
-    {
-      url: "https://facebook.com",
-      library: "fab",
-      name: "facebook-f",
-      color: "#3b5999"
-    },
-    {
-      url: "https://vn.linkedin.com/",
-      library: "fab",
-      name: "linkedin-in",
-      color: "#0077B5"
-    },
-    {
-      url: "https://twitter.com/",
-      library: "fab",
-      name: "twitter",
-      color: "#55acee"
-    },
-    {
-      url: "https://vimeo.com/",
-      library: "fab",
-      name: "vimeo-v",
-      color: "#1ab7ea"
-    },
-    {
-      url: "https://www.pinterest.com/",
-      library: "fab",
-      name: "pinterest-p",
-      color: "#bd081c"
-    }
-  ];
+import { socialIcons } from "./Data.Blog";
 
+function PostPreview(props) {
   let {
     id,
     avatar,
@@ -50,7 +19,7 @@ function PostPreview(props) {
     tags,
     previewImg,
     postTitle,
-    contentPreview,
+    postContent,
     isQuote
   } = props;
 
@@ -103,10 +72,10 @@ function PostPreview(props) {
           ""
         )}
         {postTitle ? <h5 className="post__title">{postTitle}</h5> : ""}
-        {contentPreview ? (
+        {postContent ? (
           <p
             className="post__content-preview"
-            dangerouslySetInnerHTML={{ __html: contentPreview }}
+            dangerouslySetInnerHTML={{ __html: postContent }}
           />
         ) : (
           ""
