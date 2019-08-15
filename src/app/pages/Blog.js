@@ -20,6 +20,7 @@ function Blog() {
           </section>
         )}
       />
+      <Route path="/blog/:id" component={() => <div>Next Post</div>} />
       <section id="post-content" className="section section-post-content">
         <BlogContent />
       </section>

@@ -53,6 +53,10 @@ class SlideShow extends Component {
     this.handleSetHeight();
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleSetHeight, false);
+  }
+
   render() {
     let { page } = this.props;
     return (
