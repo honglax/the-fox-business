@@ -10,7 +10,6 @@ import {
   posts,
   popularPosts,
   trendingTags,
-  unplashImg,
   archives,
   categories
 } from "./Data.Blog";
@@ -29,6 +28,52 @@ class RightContainer extends Component {
 
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  setGrayBg() {
+    if (window.innerWidth > 991.98) {
+      const grayBg = document.getElementById("blog__gray-bg");
+      const blog__container = document.getElementById("blog__container");
+      grayBg.style.width = `${370 + blog__container.offsetLeft}px`;
+    }
+  }
+
+  componentDidUpdate() {
+    this.setGrayBg();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.setGrayBg);
+  }
+
+  renderUnplashImg = randomNumber => {
+    const imageWidth = 200; //your desired image width in pixels
+    const imageHeight = 200; //desired image height in pixels
+    const collectionID = 1163637; //the collection ID from the original url
+    const unplashImgContainer = document.getElementById("unplash__content");
+    let unplashItem = document.createElement("img");
+    unplashItem.classList.add("unplash__img");
+    fetch(
+      `https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${randomNumber}`
+    )
+      .then(res => {
+        unplashItem.setAttribute("src", res.url);
+      })
+      .catch(err => {
+        unplashItem.setAttribute("src", defaultPreviewImg);
+      });
+    unplashImgContainer.appendChild(unplashItem);
+  };
+
+  componentDidMount() {
+    const numItemsToGenerate = 9; //how many gallery items you want on the screen
+    const numImagesAvailable = 242; //how many total images are in the collection you are pulling from
+    for (let i = 0; i < numItemsToGenerate; i++) {
+      let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
+      this.renderUnplashImg(randomImageIndex);
+    }
+    this.setGrayBg();
+    window.addEventListener("resize", this.setGrayBg);
   }
 
   render() {
@@ -74,16 +119,7 @@ class RightContainer extends Component {
         </div>
         <div className="right__component component__unplash">
           <div className="title">Photo from unplash</div>
-          <div className="unplash__content">
-            {unplashImg.map((img, index) => (
-              <img
-                key={index}
-                className="unplash__img"
-                src={img || defaultPreviewImg}
-                alt=""
-              />
-            ))}
-          </div>
+          <div id="unplash__content" className="unplash__content" />
         </div>
         <div className="right__component component__categories">
           <div className="title">Categories</div>
@@ -109,7 +145,6 @@ class RightContainer extends Component {
             ))}
           </div>
         </div>
-        <div id="blog__gray-bg" className="gray-background" />
       </div>
     );
   }

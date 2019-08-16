@@ -13,17 +13,17 @@ export default function OtherPost(props) {
           className="others__title"
           dangerouslySetInnerHTML={{ __html: post.postTitle }}
         />
-        <Link to={`/blog/${post.id}`}>
-          <PrimaryButton
-            width="200px"
-            height="55px"
-            bgColor="rgba(0,0,0,0.4)"
-            borderColor="rgba(0,0,0,0.4)"
-            className="others__read-more-btn"
-          >
-            Read more
-          </PrimaryButton>
-        </Link>
+        <PrimaryButton
+          // Use Styled Component as Link from react-router-dom
+          as={Link}
+          to={`/blog/${post.id}`}
+          // Defined properties of Styled Component
+          width="200px"
+          height="55px"
+          className="others__read-more-btn"
+        >
+          Read more
+        </PrimaryButton>
       </Container>
     </div>
   );

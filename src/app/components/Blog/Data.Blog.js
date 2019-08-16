@@ -10,7 +10,7 @@ export const posts = [
     author: "Brian Alvarado",
     postedAt: "1 day ago",
     tags: ["Recruitment"],
-    previewImg: "",
+    previewImg: "https://picsum.photos/id/1021/1920/1080",
     postTitle:
       "11 Impossible Tech Interview Questions You Don't Want To Be Asked",
     postContent:
@@ -23,7 +23,7 @@ export const posts = [
     author: "Justin Smith",
     postedAt: "June, 25th 2020",
     tags: ["Tech", "Commercial"],
-    previewImg: "",
+    previewImg: "https://picsum.photos/id/1019/1920/1080",
     postTitle:
       "The World's First Commercial Jetpack Will Arrive In 2016, And It'll Cost You $150,000",
     postContent:
@@ -36,7 +36,7 @@ export const posts = [
     author: "Thomas Clark",
     postedAt: "June, 25th 2020",
     tags: ["Quote", "Hardwork"],
-    previewImg: "",
+    previewImg: "https://picsum.photos/id/1006/1920/1080",
     postTitle:
       "If today were the last day of your life, would you want to do?<br/>What you are about to do today?",
     postContent: "",
@@ -48,7 +48,7 @@ export const posts = [
     author: "Susan Baker",
     postedAt: "1 day ago",
     tags: ["Recruitment"],
-    previewImg: "",
+    previewImg: "https://picsum.photos/id/1005/1920/1080",
     postTitle:
       "People Are Tweeting Their Rage At Scalia - But They're Making One Crucial Mistake",
     postContent:
@@ -61,7 +61,7 @@ export const posts = [
     author: "Jesse Harris",
     postedAt: "2 days ago",
     tags: ["Recruitment"],
-    previewImg: "",
+    previewImg: "https://picsum.photos/id/1037/1920/1080",
     postTitle:
       "How E-Commerce Is Finally Disrupting The $600 Billion-A-Year Grocery Industry",
     postContent:
@@ -74,7 +74,7 @@ export const posts = [
     author: "Thomas Clark",
     postedAt: "June, 25th 2020",
     tags: ["Tech"],
-    previewImg: "",
+    previewImg: "https://picsum.photos/id/1048/1920/1080",
     postTitle: "How To Tell Which Of Your Apps Are Using Up The Most Data",
     postContent:
       'You may purchase phone plans with more than enough data to cover things like casual web surfing and streaming the occasional song. But you may not realize that browsing Facebook could be a big hit against your data plan too.<br>According to Cisco\'s online VNI Services Gauge Tool, one hour of browsing through social media can use up 90 megabytes, which is more than twice the amount of data that streaming music uses in the standard "normal" quality per hour.',
@@ -156,8 +156,6 @@ export const trendingTags = [
   "WordPress Theme",
   "Design"
 ];
-
-export const unplashImg = ["", "", "", "", "", "", "", "", ""];
 
 export const categories = [
   "Design",

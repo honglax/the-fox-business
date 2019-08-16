@@ -9,8 +9,6 @@ class DetailBanner extends Component {
     super(props);
 
     this.state = {};
-
-    this.disableAnchor = this.disableAnchor.bind(this);
   }
 
   handleSetHeight() {
@@ -33,10 +31,6 @@ class DetailBanner extends Component {
     window.removeEventListener("resize", this.handleSetHeight, false);
   }
 
-  disableAnchor = e => {
-    e.preventDefault();
-  };
-
   scrollToContent() {
     const blogDetail = document.getElementById("post-content");
     const header = document.querySelector("header");
@@ -53,7 +47,13 @@ class DetailBanner extends Component {
     let { match } = this.props;
     let post = posts[match.params.id];
     return (
-      <div id="post-detail-banner" className="detail__banner">
+      <div
+        id="post-detail-banner"
+        className="detail__banner"
+        style={{
+          backgroundImage: `url(${post.previewImg})`
+        }}
+      >
         <Container className="banner__post-summary">
           <div
             className="summary__title"
