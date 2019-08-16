@@ -137,7 +137,7 @@ class Pagination extends Component {
                   <li key={index} className="page-item">
                     <a
                       className="page-link"
-                      href="#"
+                      href="/"
                       aria-label="Previous"
                       onClick={this.handleMoveLeft}
                     >
@@ -152,7 +152,7 @@ class Pagination extends Component {
                   <li key={index} className="page-item">
                     <a
                       className="page-link"
-                      href="#"
+                      href="/"
                       aria-label="Next"
                       onClick={this.handleMoveRight}
                     >
@@ -171,7 +171,7 @@ class Pagination extends Component {
                 >
                   <a
                     className="page-link"
-                    href="#"
+                    href="/"
                     onClick={e => this.handleClick(page, e)}
                   >
                     {page}

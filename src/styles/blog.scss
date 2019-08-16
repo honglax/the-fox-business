@@ -731,10 +731,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    * {
-      z-index: 2;
-    }
   }
 
   .carousel-item::after {
@@ -768,6 +764,10 @@
   .detail__others,
   .others__container {
     @extend %flex-col-center-center;
+  }
+
+  .detail__others {
+    z-index: 10;
   }
 
   .others__container {
@@ -816,12 +816,12 @@
 
     .others__read-more-btn {
       @include customFont($whiteColor, 14px, $boldWeight, uppercase);
-      // @include customTransition($duration: 0.3s);
+      @include customTransition($duration: 0.3s);
       margin: 0 auto;
       background-color: rgba(0, 0, 0, 0.5);
       margin-top: 30px;
       border: none;
-      // opacity: 0.5;
+      opacity: 0.5;
       position: relative;
       z-index: 10;
       display: inline-block;
@@ -829,6 +829,10 @@
       height: 55px;
       line-height: 55px;
       border-radius: 5px;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
 
     @include respond-to(phone-only) {
