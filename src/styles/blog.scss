@@ -953,7 +953,17 @@
     margin: 0 5px;
 
     .page-link {
+      @include customTransition($duration: 0.2s);
+      background-color: $secondaryBgColor;
       border-radius: 5px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &.active .page-link {
+      background-color: $primaryColor;
     }
 
     &:hover {
@@ -961,7 +971,7 @@
         background-color: $whiteColor;
       }
       &.active .page-link {
-        background-color: #007bff;
+        background-color: $primaryColor;
       }
     }
   }
